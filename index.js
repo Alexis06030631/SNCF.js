@@ -1,4 +1,5 @@
 const axios = require("axios");
+const Formatter = require("./utils/date");
 const baseUrl = 'https://api.navitia.io/v1/coverage/sncf/';
 
 class Sncf {
@@ -10,7 +11,7 @@ class Sncf {
         }
         this.user = {
             connected: false,
-            last_load_at: '',
+            readyDate: '',
             connectionType: '',
             id: '',
             shape: '',
@@ -30,7 +31,7 @@ class Sncf {
             }else {
                 this.user = {
                     connected: true,
-                    last_load_at: response.data.regions[0].last_load_at,
+                    readyDate: response.data.regions[0].last_load_at,
                     connectionType: response.data.regions[0].name,
                     id: response.data.regions[0].id,
                     shape: response.data.regions[0].shape,
@@ -44,6 +45,9 @@ class Sncf {
         }
     }
 
+    get readyAt() {
+        return this.user.readyDate && Formatter.date(this.user.readyDate)
+    }
     requestSNCFapi(method, data='') {
         return new Promise( (resolve, reject) => {
             axios({
