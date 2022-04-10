@@ -1,0 +1,16 @@
+{
+  "name": "sncf_module",
+  "version": "1.0.0",
+  "description": "An easy to use javascript module to get all the information in real time about the trains ©SNCF (only in France)\n\nUnder development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Alexis06030631",
+  "license": "ISC",
+  "private": false,
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
+}
