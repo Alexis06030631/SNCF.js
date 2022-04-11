@@ -3,21 +3,20 @@ const axios = require("axios");
 const baseUrl = 'https://api.navitia.io/v1/coverage/sncf/';
 
 class Sncf {
-  constructor(client) {
-    this.client = client
-    if (!this.token && 'SNCF_TOKEN' in process.env) {
-      this.token = process.env.SNCF_TOKEN;
-    } else {
-      this.token = null;
-    }
-    this.user = {
+  constructor() {
+    //Sncf Token
+    if (!this.token && 'SNCF_TOKEN' in process.env) this.token = process.env.SNCF_TOKEN;
+    else this.token = null;
+
+    // user info
+    this.client = {
       connected: false,
       readyDate: '',
       connectionType: '',
       id: '',
       shape: '',
       timezone: '',
-    }  // user info
+    }
 
   }
 
@@ -65,6 +64,10 @@ class Sncf {
 
   get uptime() {
     return this.user.readyDate && Formatter.uptime(this.user.readyDate)
+  }
+
+  get timezone() {
+    return this.user.timezone
   }
 
   requestSNCFapi(method, data='') {
