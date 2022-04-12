@@ -26,19 +26,15 @@ class Sncf {
 
     try {
       const response = await this.requests('GET');
-      if(response.status !== 200) {
-        throw new Error(`Error ${response.status}: ${response.data.message}`);
-      }else {
-        this.user = {
-          connected: true,
-          readyDate: response.data.regions[0].last_load_at,
-          connectionType: response.data.regions[0].name,
-          id: response.data.regions[0].id,
-          shape: response.data.regions[0].shape,
-          timezone: response.data.context.timezone
-        };
-        process.emit("debug", `Connected to the api as ${this.user.id}`);
-      }
+      this.user = {
+        connected: true,
+        readyDate: response.data.regions[0].last_load_at,
+        connectionType: response.data.regions[0].name,
+        id: response.data.regions[0].id,
+        shape: response.data.regions[0].shape,
+        timezone: response.data.context.timezone
+      };
+      process.emit("debug", `Connected to the api as ${this.user.id}`);
       return this.user
     } catch (error) {
       throw error;
