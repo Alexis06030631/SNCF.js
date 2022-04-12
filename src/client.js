@@ -1,6 +1,5 @@
 const Formatter = require("./utils/date")
-const axios = require("axios");
-const baseUrl = 'https://api.navitia.io/v1/coverage/sncf/';
+const {requestSNCFapi} = require("./utils/api");
 
 class Sncf {
   constructor() {
@@ -26,7 +25,7 @@ class Sncf {
     process.emit("debug", 'Preparing to connect to the api...');
 
     try {
-      const response = await this.requestSNCFapi('GET');
+      const response = await this.requests('GET');
       if(response.status !== 200) {
         throw new Error(`Error ${response.status}: ${response.data.message}`);
       }else {
@@ -70,21 +69,9 @@ class Sncf {
     return this.user.timezone
   }
 
-  requestSNCFapi(method, data='') {
-    return new Promise( (resolve, reject) => {
-      axios({
-        method: method,
-        url: baseUrl + data,
-        headers: {
-          'Authorization': this.token
-        }
-      }).then(response => {
-        resolve({status: response.status, data:response.data});
-      }).catch(error => {
-        resolve({status: error.response.status, data:error.response.data});
-      });
-    })
-  };
+  requests(method, url) {
+    return requestSNCFapi(this.token, method, url)
+  }
 }
 
 module.exports = Sncf;

@@ -1,12 +1,17 @@
-const Sncf = require("./client");
 const response_format = require("./utils/response_format");
-const axios = require("axios");
+const Sncf = require("./client");
 
 class Places extends Sncf {
-    constructor(client) {
-        super(client);
-        this.client = client;
-        console.log(client)
+    async found(station, filter = true) {
+        const response = await this.requests('GET',`places/?q=${station.replaceAll(' ', '%20')}`)
+        if(response.data.places) {
+            if(filter) {
+                response.data.places = response.data.places.filter((d)=> d.embedded_type === 'stop_area')
+            }
+            return response_format.places(response.status, response.data.places)
+        } else {
+            return response_format.places(404, {message: 'No places found'})
+        }
     }
 
     async getStation(station, filter = true) {
