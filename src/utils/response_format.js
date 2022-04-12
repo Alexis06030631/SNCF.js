@@ -2,8 +2,14 @@ module.exports = {
   places: function(status, data) {
     return {
       status: status,
-      placeslength: data.length,
+      placeslength: data?.length || 0,
       places: data
+    };
+  },
+  place: function(status, data) {
+    return {
+      status: status,
+      place: data
     };
   },
   error: function(message) {
