@@ -6,6 +6,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      SNCF_TOKEN: ${{ secrets.SNCF_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -13,8 +15,5 @@ jobs:
           node-version: 16.x
       - name: download deps
         run: npm ci
-      - name: Set token
-        env:
-          SNCF_TOKEN: ${{ secrets.SNCF_TOKEN }}
       - name: test run
         run: npm test
