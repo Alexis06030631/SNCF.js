@@ -1,20 +1,21 @@
-name: Test module
+name: test module
 on:
-  push:
-    branches: [ main, dev ]
   pull_request:
-    branches: [ main, dev ]
+  push:
+
 jobs:
-  npm:
-    name: npm
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: download deps
+        run: npm ci
+      - name: Create env file
+        run: |
+          echo SNCF_TOKEN=${{secrets.SNCF_TOKEN}} >> .env
 
-      - name: Install node.js v16
-        uses: actions/setup-node@v2
-        
-      - name: Run test
-      - run: npm test
-      
+      - name: test run
+        run: npm start
