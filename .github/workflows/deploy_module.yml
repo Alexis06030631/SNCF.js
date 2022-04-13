@@ -15,11 +15,19 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16.x
+      
       - name: download deps
         run: npm ci
+      
       - name: test run
         run: npm test
+        
+      - name: Check package version
+        id: cpv
+        uses: PostHog/check-package-version@v2
+      
       - name: Update module
+        if: ${{ steps.cpv.outputs.is-new-version }}
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
