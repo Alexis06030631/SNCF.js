@@ -7,6 +7,9 @@ jobs:
   update-deps:
     name: Update node module
     runs-on: ubuntu-latest
+    env:
+      CI: true
+      SNCF_TOKEN: ${{ secrets.SNCF_TOKEN }}
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
@@ -14,9 +17,6 @@ jobs:
           node-version: 10
       - run: npm install
       - run: npm test
-        env:
-          CI: true
-          SNCF_TOKEN: ${{ secrets.SNCF_TOKEN }}
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
