@@ -16,6 +16,5 @@ jobs:
       - name: Set token
         env:
           SNCF_TOKEN: ${{ secrets.SNCF_TOKEN }}
-
       - name: test run
         run: npm test
