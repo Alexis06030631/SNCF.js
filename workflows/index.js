@@ -1,6 +1,8 @@
 const {Client, Places, Routes} = require('../index')
 const sncf = new Client()
 
+
+console.log(process.env)
 sncf.login().then(async () => {
     try{
         const FoundGare = await Places.search('Paris')
