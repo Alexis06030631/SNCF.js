@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "Alexis06030631",
   "license": "ISC",
-  "private": true,
+  "private": false,
   "dependencies": {
     "axios": "^0.26.1",
     "moment": "^2.29.2"
