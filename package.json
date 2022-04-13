@@ -6,7 +6,9 @@
   "scripts": {
     "test": "node ./workflows/index"
   },
-  "keywords": [],
+  "keywords": [
+    "SNCF", "API", "FRENCH", "TRAIN", "EASY TO USE"
+  ],
   "author": "Alexis06030631",
   "license": "ISC",
   "private": false,
