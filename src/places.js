@@ -2,7 +2,7 @@ const response_format = require("./utils/response_format");
 const Sncf = require("./client");
 
 class Places extends Sncf {
-    async found(station, filter = true) {
+    async search(station, filter = true) {
         const response = await this.requests('GET',`places/?q=${station.replaceAll(' ', '%20')}`)
         if(response.data.places) {
             if(filter) {

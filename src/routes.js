@@ -2,7 +2,7 @@ const response_format = require("./utils/response_format");
 const Sncf = require("./client");
 
 class Routes extends Sncf {
-    async found(from, to, filter = true) {
+    async search(from, to, filter = true) {
         const station = `${from} - ${to}`;
         const response = await this.requests('GET',`pt_objects/?q=${station.replaceAll(' ', '%20')}`)
         if(response.data.pt_objects) {
