@@ -1,26 +1,23 @@
 name: Test module
-
 on:
   push:
     branches: [ main, dev ]
   pull_request:
     branches: [ main, dev ]
-
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */12 * * *'
 jobs:
-  build:
-
+  npm:
+    name: npm
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }} to the test
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm test
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install node.js v16
+        uses: actions/setup-node@v2
+        
+      - name: Run test
+      - run: npm test
+      
