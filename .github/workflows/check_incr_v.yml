@@ -22,3 +22,10 @@ jobs:
             echo "Committed version: ${{ steps.cpv.outputs.committed-version }}"
             echo "Published version: ${{ steps.cpv.outputs.published-version }}"
             echo "Is new version: ${{ steps.cpv.outputs.is-new-version }}"
+      
+      - name: Update version check
+        if: ${{ !steps.cpv.outputs.is-new-version }}
+        uses: actions/github-script@v3
+        with:
+          script: |
+              core.setFailed('The version was not incremented')
