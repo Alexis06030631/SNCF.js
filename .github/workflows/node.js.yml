@@ -3,11 +3,12 @@ on:
   pull_request:
   push:
 
+env:
+      SNCF_TOKEN: ${{ secrets.SNCF_TOKEN }}
+      
 jobs:
   test:
     runs-on: ubuntu-latest
-    env:
-      SNCF_TOKEN: ${{ secrets.SNCF_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
