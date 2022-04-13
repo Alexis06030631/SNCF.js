@@ -15,6 +15,7 @@ jobs:
         run: npm ci
       - name: Create env file
         run: |
+          cd .env
           echo SNCF_TOKEN=${{secrets.SNCF_TOKEN}} >> .env
 
       - name: test run
