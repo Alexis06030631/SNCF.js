@@ -21,6 +21,7 @@ class Sncf {
 
   async login(token = this.token) {
     if (!token || typeof token !== 'string') throw new Error('TOKEN_INVALID');
+    if(this.token !== token) this.token = token;
 
     process.emit("debug", 'Preparing to connect to the api...');
 
@@ -37,7 +38,7 @@ class Sncf {
       process.emit("debug", `Connected to the api as ${this.user.id}`);
       return this.user
     } catch (error) {
-      throw error;
+      throw new Error(error);
     }
   }
 
