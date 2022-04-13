@@ -14,8 +14,8 @@ jobs:
       - name: download deps
         run: npm ci
       - name: Create env file
-        run: |
-          cp .env.backup .env
-          echo SNCF_TOKEN=${{secrets.SNCF_TOKEN}} >> .env
+        env:
+          CI: true
+          SNCF_TOKEN: ${{ secrets.SNCF_TOKEN }}
       - name: test run
         run: npm test
