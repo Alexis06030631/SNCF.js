@@ -20,4 +20,6 @@ jobs:
 
       - name: Log when unchanged
         if: steps.check.outputs.changed == 'false'
-        run: 'echo "No version change :/"'
+        run: |
+          'echo "No version change :/"'
+          'exit 1'
