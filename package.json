@@ -1,7 +1,7 @@
 {
   "name": "sncf.js",
-  "version": "0.2.1",
-  "description": "An easy to use javascript module to get all the information in real time about the trains ©SNCF (only in France)\n\nUnder development",
+  "version": "0.2.0",
+  "description": "An easy to use javascript module to get all the information in real time about the trains ©SNCF (only in France)",
   "main": "index.js",
   "scripts": {
     "test": "node ./workflows/index"
