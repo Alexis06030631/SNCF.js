@@ -1,26 +1,19 @@
 name: deploy module
 on:
-  workflow_run:
+  push:
     branches: [main]
-    workflows: ["test module"]
-    types:
-      - completed
 
 jobs:
   update-deps:
     name: Update node module
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: neverendingqs/gh-action-node-update-deps@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          bump-version: patch
-          commit-message-prefix: fix
-          package-manager: npm
-          git-user-email: 61119747+Alexis06030631@users.noreply.github.com
-          git-user-name: SNCF.js
-          pull-request-labels: test
-          target-version: minor
+          node-version: 10
+      - run: npm install
+      - run: npm test
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
