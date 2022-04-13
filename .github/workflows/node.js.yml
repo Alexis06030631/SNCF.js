@@ -3,9 +3,6 @@ on:
   pull_request:
   push:
 
-env:
-      SNCF_TOKEN: ${{ secrets.SNCF_TOKEN }}
-      
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -16,5 +13,9 @@ jobs:
           node-version: 16.x
       - name: download deps
         run: npm ci
+      - name: Create env file
+        run: |
+          cp .env.backup .env
+          echo SNCF_TOKEN=${{secrets.SNCF_TOKEN}} >> .env
       - name: test run
         run: npm test
