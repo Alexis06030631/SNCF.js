@@ -2,7 +2,7 @@ name: deploy module
 on:
   workflow_run:
     branches: [main]
-    workflows: ["test_module"]
+    workflows: ["test module"]
     types:
       - completed
 
