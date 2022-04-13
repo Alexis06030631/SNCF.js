@@ -18,4 +18,4 @@ jobs:
           echo SNCF_TOKEN=${{secrets.SNCF_TOKEN}} >> .env
 
       - name: test run
-        run: npm start
+        run: npm test
