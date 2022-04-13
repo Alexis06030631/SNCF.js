@@ -1,8 +1,7 @@
 name: deploy module
 on:
-  push:
-    branches: [main]
   workflow_run:
+    branches: [main]
     workflows: ["CI test_module"]
     types:
       - completed
