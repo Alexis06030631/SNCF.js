@@ -23,6 +23,6 @@ jobs:
       - name: test run
         run: npm test
       - name: Update module
-      - uses: JS-DevTools/npm-publish@v1
+        uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
