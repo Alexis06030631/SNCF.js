@@ -35,3 +35,4 @@ class Routes extends Sncf {
 }
 
 Sncf.prototype.routes = new Routes()
+module.exports.Routes = new Routes()

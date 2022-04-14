@@ -25,3 +25,4 @@ class Places extends Sncf {
 }
 
 Sncf.prototype.places = new Places()
+module.exports.Places = new Places()
