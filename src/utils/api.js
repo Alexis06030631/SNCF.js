@@ -11,7 +11,7 @@ async function requestSNCFapi(token, method, data='') {
             method: method,
             url: baseUrl + data,
             headers: {
-                'Authorization': token
+                'Authorization': token.replaceAll(' ', '%20')
             }
         })
         return res
