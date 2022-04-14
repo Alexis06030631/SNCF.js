@@ -24,4 +24,4 @@ class Places extends Sncf {
     }
 }
 
-module.exports = new Places;
+Sncf.prototype.places = new Places()
