@@ -4,7 +4,7 @@ const Sncf = require("./client");
 class Routes extends Sncf {
     async search(from, to, filter = true) {
         const station = `${from} - ${to}`;
-        const response = await this.requests('GET',`pt_objects/?q=${station.replaceAll(' ', '%20')}`)
+        const response = await this.requests('GET',`pt_objects/?q=${station}`)
         if(response.data.pt_objects) {
             if(filter) {
                 response.data.pt_objects = response.data.pt_objects.filter((d)=> d.embedded_type === 'line')
