@@ -6,12 +6,14 @@ const methods = ['GET', 'POST', 'PUT', 'DELETE'];
 async function requestSNCFapi(token, method, data='') {
     if(!token) throw 'TOKEN_INVALID';
     if(!method || !methods.includes(method)) throw 'METHOD_INVALID';
+
+    data = data.replaceAll(' ', '%20')
     try{
         const res = await axios({
             method: method,
             url: baseUrl + data,
             headers: {
-                'Authorization': token
+                'Authorization': token.replaceAll(' ', '%20')
             }
         })
         return res

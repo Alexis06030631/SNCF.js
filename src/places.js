@@ -3,7 +3,7 @@ const Sncf = require("./client");
 
 class Places extends Sncf {
     async search(station, filter = true) {
-        const response = await this.requests('GET',`places/?q=${station.replaceAll(' ', '%20')}`)
+        const response = await this.requests('GET',`places/?q=${station}`)
         if(response.data.places) {
             if(filter) {
                 response.data.places = response.data.places.filter((d)=> d.embedded_type === 'stop_area')
@@ -24,4 +24,5 @@ class Places extends Sncf {
     }
 }
 
-module.exports = new Places;
+Sncf.prototype.places = new Places()
+module.exports.Places = new Places()
