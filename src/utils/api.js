@@ -18,7 +18,24 @@ async function requestSNCFapi(token, method, data='') {
         })
         return res
     }catch(e){
-        throw `Connection to SNCF api failed:\n${e.response.status} - ${e.response.statusText}: ${e.response.data.message}`
+        let error
+        if(e.response){
+            error = `${e.response.status} - ${e.response.statusText}: ${e.response.data.message}`
+        }else{
+            switch (e.code) {
+                case 'ECONNREFUSED':
+                    error = 'SERVER_REFUSED'
+                    break;
+                case 'ENOTFOUND':
+                    error = 'SERVER_NOT_FOUND'
+                    break;
+                default:
+                    error = e.code
+                    break;
+            }
+        }
+
+        throw `Connection to SNCF api failed:\n${error}`
     }
 }
 
