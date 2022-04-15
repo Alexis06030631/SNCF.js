@@ -37,6 +37,32 @@ module.exports = {
       stop_areas: data
     };
   },
+  stop_areas_departure: function(status, data) {
+    return {
+      status: status,
+      stop_areas: data
+    };
+  },
+  stop_areas_departures: function(status, data) {
+    return {
+      status: status,
+      length: data?.length || 0,
+      stop_areas: data
+    };
+  },
+  stop_areas_arrival: function(status, data) {
+    return {
+      status: status,
+      stop_areas: data
+    };
+  },
+  stop_areas_arrivals: function(status, data) {
+    return {
+      status: status,
+      length: data?.length || 0,
+      stop_areas: data
+    };
+  },
 
   // Callback module
   error: function(message) {
