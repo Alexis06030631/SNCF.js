@@ -38,7 +38,7 @@ class Sncf {
       process.emit("debug", `Connected to the api as ${this.user.id}`);
       return this.user
     } catch (error) {
-      throw new Error(error);
+      throw error;
     }
   }
 
