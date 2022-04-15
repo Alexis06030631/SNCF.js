@@ -1,4 +1,5 @@
 module.exports = {
+
   // Places module
   places: function(status, data) {
     return {
@@ -70,5 +71,12 @@ module.exports = {
       status: 'error',
       message: message
     };
-  }
+  },
+  return_values: function(type, status, data) {
+    return {
+      status: status || data?.length 200 : 404,
+      length: data?.length || 0,
+      [type]: data || {message: `${type} no found`}
+    };
+  },
 }
