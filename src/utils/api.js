@@ -30,7 +30,6 @@ async function requestSNCFapi(token, method, data='') {
             }
             error = `${e.response.status} - ${e.response.statusText}: ${e.response.data.message}`
         }else{
-            console.log(e.code)
             switch (e.code) {
                 case 'ECONNREFUSED':
                     error = 'SERVER_REFUSED'
