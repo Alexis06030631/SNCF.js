@@ -48,10 +48,10 @@ sncf.login("YOUR TOKEN").then(async () =>{
 sncf.places.search('STATION_NAME') // Search for a station
 sncf.places.get('STATION_ID') // Get a specific station
 
-//Routes
-sncf.routes.search('ROUTE_NAME') // Search for a route
-sncf.routes.get('ROUTE_ID') // Get a specific route
-sncf.routes.stop_areas('ROUTE_ID') // Get the stop areas of a specific route
+//lines
+sncf.lines.search('LINE_NAME') // Search for a line
+sncf.lines.get('LINE_ID') // Get a specific line
+sncf.lines.stop_areas('LINE_ID') // Get the stop areas of a specific line
 
 // User (Get the information about the current session)
 sncf.user // Get all informations
