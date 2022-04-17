@@ -1,39 +1,49 @@
 const Sncf = require("./client");
 
 class Stoparea extends Sncf {
-    constructor(user, stoparea_id){
+    constructor(user, stopareaID){
         super(user)
-        this.stoparea_id = stoparea_id || null
+        this.stopareaID = stopareaID || null
     }
 
-    async departures(stoparea_id, items = 10){
-        stoparea_id = this.check_stoparea_id(stoparea_id);
-        if(typeof stoparea_id !== 'string') return stoparea_id;
-        const response = await this.requests('GET', `stop_areas/${stoparea_id}/departures?count=${items}`)
+    async search(StationName) {
+        const response = await this.requests('GET',`pt_objects/?q=${StationName}`)
+        return this.inclMultresp('pt_objects', response)
+    }
+
+    async get(stopareaID) {
+        const response = await this.requests('GET',`stop_areas/${stopareaID}`)
+        return this.inclresp('stop_areas', response)
+    }
+
+    async departures(stopareaID, items = 10){
+        stopareaID = this.check_stopareaID(stopareaID);
+        if(typeof stopareaID !== 'string') return stopareaID;
+        const response = await this.requests('GET', `stop_areas/${stopareaID}/departures?count=${items}`)
         return this.this.return_values('departures', response.status, response.data.departures)
     }
 
-    async arrivals(stoparea_id, items = 10){
-        stoparea_id = this.check_stoparea_id(stoparea_id);
-        if(typeof stoparea_id !== 'string') return stoparea_id;
-        const response = await this.requests('GET', `stop_areas/${stoparea_id}/arrivals?count=${items}`)
+    async arrivals(stopareaID, items = 10){
+        stopareaID = this.check_stopareaID(stopareaID);
+        if(typeof stopareaID !== 'string') return stopareaID;
+        const response = await this.requests('GET', `stop_areas/${stopareaID}/arrivals?count=${items}`)
         return this.this.return_values('arrivals', response.status, response.data.arrivals)
     }
 
-    async shedules(stoparea_id){
-        stoparea_id = this.check_stoparea_id(stoparea_id);
-        if(typeof stoparea_id !== 'string') return stoparea_id;
-        const response = await this.requests('GET', `stop_areas/${stoparea_id}/route_schedules`)
+    async shedules(stopareaID){
+        stopareaID = this.check_stopareaID(stopareaID);
+        if(typeof stopareaID !== 'string') return stopareaID;
+        const response = await this.requests('GET', `stop_areas/${stopareaID}/route_schedules`)
         return this.this.return_values('route_schedules', response.status, response.data.route_schedules)
     }
 
-    check_stoparea_id(stoparea_id){
-        if(!stoparea_id) {
-            if(!stoparea_id) {
+    check_stopareaID(stopareaID){
+        if(!stopareaID) {
+            if(!stopareaID) {
                 return {status: 400, message: "Stoparea id is required"};
             }
         }
-        return stoparea_id
+        return stopareaID
     }
 }
 

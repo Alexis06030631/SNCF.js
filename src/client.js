@@ -77,6 +77,9 @@ class Sncf {
           case 'line':
             resp = Object.create(new this.Line(this.user, data))
             break
+          case 'stop_areas':
+            resp = Object.create(new this.StopArea(this.user, data))
+            break
         }
         resp.length = response.data[`${type}s`].length || 0
         resp.status = response.status || 200
@@ -91,6 +94,8 @@ class Sncf {
     if(responses.status === 200){
       let data = responses.data[type]
       if(data){
+        resp.length = responses.data[type].length || 0
+        resp.status = responses.status || 200
         switch (type) {
           case 'vehicle_journeys':
             const daysTrain = data.map(line => {
@@ -101,12 +106,13 @@ class Sncf {
             })
             resp.daysTrain = daysTrain
             break
+          case 'pt_objects':
+            resp.stopAreas = data
+            break
           default:
             resp[type] = data
             break
         }
-        resp.length = responses.data[type].length || 0
-        resp.status = responses.status || 200
       }else resp = {status: 404, message: `${type} no found`}
       return resp
     }else return {status: 404, message: `${type} no found`}
