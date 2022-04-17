@@ -20,8 +20,17 @@ async function requestSNCFapi(token, method, data='') {
     }catch(e){
         let error
         if(e.response){
+            switch (e.response.status) {
+                case 404:
+                    return {
+                        status: 404,
+                        message: 'NOT_FOUND'
+                    }
+                    break;
+            }
             error = `${e.response.status} - ${e.response.statusText}: ${e.response.data.message}`
         }else{
+            console.log(e.code)
             switch (e.code) {
                 case 'ECONNREFUSED':
                     error = 'SERVER_REFUSED'

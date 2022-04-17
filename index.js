@@ -1,5 +1,8 @@
 exports.User = require('./src/user')
 exports.Places = require('./src/places')
-exports.Routes = require('./src/routes')
+//lines
+exports.Lines = require('./src/lines')
+exports.Lines = require('./src/lines/line')
+
 exports.stoparea = require('./src/stoparea')
 exports.Client = require('./src/client')
