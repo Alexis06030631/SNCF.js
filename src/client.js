@@ -89,6 +89,13 @@ class Sncf {
     }else return {status: response.status || 404, message: `${type} no found`}
   }
 
+  /**
+   * Returns array in object .
+   *
+   * @param {String} type The type of the data to index
+   * @param {Object} responses The data to return after analyse.
+   * @return {object} Return object with the data indexed by type.
+   */
   inclMultresp(type, responses){
     let resp = {}
     if(responses.status === 200){
