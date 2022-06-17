@@ -1,4 +1,4 @@
-exports.User = require('./src/user')
+//exports.User = require('./src/user')
+//exports.Routes = require('./src/routes')
 exports.Places = require('./src/places')
-exports.Routes = require('./src/routes')
 exports.Client = require('./src/client')
