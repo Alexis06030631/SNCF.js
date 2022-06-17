@@ -7,14 +7,22 @@
     "test": "node ./workflows/index"
   },
   "keywords": [
-    "SNCF", "API", "FRENCH", "TRAIN", "EASY TO USE"
+    "SNCF",
+    "API",
+    "FRENCH",
+    "TRAIN",
+    "EASY TO USE"
   ],
   "author": "Alexis06030631",
   "license": "ISC",
   "private": false,
   "dependencies": {
     "axios": "^0.26.1",
+    "dotenv": "^16.0.1",
     "moment": "^2.29.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   },
   "homepage": "https://github.com/Alexis06030631/SNCF.js/#readme",
   "repository": {
