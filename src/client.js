@@ -1,50 +1,67 @@
-const Formatter = require("./utils/date")
-const {requestSNCFapi} = require("./utils/api");
+const axios = require("axios");
+const util = require("./utils");
+const places = require("./places");
 
-class Sncf {
-  constructor() {
-    //Sncf Token
-    if (!this.token && 'SNCF_TOKEN' in process.env) this.token = process.env.SNCF_TOKEN;
-    else this.token = null;
+class Client {
+    #token
+    constructor() {
 
-    // user info
-    this.client = {
-      connected: false,
-      readyDate: '',
-      connectionType: '',
-      id: '',
-      shape: '',
-      timezone: '',
+        // Private properties
+        this.#token = process.env.SNCF_TOKEN;
+
+        // Public properties
+        this.connected = false;
+        this.readyDate = null;
+        this.connectionType = null;
+        this.id = null;
+        this.shape = null;
+        this.timezone = null;
+        this.places = null;
     }
 
-  }
+    login(token = this.#token) {
+        return new Promise((resolve, reject) => {
 
-  async login(token = this.token) {
-    if (!token || typeof token !== 'string') throw new Error('TOKEN_INVALID');
-    if(this.token !== token) this.token = token;
+            // Check and set the token
+            if (!token) reject(new Error('TOKEN_INVALID'));
+            token? this.#token = token : null
 
-    process.emit("debug", 'Preparing to connect to the api...');
-
-    try {
-      const response = await this.requests('GET');
-      this.user = {
-        connected: true,
-        readyDate: response.data.regions[0].last_load_at,
-        connectionType: response.data.regions[0].name,
-        id: response.data.regions[0].id,
-        shape: response.data.regions[0].shape,
-        timezone: response.data.context.timezone
-      };
-      process.emit("debug", `Connected to the api as ${this.user.id}`);
-      return this.user
-    } catch (error) {
-      throw new Error(error);
+            // Establish the connection
+            axios({
+                method: 'GET',
+                url: util.SNCFapi,
+                headers: {
+                    'Authorization': this.#token
+                }
+            }).then(res => {
+                this.connected = true;
+                this.readyDate = res.data.regions[0].last_load_at;
+                this.connectionType = res.data.regions[0].name;
+                this.id = res.data.regions[0].id;
+                this.shape = res.data.regions[0].shape;
+                this.timezone = res.data.context.timezone;
+                this.places = new places(this.#token)
+                resolve(this);
+            }).catch(err => {
+                reject(util.error(err.response));
+            })
+        })
     }
-  }
 
-  requests(method, url) {
-    return requestSNCFapi(this.token, method, url)
-  }
+    logout() {
+        this.connected = false;
+        this.readyDate = null;
+        this.connectionType = null;
+        this.id = null;
+        this.shape = null;
+        this.timezone = null;
+        this.places = null;
+        return this;
+    }
+
+    get token() {
+        return this.#token
+    }
 }
 
-module.exports = Sncf;
+module.exports = Client;
