@@ -1,6 +1,6 @@
-const response_format = require("./data/response_format");
 const axios = require("axios");
 const utils = require("./utils");
+const Place = require("./data/place");
 
 class Places {
     #token
@@ -18,8 +18,9 @@ class Places {
                     'Authorization': this.#token
                 }
             }).then(res => {
-                resolve(res.data)
+                resolve(this._placesMany(res.data))
             }).catch(err => {
+                console.log(err)
                 reject(utils.error(err.response));
             })
         })
@@ -37,11 +38,22 @@ class Places {
                     'Authorization': this.#token
                 }
             }).then(res => {
-                resolve(res.data)
+                resolve(new Place(res.data.places[0], this.#token))
             }).catch(err => {
                 reject(utils.error(err.response));
             })
         })
+    }
+
+
+
+
+    _placesMany(places) {
+        const placesMany = [];
+        for(let place of places.places) {
+            placesMany.push(new Place(place, this.#token))
+        }
+        return placesMany
     }
 }
 
