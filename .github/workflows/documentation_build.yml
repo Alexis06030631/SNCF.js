@@ -1,20 +1,26 @@
-name: Publish Retype powered website to GitHub Pages
+name: Publish Retype powered website to GitHub
 on:
+  workflow_dispatch:
   push:
-    branches: 
-      - prepare/V2
+    branches:
+      - main
 
 jobs:
   publish:
-    name: Publish to retype branch
+    name: Publish to the retype branch
 
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Build
-        uses: retypeapp/action-build@latest
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+
+      - uses: retypeapp/action-build@latest
 
       - uses: retypeapp/action-github-pages@latest
+        with:
+          branch: dist
+          update-branch: true
