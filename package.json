@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node ./workflows/index",
+    "dev": "nodemon test.js",
     "build_docs": "retype build",
     "dev_docs": "retype watch"
   },
@@ -24,7 +25,7 @@
     "moment": "^2.29.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.19"
   },
   "homepage": "https://github.com/Alexis06030631/SNCF.js/#readme",
   "repository": {

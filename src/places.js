@@ -1,6 +1,13 @@
-const axios = require("axios");
 const utils = require("./utils");
 const Place = require("./data/place");
+
+const type = [
+    "stop_area",
+    "stop_point",
+    "address",
+    "administrative_region",
+    "poi",
+]
 
 class Places {
     #token
@@ -9,44 +16,32 @@ class Places {
     }
 
 
-    search(station) {
-        return new Promise((resolve, reject) => {
-            axios({
-                method: 'GET',
-                url: utils.SNCFapi + `places/?q=${station}`,
-                headers: {
-                    'Authorization': this.#token
-                }
-            }).then(res => {
-                resolve(this._placesMany(res.data))
-            }).catch(err => {
-                reject(utils.error(err))
-            })
-        })
+    /**
+     * Search for a place by name
+     * @param {String} station The name of the station to search for
+     * @param {String<type>} type The filters to apply to the search
+     * @returns {Promise<Place[]>}
+     * */
+    async search(station, type) {
+        return this._placesMany(await utils.request(this.#token, `places/?q=${station}&type[]=${type}`))
     }
 
+    /**
+     * Get a place by id
+     * @param stationID
+     * @returns {Promise<Place>}
+     */
     async get(stationID){
-        return new Promise((resolve, reject) => {
-            if(stationID.length === 0) {
-                reject(new Error(Error.code.ID_MISSING))
-            }else if(!stationID.includes('stop_area:SNCF:')){
-                if(isNaN(Number(stationID))) {
-                    reject(new Error(Error.code.ID_IS_NOT_A_NUMBER))
-                }
-                stationID = `stop_area:SNCF:${stationID}`
+        if(stationID.length === 0) {
+            throw new Error(Error.code.ID_MISSING)
+        }else if(!stationID.includes('stop_area:SNCF:')){
+            if(isNaN(Number(stationID))) {
+                throw new Error(Error.code.ID_IS_NOT_A_NUMBER)
             }
-            axios({
-                method: 'GET',
-                url: utils.SNCFapi + `places/${stationID}`,
-                headers: {
-                    'Authorization': this.#token
-                }
-            }).then(res => {
-                resolve(new Place(res.data.places[0], this.#token))
-            }).catch(err => {
-                reject(utils.error(err));
-            })
-        })
+            stationID = `stop_area:SNCF:${stationID}`
+        }
+
+        return new Place((await utils.request(this.#token, `places/${stationID}`)).places[0], this.#token)
     }
 
 
