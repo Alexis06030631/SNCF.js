@@ -1,4 +1,5 @@
 //exports.User = require('./src/user')
 //exports.Routes = require('./src/routes')
+Error.code = require('./src/utils/errors')
 exports.Places = require('./src/places')
 exports.Client = require('./src/client')
