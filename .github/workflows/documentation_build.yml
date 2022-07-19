@@ -1,8 +1,7 @@
 name: Publish Retype powered website to GitHub Pages
 on:
   push:
-    branches:
-      - prepare/V2
+    branches: [prepare/V2, V2]
 
 jobs:
   publish:
