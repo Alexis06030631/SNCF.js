@@ -1,4 +1,4 @@
-const utils = require("../utils");
+const utils = require("../utils/utils");
 const Line = require("./line");
 const StopSchedules = require("./stop_schedules");
 const Vehicle = require("./vehicle");

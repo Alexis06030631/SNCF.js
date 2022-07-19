@@ -9,6 +9,7 @@ module.exports = {
     ID_MISSING: 'The id is missing.',
 
     PLACE_NOT_FOUND: 'The place was not found.',
+    LINE_NOT_FOUND: 'The line was not found.',
 
     NOT_A_STOP_AREA: 'the element selected is not a stop_area.',
 }

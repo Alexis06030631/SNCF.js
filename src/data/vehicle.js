@@ -1,5 +1,5 @@
 const axios = require("axios");
-const utils = require("../utils");
+const utils = require("../utils/utils");
 const Disruptions = require("./disruptions");
 const Line = require("./line");
 module.exports = class Vehicle {

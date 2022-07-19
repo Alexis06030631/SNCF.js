@@ -1,4 +1,4 @@
-const utils = require("./utils");
+const utils = require("./utils/utils");
 const Place = require("./data/place");
 
 const type = [
