@@ -1,7 +1,8 @@
 name: Publish Retype powered website to GitHub Pages
 on:
   push:
-    branches: [prepare/V2, V2]
+    branches: 
+      - prepare/V2
 
 jobs:
   publish:
@@ -10,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      - uses: retypeapp/action-build@latest
+      - name: Build
+        uses: retypeapp/action-build@latest
 
       - uses: retypeapp/action-github-pages@latest
-        with:
-          update-branch: true
