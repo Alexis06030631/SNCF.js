@@ -1,0 +1,31 @@
+<!-- Add content to _includes/head.html to include here -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f24848">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="theme-color" content="#000000">
+<script>
+    function ready(callback){
+        // in case the document is already rendered
+        if (document.readyState!=='loading') callback();
+        // modern browsers
+        else if (document.addEventListener) document.addEventListener('DOMContentLoaded', callback);
+        // IE <= 8
+        else document.attachEvent('onreadystatechange', function(){
+                if (document.readyState==='complete') callback();
+            });
+    }
+
+    ready(function(){
+        const delete_order = setInterval(function(){
+            try {
+                document.querySelector("#docs-app > div.container.relative.flex.bg-white > aside > div:nth-child(4)").remove();
+                clearInterval(delete_order)
+            }catch (e) {
+                console.log(e)
+            }
+        }, 1000);
+    })
+</script>
