@@ -1,4 +1,3 @@
-const axios = require("axios");
 const utils = require("../utils");
 const Line = require("./line");
 const StopSchedules = require("./stop_schedules");
@@ -16,148 +15,103 @@ module.exports = class Place {
         this.id = data.id
     }
 
-    departures(length = 10) {
-        return new Promise((resolve, reject) => {
-            axios({
-                method: 'GET',
-                url: utils.SNCFapi + `stop_areas/${this.id}/departures?count=${length}`,
-                headers: {
-                    'Authorization': this.#token
-                }
-            }).then(res => {
-                resolve({disruptions: res.data.disruptions,  departures:res.data.departures})
-            }).catch(err => {
-                reject(utils.error(err));
-            })
-        })
+
+    /**
+     * Get the departures of the place
+     * @param {Number} count The number of departures to get
+     * @returns {Promise<[]>}
+     * */
+    async departures(count = 10) {
+        if(!this.id.includes('stop_area')) throw new Error(Error.code.NOT_A_STOP_AREA)
+        const data = await utils.request(this.#token, `stop_areas/${this.id}/departures?count=${count}`)
+
+        return {disruptions: data.disruptions, departures: data.departures}
     }
 
-    arrivals(length = 10) {
-        return new Promise((resolve, reject) => {
-            axios({
-                method: 'GET',
-                url: utils.SNCFapi + `stop_areas/${this.id}/arrivals?count=${length}`,
-                headers: {
-                    'Authorization': this.#token
-                }
-            }).then(res => {
-                resolve({disruptions: res.data.disruptions,  arrivals:res.data.departures})
-            }).catch(err => {
-                reject(utils.error(err));
-            })
-        })
+    /**
+     * Get the arrivals of the place
+     * @param {Number} count The number of arrivals to get
+     * @returns {Promise<[]>}
+     * */
+    async arrivals(count = 10) {
+        if (!this.id.includes('stop_area')) throw new Error(Error.code.NOT_A_STOP_AREA)
+        const data = await utils.request(this.#token, `stop_areas/${this.id}/arrivals?count=${count}`)
+
+        return {disruptions: data.disruptions, arrivals: data.arrivals}
     }
 
-    commercial_modes() {
-        return new Promise((resolve, reject) => {
-            axios({
-                method: 'GET',
-                url: utils.SNCFapi + `stop_areas/${this.id}/commercial_modes`,
-                headers: {
-                    'Authorization': this.#token
-                }
-            }).then(res => {
-                resolve(res.data.commercial_modes)
-            }).catch(err => {
-                reject(utils.error(err));
-            })
-        })
+    /**
+     * Get the commercial mode of the place
+     * @returns {Promise<[]>}
+     * */
+    async commercial_modes() {
+        if (!this.id.includes('stop_area')) throw new Error(Error.code.NOT_A_STOP_AREA)
+
+        return (await utils.request(this.#token, `stop_areas/${this.id}/arrivals?count=${length}`)).commercial_modes
     }
 
-    lines(count = 10) {
-        return new Promise((resolve, reject) => {
-            axios({
-                method: 'GET',
-                url: utils.SNCFapi + `stop_areas/${this.id}/lines?count=${count}`,
-                headers: {
-                    'Authorization': this.#token
-                }
-            }).then(res => {
-                resolve(this._linesMany(res.data))
-            }).catch(err => {
-                reject(utils.error(err))
-            })
-        })
+    /**
+     * Get the lines of the place
+     * @param {Number} count The number of lines to get
+     * @returns {Promise<Line[]>}
+     * */
+    async lines(count = 10) {
+        if (!this.id.includes('stop_area')) throw new Error(Error.code.NOT_A_STOP_AREA)
+
+        return this._linesMany(await utils.request(this.#token, `stop_areas/${this.id}/lines?count=${count}`))
     }
 
-    networks() {
-        return new Promise((resolve, reject) => {
-            axios({
-                method: 'GET',
-                url: utils.SNCFapi + `stop_areas/${this.id}/networks`,
-                headers: {
-                    'Authorization': this.#token
-                }
-            }).then(res => {
-                resolve(res.data.networks)
-            }).catch(err => {
-                reject(utils.error(err))
-            })
-        })
+    /**
+     * Get the networks of the place
+     * @returns {Promise<[]>}
+     * */
+    async networks() {
+        if (!this.id.includes('stop_area')) throw new Error(Error.code.NOT_A_STOP_AREA)
+
+        return (await utils.request(this.#token, `stop_areas/${this.id}/networks`)).networks
     }
 
-    physical_modes() {
-        return new Promise((resolve, reject) => {
-            axios({
-                method: 'GET',
-                url: utils.SNCFapi + `stop_areas/${this.id}/physical_modes`,
-                headers: {
-                    'Authorization': this.#token
-                }
-            }).then(res => {
-                resolve(res.data.physical_modes)
-            }).catch(err => {
-                reject(utils.error(err))
-            })
-        })
+    /**
+     * Get the physical modes of the place
+     * @returns {Promise<[]>}
+     * */
+    async physical_modes() {
+        if (!this.id.includes('stop_area')) throw new Error(Error.code.NOT_A_STOP_AREA)
+
+        return (await utils.request(this.#token, `stop_areas/${this.id}/physical_modes`)).physical_modes
     }
 
-    places_nearby() {
-        return new Promise((resolve, reject) => {
-            axios({
-                method: 'GET',
-                url: utils.SNCFapi + `stop_areas/${this.id}/places_nearby`,
-                headers: {
-                    'Authorization': this.#token
-                }
-            }).then(res => {
-                resolve(this._places_nearbyMany(res.data))
-            }).catch(err => {
-                reject(utils.error(err))
-            })
-        })
+    /**
+     * Get the places nearby of the place
+     * @param {Number} count The number of places to get
+     * @returns {Promise<Place[]>}
+     * */
+    async places_nearby(count = 10) {
+        if (!this.id.includes('stop_area')) throw new Error(Error.code.NOT_A_STOP_AREA)
+
+        return this._places_nearbyMany(await utils.request(this.#token, `stop_areas/${this.id}/places_nearby?count=${count}`))
     }
 
-    stop_schedules() {
-        return new Promise((resolve, reject) => {
-            axios({
-                method: 'GET',
-                url: utils.SNCFapi + `stop_areas/${this.id}/stop_schedules`,
-                headers: {
-                    'Authorization': this.#token
-                }
-            }).then(res => {
-                resolve(this._stop_schedulesMany(res.data))
-            }).catch(err => {
-                reject(utils.error(err))
-            })
-        })
+    /**
+     * Get the stop schedules of the place
+     * @param {Number} count The number of places to get
+     * @returns {Promise<StopSchedules[]>}
+     * */
+    async stop_schedules(count = 10) {
+        if (!this.id.includes('stop_area')) throw new Error(Error.code.NOT_A_STOP_AREA)
+
+        return this._stop_schedulesMany(await utils.request(this.#token, `stop_areas/${this.id}/stop_schedules?count=${count}`))
     }
 
-    traffic_reports(count = 10) {
-        return new Promise((resolve, reject) => {
-            axios({
-                method: 'GET',
-                url: utils.SNCFapi + `stop_areas/${this.id}/traffic_reports?count=${count}`,
-                headers: {
-                    'Authorization': this.#token
-                }
-            }).then(res => {
-                resolve(this._traffic_reportsMany(res.data))
-            }).catch(err => {
-                reject(utils.error(err))
-            })
-        })
+    /**
+     * Get the traffic reports of the place
+     * @param {Number} count The number of places to get
+     * @returns {Promise<Vehicle[]>}
+     * */
+    async traffic_reports(count = 10) {
+        if (!this.id.includes('stop_area')) throw new Error(Error.code.NOT_A_STOP_AREA)
+
+        return this._traffic_reportsMany(await utils.request(this.#token, `stop_areas/${this.id}/traffic_reports?count=${count}`))
     }
 
 
