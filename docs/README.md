@@ -5,6 +5,11 @@ author:
     name: Alexis06030631 
     avatar: https://avatars.githubusercontent.com/u/61119747
 ---
+
+!!!danger Be careful, this is a sample page.
+V2 development is not finished yet, this page is just a preview of the upcoming documentation.
+!!!
+
 # SNCF.JS - Introduction
 
 ## <div style="display:none">Introduction</div>
