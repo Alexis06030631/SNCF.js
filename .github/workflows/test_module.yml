@@ -1,9 +1,10 @@
 name: test module
 on:
+  pull_request:
   push:
     branches-ignore:
-      - main
       - prepare/V2
+      - dist
 
 jobs:
   test:
