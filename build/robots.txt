@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://github.com/Alexis06030631/sncf.js/sitemap.xml.gz
