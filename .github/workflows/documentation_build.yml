@@ -19,6 +19,9 @@ jobs:
         with:
           dotnet-version: 6.0.x
           
+      - name: download deps
+        run: npm ci
+        
       - name: Update docs date and author data
         run: npm run update_doc_data
 
