@@ -6,6 +6,7 @@
   "scripts": {
     "test": "node ./workflows/index",
     "dev": "nodemon test.js",
+    "update_doc_data": "node ./.github/action/update_version.js",
     "build_docs": "node ./.github/action/update_version.js && retype build --override \"{ \"version\": $npm_package_version }\"",
     "dev_docs": "node ./.github/action/update_version.js && retype watch"
   },

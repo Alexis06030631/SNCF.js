@@ -50,7 +50,7 @@ try {
 
                     // Add date info to the header
                     if(md_header_content.search(/.*date:.*/mg) >= 0){
-                        md_header_content = md_header_content.replace(/.*date:.*/mg, `\ndate: ${(new Date(commits[0].authorDate)).toISOString().substring(0, 16)}`)
+                        md_header_content = md_header_content.replace(/.*date:.*/mg, `date: ${(new Date(commits[0].authorDate)).toISOString().substring(0, 16)}`)
                     }else md_header_content += `\ndate: ${(new Date(commits[0].authorDate)).toISOString().substring(0, 16)}\n`
 
                     const rebuild = md_content.split('---')

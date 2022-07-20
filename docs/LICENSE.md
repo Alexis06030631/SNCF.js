@@ -3,7 +3,8 @@ label: LICENSE
 layout: page
 
 
-date: 2022-07-19T17:36
+
+date: 2022-07-20T09:31
 ---
 
 BSD 3-Clause License
