@@ -2,7 +2,6 @@ module.exports = class Line {
     #token
     constructor(data, token) {
         this.#token = token
-        this.code = data.code
         this.network = data.network
         this.routes = data.routes
         this.physical_modes = data.physical_modes
