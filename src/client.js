@@ -2,6 +2,7 @@ const axios = require("axios");
 const util = require("./utils/utils");
 const places = require("./places");
 const lines = require("./lines");
+const {Disruptions} = require("../index");
 
 class Client {
     #token
@@ -43,6 +44,7 @@ class Client {
                 this.timezone = res.data.context.timezone;
                 this.places = new places(this.#token)
                 this.lines = new lines(this.#token)
+                this.disruptions = new Disruptions(this.#token)
                 resolve(this);
             }).catch(err => {
                 reject(util.error(err.response));
