@@ -1,4 +1,4 @@
-module.exports = class Disruptions {
+module.exports = class Disruption {
     #token
     #impacted_objects
 

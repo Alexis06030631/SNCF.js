@@ -1,6 +1,6 @@
 const axios = require("axios");
 const utils = require("../utils/utils");
-const Disruptions = require("./disruptions");
+const Disruption = require("./disruption");
 const Line = require("./line");
 module.exports = class Vehicle {
     #token
@@ -36,7 +36,7 @@ module.exports = class Vehicle {
     _disruptionsMany(disruptions) {
         const linesMany = [];
         for(let disruption of disruptions.disruptions) {
-            linesMany.push(new Disruptions(disruption, this.#token))
+            linesMany.push(new Disruption(disruption, this.#token))
         }
         return linesMany
     }
