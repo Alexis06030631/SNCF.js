@@ -1,4 +1,6 @@
 const axios = require("axios");
+const moment = require("moment");
+
 module.exports = {
     version: process.version,
     SNCFapi: 'https://api.navitia.io/v1/coverage/sncf/',
@@ -28,6 +30,29 @@ module.exports = {
             console.log(e)
             throw this.error(e)
         }
-    }
+    },
 
+
+    /**
+     * Check if a date is valid
+     * @param {string||Date} date The date to check
+     * @param time
+     * @param unit
+     * @returns {string}
+     */
+    check_date(date, time = 0, unit = 'days') {
+        let rdate = moment(date)
+
+        if(!rdate.isValid()) {
+            throw new Error(Error.code.DATE_MUST_BE_A_DATE)
+        }
+
+        rdate.add(time, unit);
+
+        return rdate.format('YYYY-MM-DDTHH:mm:ss')
+    },
+
+    to_nativia_date(date) {
+        return moment(date).format('YYYYMMDDTHHmmss')
+    }
 }

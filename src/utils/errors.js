@@ -12,4 +12,6 @@ module.exports = {
     LINE_NOT_FOUND: 'The line was not found.',
 
     NOT_A_STOP_AREA: 'the element selected is not a stop_area.',
+
+    DATE_MUST_BE_A_DATE: 'The date must be a valid date.',
 }
