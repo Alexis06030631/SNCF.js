@@ -18,6 +18,9 @@ jobs:
       - uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 6.0.x
+          
+      - name: Update docs date and author data
+        run: npm run update_doc_data
 
       - uses: retypeapp/action-build@latest
 
