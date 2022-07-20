@@ -22,6 +22,11 @@ links:
     link: https://github.com/Alexis06030631/sncf.js/discussions
     icon: comment-discussion
     target: blank
+  - text: Github
+    link: https://github.com/Alexis06030631/sncf.js
+    icon: mark-github
+    target: blank
+
 footer:
   copyright: >-
     © Copyright {{ year }} –

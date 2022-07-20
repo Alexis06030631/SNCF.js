@@ -6,7 +6,7 @@ author:
   name: Alexis06030631
   avatar: https://avatars.githubusercontent.com/u/61119747
 
-date: 2022-07-20T09:31
+date: 2022-07-20T09:37
 ---
 
 !!!danger Be careful, this is a sample page.
@@ -17,7 +17,7 @@ V2 development is not finished yet, this page is just a preview of the upcoming 
 
 ## <div style="display:none">Introduction</div>
 
-[SNCF.JS](https://retype.com/) is a JavaScript library that allows you to easily use the [SNCF](https://www.sncf.com/) api.
+[SNCF.JS](/) is a JavaScript library that allows you to easily use the [SNCF](https://www.sncf.com/) api.
 
 ![](https://www.sncf.com/themes/contrib/sncf_theme/images/logo-sncf.svg)
 
