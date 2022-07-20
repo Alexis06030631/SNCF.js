@@ -22,6 +22,8 @@
   "dependencies": {
     "axios": "^0.26.1",
     "dotenv": "^16.0.1",
+    "gitlog": "^4.0.4",
+    "glob": "^8.0.3",
     "js-yaml": "^4.1.0",
     "moment": "^2.29.2"
   },
