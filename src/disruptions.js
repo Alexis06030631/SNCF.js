@@ -1,5 +1,4 @@
 const utils = require("./utils/utils");
-const Place = require("./data/place");
 const Disruption = require("./data/disruption");
 
 module.exports = class Disruptions {
@@ -28,21 +27,16 @@ module.exports = class Disruptions {
     }
 
     /**
-     * Get a place by id
-     * @param stationID
-     * @returns {Promise<Place>}
+     * Get a disruption by id
+     * @param disruptionID
+     * @returns {Promise<Disruption>}
      */
-    async get(stationID){
-        if(stationID.length === 0) {
+    async get(disruptionID){
+        if(disruptionID.length === 0) {
             throw new Error(Error.code.ID_MISSING)
-        }else if(!stationID.includes('stop_area:SNCF:')){
-            if(isNaN(Number(stationID))) {
-                throw new Error(Error.code.ID_IS_NOT_A_NUMBER)
-            }
-            stationID = `stop_area:SNCF:${stationID}`
         }
 
-        return new Place((await utils.request(this.#token, `places/${stationID}`)).places[0], this.#token)
+        return new Disruption((await utils.request(this.#token, `disruptions/${disruptionID}`)).disruptions[0], this.#token)
     }
 
 
