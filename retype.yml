@@ -1,36 +1,31 @@
 input: ./docs/
 output: ./docs/build/
 url: github.com/Alexis06030631/sncf.js
-
 branding:
   logo: static/sncf-logo_dark.png
   logoDark: static/sncf-logo.png
-  label: 2.0.0
-
+  label: V2.0.0
 meta:
-  title: " - SNCF.JS a javascript library"
-
+  title: ' - SNCF.JS a javascript library'
 edit:
-  repo: github.com/Alexis06030631/sncf.js
-
+  repo: github.com/Alexis06030631/sncf.js/
+  base: /docs
 links:
   - text: Home
     link: /README.md
     icon: home
-
   - text: Issues
     link: https://github.com/Alexis06030631/sncf.js/issues
     icon: issue-opened
     target: blank
-
   - text: Discussions
     link: https://github.com/Alexis06030631/sncf.js/discussions
     icon: comment-discussion
     target: blank
-
-
 footer:
-  copyright: © Copyright {{ year }} – [SNCF.JS](https://github.com/Alexis06030631/SNCF.js) – All rights reserved
+  copyright: >-
+    © Copyright {{ year }} –
+    [SNCF.JS](https://github.com/Alexis06030631/SNCF.js) – All rights reserved
   links:
     - text: License
       link: license.md

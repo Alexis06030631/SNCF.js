@@ -1,13 +1,13 @@
 {
   "name": "sncf.js",
-  "version": "0.3.0",
+  "version": "2.0.0",
   "description": "An easy to use javascript module to get all the information in real time about the trains ©SNCF (only in France)",
   "main": "index.js",
   "scripts": {
     "test": "node ./workflows/index",
     "dev": "nodemon test.js",
-    "build_docs": "retype build",
-    "dev_docs": "retype watch"
+    "build_docs": "node ./.github/action/update_version.js && retype build --override \"{ \"version\": $npm_package_version }\"",
+    "dev_docs": "node ./.github/action/update_version.js && retype watch"
   },
   "keywords": [
     "SNCF",
@@ -22,6 +22,7 @@
   "dependencies": {
     "axios": "^0.26.1",
     "dotenv": "^16.0.1",
+    "js-yaml": "^4.1.0",
     "moment": "^2.29.2"
   },
   "devDependencies": {
