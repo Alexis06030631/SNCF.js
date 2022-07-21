@@ -4,7 +4,7 @@ const moment = require("moment");
 module.exports = {
     version: process.version,
     SNCFapi: 'https://api.navitia.io/v1/coverage/sncf/',
-    SNCFapiVersion: 'v1',
+
     error: (error) => {
         switch (error?.response?.status) {
             case 401:
@@ -33,41 +33,40 @@ module.exports = {
         }
     },
 
+     /**
+      * Check if a date is valid
+      * @param {string||Date} date The date to check
+      * @param time
+      * @param unit
+      * @returns {string}
+      */
+     check_date(date, time = 0, unit = 'days') {
+         let rdate = moment(date)
 
-    /**
-     * Check if a date is valid
-     * @param {string||Date} date The date to check
-     * @param time
-     * @param unit
-     * @returns {string}
-     */
-    check_date(date, time = 0, unit = 'days') {
-        let rdate = moment(date)
+         if(!rdate.isValid()) {
+             throw new Error(Error.code.DATE_MUST_BE_A_DATE)
+         }
 
-        if(!rdate.isValid()) {
-            throw new Error(Error.code.DATE_MUST_BE_A_DATE)
-        }
+         rdate.add(time, unit);
 
-        rdate.add(time, unit);
+         return rdate.format('YYYY-MM-DDTHH:mm:ss')
+     },
 
-        return rdate.format('YYYY-MM-DDTHH:mm:ss')
-    },
+     to_navitia_date(date) {
+         return moment(date).format('YYYYMMDDTHHmmss')
+     },
 
-    to_nativia_date(date) {
-        return moment(date).format('YYYYMMDDTHHmmss')
-    },
+     date_options(since, until) {
+         // Check if the dates are valid
+         if(since) since = this.check_date(since);
+         else since = this.check_date(new Date());
 
-    date_options(since, until) {
-        // Check if the dates are valid
-        if(since) since = this.check_date(since);
-        else since = this.check_date(new Date());
+         if(until) until = this.check_date(until);
+         else until = this.check_date(new Date(since), 1);
 
-        if(until) until = this.check_date(until);
-        else until = this.check_date(new Date(since), 1);
-
-        return {
-            since: this.to_nativia_date(since),
-            until: this.to_nativia_date(until)
-        }
-    }
+         return {
+             since: this.to_navitia_date(since),
+             until: this.to_navitia_date(until)
+         }
+     }
 }

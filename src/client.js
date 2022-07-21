@@ -1,4 +1,3 @@
-const axios = require("axios");
 const util = require("./utils/utils");
 const places = require("./places");
 const lines = require("./lines");
@@ -29,25 +28,17 @@ class Client {
             token? this.#token = token : null
 
             // Establish the connection
-            axios({
-                method: 'GET',
-                url: util.SNCFapi,
-                headers: {
-                    'Authorization': this.#token
-                }
-            }).then(res => {
+            util.request(this.#token, '', 'GET').then(r => {
                 this.connected = true;
-                this.readyDate = res.data.regions[0].last_load_at;
-                this.connectionType = res.data.regions[0].name;
-                this.id = res.data.regions[0].id;
-                this.shape = res.data.regions[0].shape;
-                this.timezone = res.data.context.timezone;
-                this.places = new places(this.#token)
-                this.lines = new lines(this.#token)
-                this.disruptions = new Disruptions(this.#token)
+                this.readyDate = r.regions[0].last_load_at;
+                this.connectionType = r.regions[0].name;
+                this.id = r.regions[0].id;
+                this.shape = r.regions[0].shape;
+                this.timezone = r.context.timezone;
+                //this.places = new places(this.#token)
+                //this.lines = new lines(this.#token)
+                //this.disruptions = new Disruptions(this.#token)
                 resolve(this);
-            }).catch(err => {
-                reject(util.error(err.response));
             })
         })
     }
