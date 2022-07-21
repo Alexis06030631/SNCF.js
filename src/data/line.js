@@ -1,5 +1,7 @@
 const Vehicle = require("./vehicle");
 const utils = require("../utils/utils");
+const Departure = require("./format/departure");
+
 module.exports = class Line {
     #token
     constructor(data, token) {
@@ -24,6 +26,44 @@ module.exports = class Line {
         let {since, until} = utils.date_options(since_date, until_date);
 
         return this._VehicleMany(await utils.request(this.#token, `lines/${this.id}/vehicle_journeys?since=${since}&until=${until}&count=${count}`))
+    }
+
+    /**
+     * Get the stop areas of the line
+     * @returns {Promise<Place[]>}
+     */
+    async stop_areas() {
+        return this._StopAreasMany(await utils.request(this.#token, `lines/${this.id}/stop_areas`))
+    }
+
+
+    /**
+     * Get the departure of the line at a given time
+     * @param {string||Date||number} [from_date] defines the start date to search departures
+     * @param {string||Date||number} [until_date] defines the end date to search departures
+     * @param {number} [count=10] The number of departures to get
+     * @returns {Promise<Vehicle[]>}
+     */
+    async departures(from_date, until_date, count= 10) {
+        let {since, until} = utils.date_options(from_date, until_date);
+
+        return this._DeparturesMany(await utils.request(this.#token, `lines/${this.id}/departures?from_datetime=${since}&until_datetime=${until}&count=${count}`))
+    }
+
+    _DeparturesMany(departures) {
+        const departuresMany = [];
+        for(let departure of departures.departures) {
+            departuresMany.push(new Departure(departure, this.#token))
+        }
+        return departuresMany
+    }
+
+    _StopAreasMany(stop_areas) {
+        const stop_areasMany = [];
+        for(let stop_area of stop_areas.stop_areas) {
+            stop_areasMany.push({id: stop_area.id, name: stop_area.name, coord: stop_area.coord, administrative_regions: stop_area.administrative_regions})
+        }
+        return stop_areasMany
     }
 
     _VehicleMany(vehicles) {

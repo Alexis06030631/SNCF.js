@@ -1,7 +1,7 @@
 const axios = require("axios");
 const utils = require("../utils/utils");
 const Disruption = require("./disruption");
-const Line = require("./line");
+
 module.exports = class Vehicle {
     #token
     #impacted_objects
