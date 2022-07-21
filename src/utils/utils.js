@@ -9,6 +9,8 @@ module.exports = {
         switch (error?.response?.status) {
             case 401:
                 return new Error(Error.code.TOKEN_INVALID)
+            case 404:
+                return []
 
             default:
                 return new Error(error)
@@ -27,7 +29,6 @@ module.exports = {
 
             return data.data
         }catch (e) {
-            console.log(e)
             throw this.error(e)
         }
     },

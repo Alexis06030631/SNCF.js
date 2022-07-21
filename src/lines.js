@@ -34,12 +34,11 @@ class Lines {
 
 
     _lineMany(lines) {
-        if(!lines?.pt_objects?.length) {
-            return new Error(Error.code.LINE_NOT_FOUND)
-        }
         const linesMany = [];
-        for(let line of lines.pt_objects) {
-            linesMany.push(new Line(line.line, this.#token))
+        if(lines.pt_objects){
+            for(let line of lines.pt_objects) {
+                linesMany.push(new Line(line.line, this.#token))
+            }
         }
         return linesMany
     }

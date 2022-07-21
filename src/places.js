@@ -48,12 +48,11 @@ class Places {
 
 
     _placesMany(places) {
-        if(!places?.places?.length) {
-            return new Error(Error.code.PLACE_NOT_FOUND)
-        }
         const placesMany = [];
-        for(let place of places.places) {
-            placesMany.push(new Place(place, this.#token))
+        if(!places?.places?.length) {
+            for(let place of places.places) {
+                placesMany.push(new Place(place, this.#token))
+            }
         }
         return placesMany
     }

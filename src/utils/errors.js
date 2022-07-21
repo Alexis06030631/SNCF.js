@@ -8,10 +8,7 @@ module.exports = {
     ID_IS_NOT_A_NUMBER: 'The id is not a number.',
     ID_MISSING: 'The id is missing.',
 
-    PLACE_NOT_FOUND: 'The place was not found.',
-    LINE_NOT_FOUND: 'The line was not found.',
-
     NOT_A_STOP_AREA: 'the element selected is not a stop_area.',
 
-    DATE_MUST_BE_A_DATE: 'The date must be a valid date.',
+    DATE_MUST_BE_A_DATE: 'The date must be a valid date.'
 }
