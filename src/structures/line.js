@@ -1,6 +1,6 @@
 const Vehicle = require("./vehicle");
 const utils = require("../utils/utils");
-const Departure = require("./format/departure");
+const Departure = require("./departure");
 
 module.exports = class Line {
     #token

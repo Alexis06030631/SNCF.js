@@ -1,5 +1,5 @@
 const utils = require("./utils/utils");
-const Disruption = require("./data/disruption");
+const Disruption = require("./structures/disruption");
 
 module.exports = class Disruptions {
     #token

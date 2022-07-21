@@ -1,5 +1,5 @@
 const utils = require("./utils/utils");
-const Place = require("./data/place");
+const Place = require("./structures/place");
 
 const type = [
     "stop_area",

@@ -1,5 +1,5 @@
 const utils = require("./utils/utils");
-const Line = require("./data/line");
+const Line = require("./structures/line");
 
 class Lines {
     #token

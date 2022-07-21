@@ -1,4 +1,5 @@
-const Line = require("../line");
+const Line = require("./line");
+
 module.exports = class Departure {
     #token
     constructor(departure, token) {
