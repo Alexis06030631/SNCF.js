@@ -10,25 +10,21 @@ module.exports = class Disruptions {
 
     /**
      * Search the disruptions
-     * @param {String||Date} since defines the start date of the disruptions to search for
-     * @param {String||Date} until defines the end date of the disruptions to search for
+     * @param {string||Date||number} [since_date] defines the start date of the disruptions to search for
+     * @param {string||Date||number} [until_date] defines the end date of the disruptions to search for
+     * @param {number} [count=10] The number of disruptions to get
      * @returns {Promise<Disruption[]>} The disruptions found
      * */
-    async search(since, until) {
-        // Check if the dates are valid
-        if(since) since = utils.check_date(since);
-        else since = utils.check_date(new Date());
-
-        if(until) until = utils.check_date(until);
-        else until = utils.check_date(new Date(since), 1);
+    async search(since_date, until_date, count=10) {
+        let {since, until} = utils.date_options(since_date, until_date);
 
 
-        return this._disruptionsMany(await utils.request(this.#token, `disruptions/?since=${utils.to_nativia_date(since)}&until=${utils.to_nativia_date(until)}`))
+        return this._disruptionsMany(await utils.request(this.#token, `disruptions/?since=${since}&until=${until}&count=${count}`))
     }
 
     /**
      * Get a disruption by id
-     * @param disruptionID
+     * @param {string} disruptionID The id of the disruption to get
      * @returns {Promise<Disruption>}
      */
     async get(disruptionID){

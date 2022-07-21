@@ -55,5 +55,19 @@ module.exports = {
 
     to_nativia_date(date) {
         return moment(date).format('YYYYMMDDTHHmmss')
+    },
+
+    date_options(since, until) {
+        // Check if the dates are valid
+        if(since) since = this.check_date(since);
+        else since = this.check_date(new Date());
+
+        if(until) until = this.check_date(until);
+        else until = this.check_date(new Date(since), 1);
+
+        return {
+            since: this.to_nativia_date(since),
+            until: this.to_nativia_date(until)
+        }
     }
 }
