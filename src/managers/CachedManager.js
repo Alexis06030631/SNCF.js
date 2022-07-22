@@ -5,10 +5,8 @@
  * @extends {DataManager}
  * @abstract
  */
-class CachedManager {
+module.exports = class CachedManager {
     constructor() {
 
     }
 }
-
-module.exports = CachedManager;

@@ -1,6 +1,6 @@
 const CachedManager = require("./CachedManager");
 
-class Lines extends CachedManager {
+module.exports = class Lines extends CachedManager {
     constructor(client) {
         super()
 
@@ -44,5 +44,3 @@ class Lines extends CachedManager {
         return linesMany
     }
 }
-
-module.exports = Lines;
