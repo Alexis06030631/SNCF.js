@@ -2,6 +2,7 @@ const Utils = require("../utils/utils");
 const Base = require("../Base")
 const Lines = require("./LinesManager");
 const Disruptions = require("./DisruptionsManager");
+const Places = require("./PlacesManager");
 const StructuresManager = require("../structures/StructuresManager");
 
 module.exports = class Client extends Base {
@@ -43,6 +44,13 @@ module.exports = class Client extends Base {
         return new Disruptions(this);
     }
 
+    /**
+     * @type {Places}
+     * @returns {Places}
+     */
+    get places() {
+        return new Places(this);
+    }
 
     login(token = this.token) {
         return new Promise((resolve, reject) => {

@@ -6,5 +6,6 @@ module.exports = class StructuresManager {
         this.vehicle = require("./vehicle");
         this.disruption = require("./disruption");
         this.stop_area = require("./StopArea");
+        this.place = require("./place");
     }
 };

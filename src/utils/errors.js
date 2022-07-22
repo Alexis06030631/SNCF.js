@@ -10,5 +10,7 @@ module.exports = {
 
     NOT_A_STOP_AREA: 'the element selected is not a stop_area.',
 
-    DATE_MUST_BE_A_DATE: 'The date must be a valid date.'
+    DATE_MUST_BE_A_DATE: 'The date must be a valid date.',
+
+    INVALID_PLACE_TYPE: 'The place type is not valid. Please use one of the following: %s'
 }
