@@ -49,6 +49,27 @@ module.exports = class Line extends Client{
         return this._DeparturesMany(await this.utils.request(`lines/${this.id}/departures?from_datetime=${since}&until_datetime=${until}&count=${count}`))
     }
 
+    /**
+     * Get the arrivals of the line at a given time
+     * @param {string||Date||number} [from_date] defines the start date to search arrivals
+     * @param {string||Date||number} [until_date] defines the end date to search arrivals
+     * @param {number} [count=10] The number of arrivals to get
+     * @returns {Promise<Vehicle[]>}
+     */
+    async arrivals(from_date, until_date, count= 10) {
+        let {since, until} = this.utils.date_options(from_date, until_date);
+
+        return this._ArrivalsMany(await this.utils.request(`lines/${this.id}/arrivals?from_datetime=${since}&until_datetime=${until}&count=${count}`))
+    }
+
+    _ArrivalsMany(arrivals) {
+        const arrivalsMany = [];
+        for(let arrival of arrivals.arrivals) {
+            arrivalsMany.push(new this.structures.arrival(arrival))
+        }
+        return arrivalsMany
+    }
+
     _DeparturesMany(departures) {
         const departuresMany = [];
         for(let departure of departures.departures) {
