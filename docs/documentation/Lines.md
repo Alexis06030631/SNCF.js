@@ -1,16 +1,16 @@
 ---
-title: Places
+title: Lines
 author:
 ---
 
-# Places
+# Lines
 
 ||| Properties
 === List
 - [constructor](#constructor)
 - [search](#search)
 - [get](#get)
-- [_placesMany](#_placesMany)
+- [_lineMany](#_lineMany)
 ===
 ||| Methods
 === List

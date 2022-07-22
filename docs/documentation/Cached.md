@@ -1,16 +1,13 @@
 ---
-title: Places
+title: Cached
 author:
 ---
 
-# Places
+# Cached
 
 ||| Properties
 === List
 - [constructor](#constructor)
-- [search](#search)
-- [get](#get)
-- [_placesMany](#_placesMany)
 ===
 ||| Methods
 === List

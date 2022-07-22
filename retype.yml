@@ -26,7 +26,6 @@ links:
     link: https://github.com/Alexis06030631/sncf.js
     icon: mark-github
     target: blank
-
 footer:
   copyright: >-
     © Copyright {{ year }} –

@@ -1,16 +1,16 @@
 ---
-title: Places
+title: Disruptions
 author:
 ---
 
-# Places
+# Disruptions
 
 ||| Properties
 === List
 - [constructor](#constructor)
 - [search](#search)
 - [get](#get)
-- [_placesMany](#_placesMany)
+- [_disruptionsMany](#_disruptionsMany)
 ===
 ||| Methods
 === List
