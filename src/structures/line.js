@@ -1,4 +1,4 @@
-const Client = require("../Client");
+const {Client} = require("../../index");
 
 module.exports = class Line extends Client{
     constructor(data) {

@@ -1,9 +1,9 @@
-const Utils = require("./utils/utils");
-const Base = require("./Base")
-const Lines = require("./managers/lines");
-const StructuresManager = require("./structures/StructuresManager");
+const Utils = require("../utils/utils");
+const Base = require("../Base")
+const Lines = require("./lines");
+const StructuresManager = require("../structures/StructuresManager");
 
-class Client extends Base {
+module.exports = class Client extends Base {
     constructor() {
         super()
     }
@@ -67,5 +67,3 @@ class Client extends Base {
         return this;
     }
 }
-
-module.exports = Client;
