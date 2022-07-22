@@ -1,9 +1,10 @@
-module.exports = class Disruption {
-    #token
+const {Client} = require("../../index");
+
+module.exports = class Disruption extends Client{
     #impacted_objects
 
-    constructor(data, token) {
-        this.#token = token
+    constructor(data) {
+        super()
         this.id = data.id
         this.status = data.status
         this.cause = data.cause

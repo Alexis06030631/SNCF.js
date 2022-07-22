@@ -1,13 +1,8 @@
-const axios = require("axios");
-const utils = require("../utils/utils");
-const Disruption = require("./disruption");
+const Client = require("../Client");
 
-module.exports = class Vehicle {
-    #token
-    #impacted_objects
-
-    constructor(data, token) {
-        this.#token = token
+module.exports = class Vehicle extends Client{
+    constructor(data) {
+        super()
         this.id = data.id
         this.name = data.name
         this.network = data.network
@@ -18,17 +13,7 @@ module.exports = class Vehicle {
 
         let disruptions
         for(let id of this.disruptions_id) {
-            await axios({
-                method: 'GET',
-                url: utils.SNCFapi + `disruptions/${id}/`,
-                headers: {
-                    'Authorization': this.#token
-                }
-            }).then(res => {
-                disruptions = this._disruptionsMany(res.data)
-            }).catch(err => {
-                utils.error(err)
-            })
+            disruptions = this._disruptionsMany(await this.utils.request(`disruptions/${id}/`))
         }
         return disruptions
     }
@@ -36,7 +21,7 @@ module.exports = class Vehicle {
     _disruptionsMany(disruptions) {
         const linesMany = [];
         for(let disruption of disruptions.disruptions) {
-            linesMany.push(new Disruption(disruption, this.#token))
+            linesMany.push(new this.structures.disruption(disruption))
         }
         return linesMany
     }
