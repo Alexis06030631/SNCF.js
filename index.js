@@ -1,5 +1,6 @@
 Error.code = require('./src/utils/errors')
+exports.Base = require('./src/base')
+exports.Client = require('./src/Client')
 exports.Places = require('./src/places')
 exports.Disruptions = require('./src/disruptions')
-exports.Lines = require('./src/lines')
-exports.Client = require('./src/client')
+exports.Lines = require('./src/managers/lines')

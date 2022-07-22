@@ -1,11 +1,15 @@
 const axios = require("axios");
 const moment = require("moment");
+const {Base} = require("../../index");
 
-module.exports = {
-    version: process.version,
-    SNCFapi: 'https://api.navitia.io/v1/coverage/sncf/',
+module.exports = class Utils extends Base{
+    constructor() {
+        super()
+        this.SNCFapi = 'https://api.sncf.com/v1/coverage/sncf/'
+        this.version = process.version
+    }
 
-    error: (error) => {
+    error (error) {
         switch (error?.response?.status) {
             case 401:
                 return new Error(Error.code.TOKEN_INVALID)
@@ -15,15 +19,15 @@ module.exports = {
             default:
                 return new Error(error)
         }
-    },
+    }
 
-    async request(token, url, method = 'GET') {
+    async request(url, method = 'GET') {
         try {
             const data = await axios({
                 method: method,
                 url: this.SNCFapi + url,
                 headers: {
-                    'Authorization': token
+                    'Authorization': this.token
                 }
             })
 
@@ -31,7 +35,7 @@ module.exports = {
         }catch (e) {
             throw this.error(e)
         }
-    },
+    }
 
      /**
       * Check if a date is valid
@@ -50,11 +54,11 @@ module.exports = {
          rdate.add(time, unit);
 
          return rdate.format('YYYY-MM-DDTHH:mm:ss')
-     },
+     }
 
      to_navitia_date(date) {
          return moment(date).format('YYYYMMDDTHHmmss')
-     },
+     }
 
      date_options(since, until) {
          // Check if the dates are valid

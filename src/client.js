@@ -1,15 +1,11 @@
-const util = require("./utils/utils");
-const places = require("./places");
-const lines = require("./lines");
-const {Disruptions} = require("../index");
+const utils = require("./utils/utils");
+const Base = require("./Base")
+const Lines = require("./managers/lines");
+const StructuresManager = require("./structures/StructuresManager");
 
-class Client {
-    #token
+class Client extends Base {
     constructor() {
-
-        // Private properties
-        this.#token = process.env.SNCF_TOKEN;
-
+        super()
         // Public properties
         this.connected = false;
         this.readyDate = null;
@@ -18,17 +14,28 @@ class Client {
         this.shape = null;
         this.timezone = null;
         this.places = null;
+
+        this.utils = new utils(this);
+        this.structures = new StructuresManager();
+
+
+        /**
+         * All of the {@link Lines} objects that have been cached at any point
+         * @type {Lines}
+         * @returns {Lines}
+         */
+        this.lines = new Lines(this);
     }
 
-    login(token = this.#token) {
+    login(token = this.token) {
         return new Promise((resolve, reject) => {
 
             // Check and set the token
             if (!token) reject(new Error('TOKEN_INVALID'));
-            token? this.#token = token : null
+            else if(this.token !== token) this.setToken(token);
 
             // Establish the connection
-            util.request(this.#token, '', 'GET').then(r => {
+            this.utils.request('', 'GET').then(r => {
                 this.connected = true;
                 this.readyDate = r.regions[0].last_load_at;
                 this.connectionType = r.regions[0].name;
@@ -52,10 +59,6 @@ class Client {
         this.timezone = null;
         this.places = null;
         return this;
-    }
-
-    get token() {
-        return this.#token
     }
 }
 
