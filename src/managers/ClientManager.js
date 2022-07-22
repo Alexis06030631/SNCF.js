@@ -1,6 +1,7 @@
 const Utils = require("../utils/utils");
 const Base = require("../Base")
-const Lines = require("./lines");
+const Lines = require("./LinesManager");
+const Disruptions = require("./DisruptionsManager");
 const StructuresManager = require("../structures/StructuresManager");
 
 module.exports = class Client extends Base {
@@ -32,6 +33,16 @@ module.exports = class Client extends Base {
     get lines() {
         return new Lines(this);
     }
+
+    /**
+     * All of the {@link Dirsuptions} objects at custom date
+     * @type {Disruptions}
+     * @returns {Disruptions}
+     */
+    get disruptions() {
+        return new Disruptions(this);
+    }
+
 
     login(token = this.token) {
         return new Promise((resolve, reject) => {

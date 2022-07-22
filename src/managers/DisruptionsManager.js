@@ -1,10 +1,11 @@
-const utils = require("./utils/utils");
-const Disruption = require("./structures/disruption");
+const CachedManager = require("./CachedManager");
 
-module.exports = class Disruptions {
-    #token
-    constructor(token) {
-        this.#token = token;
+module.exports = class Disruptions extends CachedManager {
+    constructor(client) {
+        super()
+
+        this.utils = client.utils
+        this.structures = client.structures
     }
 
 
@@ -16,10 +17,10 @@ module.exports = class Disruptions {
      * @returns {Promise<Disruption[]>} The disruptions found
      * */
     async search(since_date, until_date, count=10) {
-        let {since, until} = utils.date_options(since_date, until_date);
+        let {since, until} = this.utils.date_options(since_date, until_date);
 
 
-        return this._disruptionsMany(await utils.request(this.#token, `disruptions/?since=${since}&until=${until}&count=${count}`))
+        return this._disruptionsMany(await this.utils.request(`disruptions/?since=${since}&until=${until}&count=${count}`))
     }
 
     /**
@@ -32,7 +33,7 @@ module.exports = class Disruptions {
             throw new Error(Error.code.ID_MISSING)
         }
 
-        return new Disruption((await utils.request(this.#token, `disruptions/${disruptionID}`)).disruptions[0], this.#token)
+        return new this.structures.disruption((await this.utils.request(`disruptions/${disruptionID}`)).disruptions[0])
     }
 
 
@@ -41,7 +42,7 @@ module.exports = class Disruptions {
     _disruptionsMany(disruptions) {
         const linesMany = [];
         for(let disruption of disruptions.disruptions) {
-            linesMany.push(new Disruption(disruption, this.#token))
+            linesMany.push(new this.structures.disruption(disruption))
         }
         return linesMany
     }
