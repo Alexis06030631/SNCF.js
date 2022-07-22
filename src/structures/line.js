@@ -1,11 +1,9 @@
-const Vehicle = require("./vehicle");
-const utils = require("../utils/utils");
-const Departure = require("./departure");
+const Client = require("../Client");
 
-module.exports = class Line {
-    #token
-    constructor(data, token) {
-        this.#token = token
+module.exports = class Line extends Client{
+    constructor(data) {
+        super();
+
         this.network = data.network
         this.routes = data.routes
         this.physical_modes = data.physical_modes
@@ -13,6 +11,7 @@ module.exports = class Line {
         this.opening_time = data.opening_time
         this.name = data.name
         this.id = data.id
+
     }
 
     /**
@@ -23,9 +22,9 @@ module.exports = class Line {
      * @returns {Promise<Vehicle[]>}
      */
     async vehicle_journeys(since_date, until_date, count= 10) {
-        let {since, until} = utils.date_options(since_date, until_date);
+        let {since, until} = this.utils.date_options(since_date, until_date);
 
-        return this._VehicleMany(await utils.request(this.#token, `lines/${this.id}/vehicle_journeys?since=${since}&until=${until}&count=${count}`))
+        return this._VehicleMany(await this.utils.request(`lines/${this.id}/vehicle_journeys?since=${since}&until=${until}&count=${count}`))
     }
 
     /**
@@ -33,7 +32,7 @@ module.exports = class Line {
      * @returns {Promise<Place[]>}
      */
     async stop_areas() {
-        return this._StopAreasMany(await utils.request(this.#token, `lines/${this.id}/stop_areas`))
+        return this._StopAreasMany(await this.utils.request(`lines/${this.id}/stop_areas`))
     }
 
 
@@ -45,15 +44,15 @@ module.exports = class Line {
      * @returns {Promise<Vehicle[]>}
      */
     async departures(from_date, until_date, count= 10) {
-        let {since, until} = utils.date_options(from_date, until_date);
+        let {since, until} = this.utils.date_options(from_date, until_date);
 
-        return this._DeparturesMany(await utils.request(this.#token, `lines/${this.id}/departures?from_datetime=${since}&until_datetime=${until}&count=${count}`))
+        return this._DeparturesMany(await this.utils.request(`lines/${this.id}/departures?from_datetime=${since}&until_datetime=${until}&count=${count}`))
     }
 
     _DeparturesMany(departures) {
         const departuresMany = [];
         for(let departure of departures.departures) {
-            departuresMany.push(new Departure(departure, this.#token))
+            departuresMany.push(new this.structures.departure(departure))
         }
         return departuresMany
     }
@@ -61,7 +60,7 @@ module.exports = class Line {
     _StopAreasMany(stop_areas) {
         const stop_areasMany = [];
         for(let stop_area of stop_areas.stop_areas) {
-            stop_areasMany.push({id: stop_area.id, name: stop_area.name, coord: stop_area.coord, administrative_regions: stop_area.administrative_regions})
+            stop_areasMany.push(new this.structures.stop_area(stop_area))
         }
         return stop_areasMany
     }
@@ -69,7 +68,7 @@ module.exports = class Line {
     _VehicleMany(vehicles) {
         const vehiclesMany = [];
         for(let vehicle of vehicles.vehicle_journeys) {
-            vehiclesMany.push(new Vehicle(vehicle, this.#token))
+            vehiclesMany.push(new this.structures.vehicle(vehicle))
         }
         return vehiclesMany
     }

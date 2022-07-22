@@ -1,4 +1,4 @@
-const utils = require("./utils/utils");
+const Utils = require("./utils/utils");
 const Base = require("./Base")
 const Lines = require("./managers/lines");
 const StructuresManager = require("./structures/StructuresManager");
@@ -6,25 +6,31 @@ const StructuresManager = require("./structures/StructuresManager");
 class Client extends Base {
     constructor() {
         super()
-        // Public properties
-        this.connected = false;
-        this.readyDate = null;
-        this.connectionType = null;
-        this.id = null;
-        this.shape = null;
-        this.timezone = null;
-        this.places = null;
-
-        this.utils = new utils(this);
-        this.structures = new StructuresManager();
+    }
 
 
-        /**
-         * All of the {@link Lines} objects that have been cached at any point
-         * @type {Lines}
-         * @returns {Lines}
-         */
-        this.lines = new Lines(this);
+    /**
+     * @return {Utils}
+     */
+    get utils() {
+        return new Utils(this);
+    }
+
+    /**
+     * @return {StructuresManager}
+     */
+    get structures() {
+        return new StructuresManager();
+    }
+
+
+    /**
+     * All of the {@link Lines} objects that have been cached at any point
+     * @type {Lines}
+     * @returns {Lines}
+     */
+    get lines() {
+        return new Lines(this);
     }
 
     login(token = this.token) {

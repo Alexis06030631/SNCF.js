@@ -1,10 +1,11 @@
-const utils = require("./utils/utils");
-const Line = require("./structures/line");
+const CachedManager = require("./CachedManager");
 
-class Lines {
-    #token
-    constructor(token) {
-        this.#token = token;
+class Lines extends CachedManager {
+    constructor(client) {
+        super()
+
+        this.utils = client.utils
+        this.structures = client.structures
     }
 
 
@@ -14,7 +15,7 @@ class Lines {
      * @returns {Promise<Line[]>}
      * */
     async search(line) {
-        return this._lineMany(await utils.request(this.#token, `pt_objects?q=${line}&type[]=line`))
+        return this._lineMany(await this.utils.request(`pt_objects?q=${line}&type[]=line`))
     }
 
     /**
@@ -27,7 +28,7 @@ class Lines {
             throw new Error(Error.code.ID_MISSING)
         }
 
-        return new Line((await utils.request(this.#token, `lines/${lineID}`)).lines[0], this.#token)
+        return new this.structures.line((await this.utils.request(`lines/${lineID}`)).lines[0])
     }
 
 
@@ -37,7 +38,7 @@ class Lines {
         const linesMany = [];
         if(lines.pt_objects){
             for(let line of lines.pt_objects) {
-                linesMany.push(new Line(line.line, this.#token))
+                linesMany.push(new this.structures.line(line.line))
             }
         }
         return linesMany
