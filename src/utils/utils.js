@@ -25,7 +25,7 @@ module.exports = class Utils extends Base{
         try {
             const data = await axios({
                 method: method,
-                url: this.SNCFapi + url,
+                url: encodeURI(this.SNCFapi + url),
                 headers: {
                     'Authorization': this.token
                 }
