@@ -1,5 +1,4 @@
-const StopSchedules = require("./stop_schedules");
-const {Client} = require("../../index");
+const Client = require("../managers/ClientManager");
 
 module.exports = class Place extends Client{
     #data

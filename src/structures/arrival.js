@@ -1,4 +1,4 @@
-const {Client} = require("../../index");
+const Client = require("../managers/ClientManager");
 
 module.exports = class Arrival extends Client{
     #arrival
