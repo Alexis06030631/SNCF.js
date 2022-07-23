@@ -7,12 +7,15 @@
 <meta name="msapplication-TileColor" content="#00aba9">
 <meta name="theme-color" content="#000000">
 <script>
-    const delete_order = setInterval(function(){
+    let delete_order
+    delete_order = setInterval(function(){
         try {
-            document.querySelector("#docs-app > div.container.relative.flex.bg-white > aside > div:nth-child(4)").remove();
+            document.querySelector("#docs-app > div.container.relative.flex.bg-white > aside > div:nth-child(4)").setAttribute("style", "opacity: 0;");
             clearInterval(delete_order)
+            setTimeout(function(){
+                document.querySelector("#docs-app > div.container.relative.flex.bg-white > aside > div:nth-child(4)").remove()
+            }, 1000)
         }catch (e) {
-            console.log(e)
         }
-    }, 500);
+    }, 200);
 </script>
