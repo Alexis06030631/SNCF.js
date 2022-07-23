@@ -9,8 +9,8 @@ author:
 date: 2022-07-23T21:31
 ---
 
-!!!danger Be careful, this is a sample page.
-V2 development is not finished yet, this page is just a preview of the upcoming documentation.
+!!!danger Please pay attention to the following notice
+The development of V2 is not finished yet, these pages are only a preview of the documentation to come.
 !!!
 
 # SNCF.JS - Introduction
