@@ -13,10 +13,14 @@ module.exports = class Place extends Client{
     }
 
     get stop_area() {
-        return new this.structures.stop_area(this.data.stop_area)
+        if(this.#data.embedded_type !== "stop_area") {
+            return new Error(Error.code.INVALID_EMBEDDED_TYPE)
+        }else return new this.structures.stop_area(this.#data.stop_area)
     }
 
     get stop_point() {
-        return this.#data.stop_point
+        if(this.#data.embedded_type !== "stop_point") {
+            return new Error(Error.code.INVALID_EMBEDDED_TYPE)
+        }else return this.#data.stop_point
     }
 }

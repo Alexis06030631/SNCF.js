@@ -12,5 +12,7 @@ module.exports = {
 
     DATE_MUST_BE_A_DATE: 'The date must be a valid date.',
 
-    INVALID_PLACE_TYPE: 'The place type is not valid. Please use one of the following: %s'
+    INVALID_PLACE_TYPE: 'The place type is not valid. Please use one of the following: %s',
+
+    INVALID_EMBEDDED_TYPE: 'The embedded type is not valid to use this function.'
 }
