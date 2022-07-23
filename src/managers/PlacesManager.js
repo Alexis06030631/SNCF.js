@@ -25,7 +25,7 @@ class PlacesManager extends CachedManager {
 
     /**
      * Get a place by id
-     * @param stationID
+     * @param {string} stationID The id of the station to get
      * @returns {Promise<Place>}
      */
     async get(stationID){

@@ -12,14 +12,14 @@ module.exports = class Client extends Base {
 
 
     /**
-     * @return {Utils}
+     * @returns {Utils}
      */
     get utils() {
         return new Utils(this);
     }
 
     /**
-     * @return {StructuresManager}
+     * @returns {StructuresManager}
      */
     get structures() {
         return new StructuresManager();

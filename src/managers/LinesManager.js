@@ -20,7 +20,7 @@ module.exports = class Lines extends CachedManager {
 
     /**
      * Get a line by id
-     * @param lineID
+     * @param {string} lineID The id of the line
      * @returns {Promise<Line>}
      */
     async get(lineID){

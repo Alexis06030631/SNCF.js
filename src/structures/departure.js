@@ -13,7 +13,7 @@ module.exports = class Departure extends Client{
 
     /**
      * Get the stop departure data
-     * @return {StopArea}
+     * @returns {StopArea}
      */
     get stop_area() {
         return new this.structures.stop_area(this.#departure.stop_point.stop_area);
@@ -21,7 +21,7 @@ module.exports = class Departure extends Client{
 
     /**
      * Get the line data
-     * @return {Line}
+     * @returns {Line}
      */
     get line() {
         return new this.structures.line(this.#departure.route.line)
@@ -29,7 +29,7 @@ module.exports = class Departure extends Client{
 
     /**
      * Return boolean if the train is in late
-     * @return {boolean}
+     * @returns {boolean}
      */
     get isLate() {
         return this.#departure.stop_date_time.departure_date_time !== this.#departure.stop_date_time.base_departure_date_time
