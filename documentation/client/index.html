@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/Alexis06030631/sncf.js">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.711883795035">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.711914844430">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Client - SNCF.JS a javascript library</title>
     <meta name="title" content="Client - SNCF.JS a javascript library">
-    <meta name="description" content="constructor" />
+    <meta name="description" content="utils" />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://github.com/Alexis06030631/sncf.js/documentation/client/" />
@@ -21,22 +21,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.com/Alexis06030631/sncf.js/documentation/client/">
     <meta property="og:title" content="Client - SNCF.JS a javascript library">
-    <meta property="og:description" content="constructor">
+    <meta property="og:description" content="utils">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://github.com/Alexis06030631/sncf.js/documentation/client/">
     <meta property="twitter:title" content="Client - SNCF.JS a javascript library">
-    <meta property="twitter:description" content="constructor">
+    <meta property="twitter:description" content="utils">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/Alexis06030631/sncf.js/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../favicon.ico" rel="icon" />
-    <link href="../../resources/css/retype.css?v=2.4.0.711883795035" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.711914844430" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.711883795035" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.711914844430" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.711883795035" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.711914844430" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.711914844430" defer></script>
 
     <!-- Add content to _includes/head.html to include here -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -281,10 +282,15 @@
         <span>Methods</span>
     </div>
     <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
-<doc-panel id="list">
-    <template #title>List</template>
+<doc-panel id="elements">
+    <template #title>Elements</template>
+</doc-panel>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<doc-panels>
+   <doc-panel id="functions">
+       <template #title>Functions</template>
 <ul>
-<li><doc-anchor-trigger to="#constructor">constructor</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#utils">utils</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#structures">structures</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#lines">lines</doc-anchor-trigger></li>
@@ -293,15 +299,232 @@
 <li><doc-anchor-trigger to="#login">login</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#logout">logout</doc-anchor-trigger></li>
 </ul>
-</doc-panel>
-    </div>
-    <div class="px-5 py-3 docs-columns-content">
-<doc-panels>
-   <doc-panel id="list">
-       <template #title>List</template>
    </doc-panel>
     </div>
 </div>
+<doc-anchor-target id="properties">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#properties">#</doc-anchor-trigger>
+        <span>Properties</span>
+    </h2>
+</doc-anchor-target>
+<hr />
+<doc-anchor-target id="methods">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#methods">#</doc-anchor-trigger>
+        <span>Methods</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="utils">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#utils">#</doc-anchor-trigger>
+        <span>.utils</span>
+    </h2>
+</doc-anchor-target>
+<doc-panel id="utils-string">
+    <template #title>utils : <code v-pre>string</code></template>
+<p>utils description.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>count</code></td>
+<td>description.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">Example.js</div>
+<pre class="language-javascript"><code v-pre class="language-javascript">utils()</code></pre>
+</doc-codeblock></div>
+</doc-panel>
+<doc-anchor-target id="structures">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#structures">#</doc-anchor-trigger>
+        <span>.structures</span>
+    </h2>
+</doc-anchor-target>
+<doc-panel id="structures-string">
+    <template #title>structures : <code v-pre>string</code></template>
+<p>structures description.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>count</code></td>
+<td>description.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">Example.js</div>
+<pre class="language-javascript"><code v-pre class="language-javascript">structures()</code></pre>
+</doc-codeblock></div>
+</doc-panel>
+<doc-anchor-target id="lines">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lines">#</doc-anchor-trigger>
+        <span>.lines</span>
+    </h2>
+</doc-anchor-target>
+<doc-panel id="lines-string">
+    <template #title>lines : <code v-pre>string</code></template>
+<p>lines description.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>count</code></td>
+<td>description.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">Example.js</div>
+<pre class="language-javascript"><code v-pre class="language-javascript">lines()</code></pre>
+</doc-codeblock></div>
+</doc-panel>
+<doc-anchor-target id="disruptions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disruptions">#</doc-anchor-trigger>
+        <span>.disruptions</span>
+    </h2>
+</doc-anchor-target>
+<doc-panel id="disruptions-string">
+    <template #title>disruptions : <code v-pre>string</code></template>
+<p>disruptions description.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>count</code></td>
+<td>description.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">Example.js</div>
+<pre class="language-javascript"><code v-pre class="language-javascript">disruptions()</code></pre>
+</doc-codeblock></div>
+</doc-panel>
+<doc-anchor-target id="places">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#places">#</doc-anchor-trigger>
+        <span>.places</span>
+    </h2>
+</doc-anchor-target>
+<doc-panel id="places-string">
+    <template #title>places : <code v-pre>string</code></template>
+<p>places description.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>count</code></td>
+<td>description.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">Example.js</div>
+<pre class="language-javascript"><code v-pre class="language-javascript">places()</code></pre>
+</doc-codeblock></div>
+</doc-panel>
+<doc-anchor-target id="login">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#login">#</doc-anchor-trigger>
+        <span>.login</span>
+    </h2>
+</doc-anchor-target>
+<doc-panel id="login-string">
+    <template #title>login : <code v-pre>string</code></template>
+<p>login description.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>count</code></td>
+<td>description.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">Example.js</div>
+<pre class="language-javascript"><code v-pre class="language-javascript">login()</code></pre>
+</doc-codeblock></div>
+</doc-panel>
+<doc-anchor-target id="logout">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logout">#</doc-anchor-trigger>
+        <span>.logout</span>
+    </h2>
+</doc-anchor-target>
+<doc-panel id="logout-string">
+    <template #title>logout : <code v-pre>string</code></template>
+<p>logout description.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>count</code></td>
+<td>description.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">Example.js</div>
+<pre class="language-javascript"><code v-pre class="language-javascript">logout()</code></pre>
+</doc-codeblock></div>
+</doc-panel>
 
                                 
                                 <!-- Required only on API pages -->
@@ -384,6 +607,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Client", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Client", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>

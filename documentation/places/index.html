@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/Alexis06030631/sncf.js">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.711883795035">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.711914844430">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Places - SNCF.JS a javascript library</title>
     <meta name="title" content="Places - SNCF.JS a javascript library">
-    <meta name="description" content="constructor" />
+    <meta name="description" content="utils" />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://github.com/Alexis06030631/sncf.js/documentation/places/" />
@@ -21,22 +21,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.com/Alexis06030631/sncf.js/documentation/places/">
     <meta property="og:title" content="Places - SNCF.JS a javascript library">
-    <meta property="og:description" content="constructor">
+    <meta property="og:description" content="utils">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://github.com/Alexis06030631/sncf.js/documentation/places/">
     <meta property="twitter:title" content="Places - SNCF.JS a javascript library">
-    <meta property="twitter:description" content="constructor">
+    <meta property="twitter:description" content="utils">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/Alexis06030631/sncf.js/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../favicon.ico" rel="icon" />
-    <link href="../../resources/css/retype.css?v=2.4.0.711883795035" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.711914844430" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.711883795035" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.711914844430" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.711883795035" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.711914844430" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.711914844430" defer></script>
 
     <!-- Add content to _includes/head.html to include here -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -281,23 +282,98 @@
         <span>Methods</span>
     </div>
     <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
-<doc-panel id="list">
-    <template #title>List</template>
+<doc-panel id="elements">
+    <template #title>Elements</template>
 <ul>
-<li><doc-anchor-trigger to="#constructor">constructor</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#search">search</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#get">get</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#_placesMany">_placesMany</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#utils">utils</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#structures">structures</doc-anchor-trigger></li>
 </ul>
 </doc-panel>
     </div>
     <div class="px-5 py-3 docs-columns-content">
 <doc-panels>
-   <doc-panel id="list">
-       <template #title>List</template>
+   <doc-panel id="functions">
+       <template #title>Functions</template>
+<ul>
+<li><doc-anchor-trigger to="#search">search</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#get">get</doc-anchor-trigger></li>
+</ul>
    </doc-panel>
     </div>
 </div>
+<doc-anchor-target id="properties">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#properties">#</doc-anchor-trigger>
+        <span>Properties</span>
+    </h2>
+</doc-anchor-target>
+<hr />
+<doc-anchor-target id="methods">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#methods">#</doc-anchor-trigger>
+        <span>Methods</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="search">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#search">#</doc-anchor-trigger>
+        <span>.search</span>
+    </h2>
+</doc-anchor-target>
+<doc-panel id="search-string">
+    <template #title>search : <code v-pre>string</code></template>
+<p>search description.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>count</code></td>
+<td>description.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">Example.js</div>
+<pre class="language-javascript"><code v-pre class="language-javascript">search()</code></pre>
+</doc-codeblock></div>
+</doc-panel>
+<doc-anchor-target id="get">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#get">#</doc-anchor-trigger>
+        <span>.get</span>
+    </h2>
+</doc-anchor-target>
+<doc-panel id="get-string">
+    <template #title>get : <code v-pre>string</code></template>
+<p>get description.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>count</code></td>
+<td>description.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">Example.js</div>
+<pre class="language-javascript"><code v-pre class="language-javascript">get()</code></pre>
+</doc-codeblock></div>
+</doc-panel>
 
                                 
                                 <!-- Required only on API pages -->
@@ -373,6 +449,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Places", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Places", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
