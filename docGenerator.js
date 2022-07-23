@@ -1,20 +1,47 @@
 const fs = require('fs');
 
-const folder_manager = './src/managers/';
-const doc_folder = './docs/classes/'
+const folder_classes = './src/managers/';
+const doc_folder_classes = './docs/classes/'
+
+const folder_structures = './src/structures/';
+const doc_folder_structures = './docs/structures/'
 
 const type_of = ["undefined", "object", "function", "boolean", "string", "number", "symbol", "bigint", "promise"];
 
-fs.readdirSync(folder_manager).forEach(file => {
-    if (file.indexOf('.js') > 0 && file !== 'index.js') {
-        const file_content = fs.readFileSync(folder_manager + file, 'utf8');
-        let name = file.replaceAll('.js', '').replaceAll('Manager', '');
-        exports[name] = require(folder_manager + file);
+create_classes_doc()
+create_structures_doc()
 
-        fs.writeFileSync(doc_folder + name + '.md', content_creator(exports[name], name, file_content))
 
-    }
-});
+function create_classes_doc(){
+    fs.readdirSync(folder_classes).forEach(file => {
+        if (file.indexOf('.js') > 0 && file !== 'index.js') {
+            const file_content = fs.readFileSync(folder_classes + file, 'utf8');
+            let name = file.replaceAll('.js', '').replaceAll('Manager', '');
+            exports[name] = require(folder_classes + file);
+
+            fs.writeFileSync(doc_folder_classes + name + '.md', content_creator(exports[name], name, file_content))
+
+        }
+    });
+}
+
+function create_structures_doc(){
+    fs.readdirSync(folder_structures).forEach(file => {
+        if (file.indexOf('.js') > 0 && file !== 'index.js') {
+            const file_content = fs.readFileSync(folder_structures + file, 'utf8');
+            let name = file.replaceAll('.js', '').replaceAll('Manager', '');
+            exports[name] = require(folder_structures + file);
+
+            try {
+                const content = content_creator(exports[name], name, file_content)
+                fs.writeFileSync(doc_folder_structures + name + '.md', content)
+            }catch (e) {
+                new Error('Error on create file ' + name + '.md')
+            }
+
+        }
+    });
+}
 
 
 function content_creator(data, name, file){
