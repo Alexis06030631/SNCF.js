@@ -28,20 +28,51 @@ function content_creator(data, name, file){
     // TODO: add description
 
     // add properties
-    content += `||| Properties\n` + `=== List\n`;
-    for (var name in data){
-        console.log(name)
-    }
-    const properties = Object.getOwnPropertyNames(data.prototype)
-    for(let i=0; properties.length>i; i++){
-        content += `- [${properties[i]}](#${properties[i]})\n`;
+    const constructor_data = file.match(/constructor.*\{((.*\n*\s*)*?)\}/gm)
+    const properties = constructor_data[0].match(/(this\.)(\S*)/g)
+    content += `||| Properties\n` + `=== Elements\n`;
+    if(properties){
+        for(let i=0; properties.length>i; i++){
+            properties[i] = properties[i].replace("this.", '')
+            content += `- [${properties[i]}](#${properties[i]})\n`;
+        }
     }
     content += `===\n`;
 
     // add methods
-    content += `||| Methods\n` + `=== List\n`;
+    content += `||| Methods\n` + `=== Functions\n`;
+    const methods = Object.getOwnPropertyNames(data.prototype).filter(method => method !== 'constructor' && !method.startsWith("_"));
+    for(let i=0; methods.length>i; i++){
+        content += `- [${methods[i]}](#${methods[i]})\n`;
+    }
 
     content += `|||\n`;
+
+    // add properties descriptions
+    content += `## Properties\n`;
+
+    // add methods descriptions
+    content += `---\n## Methods\n`;
+    const functions_content = file.replace(constructor_data, '')
+    for(let i=0; methods.length>i; i++){
+        const match = `/${methods[i]}.*\\((.*)\\).*\\n*\\{/`
+        //console.log(file.match(match))
+        content += `## .${methods[i]}\n\n`
+        // Set return type
+        content += `=== ${methods[i]} : \`string\`\n\n`
+        // Set description
+        content += `${methods[i]} description.\n\n`
+        // add parameters
+        content += `Parameters | Description\n`
+        content += "--- | ---\n"
+        content += "`count` | description.\n"
+        // Set example
+        content += "\n"
+        content += "```javascript Example.js\n"
+        content += `${methods[i]}()\n`
+        content += "```\n"
+        content += "===\n\n"
+    }
 
     return content;
 }
