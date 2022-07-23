@@ -10,7 +10,7 @@ try {
     doc.branding.label = `V${process.env.npm_package_version}`;
     fs.writeFileSync(process.cwd()+'/retype.yml', yaml.dump(doc));
 
-    glob(process.cwd()+"/docs/*.md", function (er, files) {
+    glob(process.cwd()+"/docs/*/*.md", function (er, files) {
         for (let id in files) {
 
             const options = {
