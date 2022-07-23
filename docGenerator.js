@@ -30,13 +30,15 @@ function content_creator(data, name, file){
     // TODO: add description
 
     // add properties
-    const constructor_data = file.match(/constructor.*\{((.*\n*\s*)*?)\}/gm)
-    const properties = constructor_data[0].match(/(this\.)(\S*)/g)
     content += `||| Properties\n` + `=== Elements\n`;
-    if(properties){
-        for(let i=0; properties.length>i; i++){
-            properties[i] = properties[i].replace("this.", '')
-            content += `- [${properties[i]}](#${properties[i]})\n`;
+    const constructor_data = file.match(/constructor.*\{((.*\n*\s*)*?)\}/gm)
+    if(constructor_data){
+        const properties = constructor_data[0].match(/(this\.)(\S*)/g)
+        if(properties){
+            for(let i=0; properties.length>i; i++){
+                properties[i] = properties[i].replace("this.", '')
+                content += `- [${properties[i]}](#${properties[i]})\n`;
+            }
         }
     }
     content += `===\n`;
