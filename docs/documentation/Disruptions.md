@@ -6,12 +6,45 @@ author:
 # Disruptions
 
 ||| Properties
-=== List
-- [constructor](#constructor)
-- [search](#search)
-- [get](#get)
-- [_disruptionsMany](#_disruptionsMany)
+=== Elements
+- [utils](#utils)
+- [structures](#structures)
 ===
 ||| Methods
-=== List
+=== Functions
+- [search](#search)
+- [get](#get)
 |||
+## Properties
+---
+## Methods
+## .search
+
+=== search : `string`
+
+search description.
+
+Parameters | Description
+--- | ---
+`count` | description.
+
+```javascript Example.js
+search()
+```
+===
+
+## .get
+
+=== get : `string`
+
+get description.
+
+Parameters | Description
+--- | ---
+`count` | description.
+
+```javascript Example.js
+get()
+```
+===
+
