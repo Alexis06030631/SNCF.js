@@ -5,16 +5,17 @@ const doc_folder = './docs/documentation/'
 
 fs.readdirSync(folder_manager).forEach(file => {
     if (file.indexOf('.js') > 0 && file !== 'index.js') {
+        const file_content = fs.readFileSync(folder_manager + file, 'utf8');
         let name = file.replaceAll('.js', '').replaceAll('Manager', '');
         exports[name] = require(folder_manager + file);
 
-        fs.writeFileSync(doc_folder + name + '.md', content_creator(exports[name], name))
+        fs.writeFileSync(doc_folder + name + '.md', content_creator(exports[name], name, file_content))
 
     }
 });
 
 
-function content_creator(data, name){
+function content_creator(data, name, file){
     let content = '';
     let separator = '---';
     // create header
