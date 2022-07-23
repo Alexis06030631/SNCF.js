@@ -1,7 +1,9 @@
 const fs = require('fs');
 
 const folder_manager = './src/managers/';
-const doc_folder = './docs/documentation/'
+const doc_folder = './docs/classes/'
+
+const type_of = ["undefined", "object", "function", "boolean", "string", "number", "symbol", "bigint", "promise"];
 
 fs.readdirSync(folder_manager).forEach(file => {
     if (file.indexOf('.js') > 0 && file !== 'index.js') {
