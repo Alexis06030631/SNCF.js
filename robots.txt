@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alexis06030631.github.io/SNCF.js/sitemap.xml.gz
+Sitemap: https://github.com/SNCF.js/sitemap.xml.gz
