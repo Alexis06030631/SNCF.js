@@ -1,91 +1,91 @@
 ---
 title: departure
 author:
-  name: Alexis06030631
-  avatar: https://avatars.githubusercontent.com/u/61119747
-
-date: 2022-07-24T11:41
 ---
 
 # departure
 
 ||| Properties
 === Elements
-- [arrival_date_time](#arrival_date_time)
-- [base_arrival_date_time](#base_arrival_date_time)
-===
-||| Methods
-=== Functions
+- [departure_date_time](#departure_date_time)
+- [base_departure_date_time](#base_departure_date_time)
 - [stop_area](#stop_area)
 - [line](#line)
 - [isLate](#isLate)
+===
+||| Methods
+=== Functions
 |||
 ## Properties
-## .arrival_date_time
+## .departure_date_time
 
-=== arrival_date_time
+=== departure_date_time
 
-
-
-
-```javascript
-departure.arrival_date_time
-```
-===
-
-## .base_arrival_date_time
-
-=== base_arrival_date_time
-
-
+Returns the departure time
 
 
 ```javascript
-departure.base_arrival_date_time
+departure.departure_date_time
 ```
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
 ===
 
----
-## Methods
+## .base_departure_date_time
+
+=== base_departure_date_time
+
+Returns the default departure time
+
+
+```javascript
+departure.base_departure_date_time
+```
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
+===
+
 ## .stop_area
 
-=== stop_area()
+=== stop_area
 
- * Get the stop departure data
+Get the stop departure data
 
 
 ```javascript
-stop_area()
+departure.stop_area
 ```
-**Type: [StopArea](StopArea)**
+**Type: [stoparea](../structures/stoparea)**
 
 ===
 
 ## .line
 
-=== line()
+=== line
 
- * Get the line data
+Get the line data
 
 
 ```javascript
-line()
+departure.line
 ```
-**Type: [Line](Line)**
+**Type: [line](../structures/line)**
 
 ===
 
 ## .isLate
 
-=== isLate()
+=== isLate
 
- * Return boolean if the train is in late
+Return boolean if the train is in late
 
 
 ```javascript
-isLate()
+departure.isLate
 ```
-**Type: [boolean](boolean)**
+**Type: [boolean :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**
 
 ===
 
+---
+## Methods

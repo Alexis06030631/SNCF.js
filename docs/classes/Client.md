@@ -1,125 +1,91 @@
 ---
 title: Client
 author:
-  name: Alexis06030631
-  avatar: https://avatars.githubusercontent.com/u/61119747
-
-date: 2022-07-24T11:41
 ---
 
 # Client
 
 ||| Properties
 === Elements
-===
-||| Methods
-=== Functions
 - [utils](#utils)
 - [structures](#structures)
 - [lines](#lines)
 - [disruptions](#disruptions)
 - [places](#places)
-- [login](#login)
-- [logout](#logout)
+===
+||| Methods
+=== Functions
 |||
 ## Properties
----
-## Methods
 ## .utils
 
-=== utils()
+=== utils
 
-
+Get the utils functions
 
 
 ```javascript
-utils()
+Client.utils
 ```
-**Type: [Utils](Utils)**
+**Type: [utils](../classes/utils)**
 
 ===
 
 ## .structures
 
-=== structures()
+=== structures
 
-
+Get all the structures' manager available
 
 
 ```javascript
-structures()
+Client.structures
 ```
-**Type: [StructuresManager](StructuresManager)**
+**Type: [structuresmanager](../structures/structuresmanager)**
 
 ===
 
 ## .lines
 
-=== lines()
+=== lines
 
-
+All of the [lines](../classes/lines) objects that have been cached at any point
 
 
 ```javascript
-lines()
+Client.lines
 ```
-**Type: [Lines](Lines)**
+**Type: [lines](../classes/lines)**
 
 ===
 
 ## .disruptions
 
-=== disruptions()
+=== disruptions
 
-
+All of the [dirsuptions](../classes/dirsuptions) objects at custom date
 
 
 ```javascript
-disruptions()
+Client.disruptions
 ```
-**Type: [Disruptions](Disruptions)**
+**Type: [disruptions](../classes/disruptions)**
 
 ===
 
 ## .places
 
-=== places()
+=== places
 
 
 
 
 ```javascript
-places()
+Client.places
 ```
-**Type: [Places](Places)**
+**Type: [places](../classes/places)**
 
 ===
 
-## .login
-
-=== login()
-
-
-
-
-```javascript
-login()
-```
-**Type: null**
-
-===
-
-## .logout
-
-=== logout()
-
-
-
-
-```javascript
-logout()
-```
-**Type: null**
-
-===
-
+---
+## Methods

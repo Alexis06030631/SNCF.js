@@ -1,10 +1,6 @@
 ---
 title: Disruptions
 author:
-  name: Alexis06030631
-  avatar: https://avatars.githubusercontent.com/u/61119747
-
-date: 2022-07-24T11:41
 ---
 
 # Disruptions
@@ -24,24 +20,28 @@ date: 2022-07-24T11:41
 
 === utils
 
-
+The utils functions.
 
 
 ```javascript
 Disruptions.utils
 ```
+**Type: [utils](../classes/utils)**
+
 ===
 
 ## .structures
 
 === structures
 
-
+All the structures available.
 
 
 ```javascript
 Disruptions.structures
 ```
+**Type: [structuresmanager](../structures/structuresmanager)**
+
 ===
 
 ---
@@ -50,18 +50,18 @@ Disruptions.structures
 
 === search()
 
- * Search the disruptions
+Search the disruptions
 
 | PARAMETER | TYPE | OPTIONAL | DESCRIPTION |
 | --- | --- | :---: | --- |
-| since_date | string;Date;number | :icon-check: | defines the start date of the disruptions to search for |
-| until_date | string;Date;number | :icon-check: | defines the end date of the disruptions to search for |
-| count=10 | number | :icon-check: | The number of disruptions to get |
+| since_date | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) [date :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)  | :icon-check: | defines the start date of the disruptions to search for |
+| until_date | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) [date :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)  | :icon-check: | defines the end date of the disruptions to search for |
+| count=10 | [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | :icon-check: | The number of disruptions to get |
 
 ```javascript
-search()
+[object Object]()
 ```
-**Type: promise<[Disruption](../structures/Disruption)>**
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[disruption](../structures/disruption)[]>**
 
 ===
 
@@ -69,16 +69,16 @@ search()
 
 === get()
 
- * Get a disruption by id
+Get a disruption by id
 
 | PARAMETER | TYPE | OPTIONAL | DESCRIPTION |
 | --- | --- | :---: | --- |
-| disruptionID | string | :icon-x: | The id of the disruption to get |
+| disruptionID | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | :icon-x: | The id of the disruption to get |
 
 ```javascript
-get()
+[object Object]()
 ```
-**Type: promise<[Disruption](../structures/Disruption)>**
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[disruption](../structures/disruption)>**
 
 ===
 

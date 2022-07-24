@@ -1,10 +1,6 @@
 ---
 title: Structures
 author:
-  name: Alexis06030631
-  avatar: https://avatars.githubusercontent.com/u/61119747
-
-date: 2022-07-24T11:41
 ---
 
 # Structures
@@ -33,6 +29,8 @@ date: 2022-07-24T11:41
 ```javascript
 Structures.departure
 ```
+**Type: [departure](../structures/departure)**
+
 ===
 
 ## .arrival
@@ -45,6 +43,8 @@ Structures.departure
 ```javascript
 Structures.arrival
 ```
+**Type: [arrival](../structures/arrival)**
+
 ===
 
 ## .line
@@ -57,6 +57,8 @@ Structures.arrival
 ```javascript
 Structures.line
 ```
+**Type: [line](../structures/line)**
+
 ===
 
 ## .vehicle
@@ -69,6 +71,8 @@ Structures.line
 ```javascript
 Structures.vehicle
 ```
+**Type: [vehicle](../structures/vehicle)**
+
 ===
 
 ## .disruption
@@ -81,6 +85,8 @@ Structures.vehicle
 ```javascript
 Structures.disruption
 ```
+**Type: [disruption](../structures/disruption)**
+
 ===
 
 ## .stop_area
@@ -93,6 +99,8 @@ Structures.disruption
 ```javascript
 Structures.stop_area
 ```
+**Type: [stoparea](../structures/stoparea)**
+
 ===
 
 ## .place
@@ -105,6 +113,8 @@ Structures.stop_area
 ```javascript
 Structures.place
 ```
+**Type: [place](../structures/place)**
+
 ===
 
 ---

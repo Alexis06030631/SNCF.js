@@ -1,18 +1,12 @@
 ---
 title: Lines
 author:
-  name: Alexis06030631
-  avatar: https://avatars.githubusercontent.com/u/61119747
-
-date: 2022-07-24T11:41
 ---
 
 # Lines
 
 ||| Properties
 === Elements
-- [utils](#utils)
-- [structures](#structures)
 ===
 ||| Methods
 === Functions
@@ -20,46 +14,22 @@ date: 2022-07-24T11:41
 - [get](#get)
 |||
 ## Properties
-## .utils
-
-=== utils
-
-
-
-
-```javascript
-Lines.utils
-```
-===
-
-## .structures
-
-=== structures
-
-
-
-
-```javascript
-Lines.structures
-```
-===
-
 ---
 ## Methods
 ## .search
 
 === search()
 
- * Search a line by name (departure - arrival)
+Search a line by name (departure - arrival)
 
 | PARAMETER | TYPE | OPTIONAL | DESCRIPTION |
 | --- | --- | :---: | --- |
-| line | String | :icon-x: | The name of the line |
+| line | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | :icon-x: | The name of the line |
 
 ```javascript
-search()
+[object Object]()
 ```
-**Type: promise<[Line](../structures/Line)>**
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[line](../structures/line)[]>**
 
 ===
 
@@ -67,16 +37,16 @@ search()
 
 === get()
 
- * Get a line by id
+Get a line by id
 
 | PARAMETER | TYPE | OPTIONAL | DESCRIPTION |
 | --- | --- | :---: | --- |
-| lineID | string | :icon-x: | The id of the line |
+| lineID | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | :icon-x: | The id of the line |
 
 ```javascript
-get()
+[object Object]()
 ```
-**Type: promise<[Line](../structures/Line)>**
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[line](../structures/line)>**
 
 ===
 

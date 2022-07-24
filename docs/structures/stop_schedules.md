@@ -1,10 +1,6 @@
 ---
 title: stop_schedules
 author:
-  name: Alexis06030631
-  avatar: https://avatars.githubusercontent.com/u/61119747
-
-date: 2022-07-24T11:41
 ---
 
 # stop_schedules
@@ -12,19 +8,16 @@ date: 2022-07-24T11:41
 ||| Properties
 === Elements
 - [additional_informations](#additional_informations)
-- [code](#code)
 - [network](#network)
 - [direction](#direction)
 - [name](#name)
 - [route](#route)
 - [departure](#departure)
-- [departure.scheduled](#departure.scheduled)
-- [departure.current](#departure.current)
-- [departure.type](#departure.type)
+- [departure](#departure)
+- [departure](#departure)
 - [arrival](#arrival)
-- [arrival.scheduled](#arrival.scheduled)
-- [arrival.current](#arrival.current)
-- [arrival.type](#arrival.type)
+- [arrival](#arrival)
+- [arrival](#arrival)
 ===
 ||| Methods
 === Functions
@@ -35,168 +28,154 @@ date: 2022-07-24T11:41
 
 === additional_informations
 
-
+The additional information given by SNCF
 
 
 ```javascript
 stop_schedules.additional_informations
 ```
-===
+**Type: [object :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**
 
-## .code
-
-=== code
-
-
-
-
-```javascript
-stop_schedules.code
-```
 ===
 
 ## .network
 
 === network
 
-
+Return the network data
 
 
 ```javascript
 stop_schedules.network
 ```
+**Type: [object :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+
 ===
 
 ## .direction
 
 === direction
 
-
+Return the direction of the train
 
 
 ```javascript
 stop_schedules.direction
 ```
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
 ===
 
 ## .name
 
 === name
 
-
+Return the name of the line
 
 
 ```javascript
 stop_schedules.name
 ```
+**Type: [object :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+
 ===
 
 ## .route
 
 === route
 
-
+Return the route schedule
 
 
 ```javascript
 stop_schedules.route
 ```
+**Type: [object :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+
 ===
 
 ## .departure
 
 === departure
 
-
+Return the departure schedule of the train stop
 
 
 ```javascript
 stop_schedules.departure
 ```
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
 ===
 
-## .departure.scheduled
+## .departure
 
-=== departure.scheduled
+=== departure
 
-
+Return the departure of the train stop
 
 
 ```javascript
-stop_schedules.departure.scheduled
+stop_schedules.departure
 ```
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
 ===
 
-## .departure.current
+## .departure
 
-=== departure.current
+=== departure
 
-
+Return the departure type of the train stop
 
 
 ```javascript
-stop_schedules.departure.current
+stop_schedules.departure
 ```
-===
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
-## .departure.type
-
-=== departure.type
-
-
-
-
-```javascript
-stop_schedules.departure.type
-```
 ===
 
 ## .arrival
 
 === arrival
 
-
+Return the arrival schedule of the train stop
 
 
 ```javascript
 stop_schedules.arrival
 ```
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
 ===
 
-## .arrival.scheduled
+## .arrival
 
-=== arrival.scheduled
+=== arrival
 
-
+Return the arrival of the train stop
 
 
 ```javascript
-stop_schedules.arrival.scheduled
+stop_schedules.arrival
 ```
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
 ===
 
-## .arrival.current
+## .arrival
 
-=== arrival.current
+=== arrival
 
-
+Return the departure type of the train stop
 
 
 ```javascript
-stop_schedules.arrival.current
+stop_schedules.arrival
 ```
-===
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
-## .arrival.type
-
-=== arrival.type
-
-
-
-
-```javascript
-stop_schedules.arrival.type
-```
 ===
 
 ---
@@ -205,13 +184,5 @@ stop_schedules.arrival.type
 
 === stops_dates()
 
-
-
-
-```javascript
-stops_dates()
-```
-**Type: null**
-
-===
+Returns the stop dates of this stop schedule
 

@@ -1,102 +1,106 @@
 ---
 title: place
 author:
-  name: Alexis06030631
-  avatar: https://avatars.githubusercontent.com/u/61119747
-
-date: 2022-07-24T11:41
 ---
 
 # place
 
 ||| Properties
 === Elements
-- [embedded_type](#embedded_type)
+- [type](#type)
 - [quality](#quality)
 - [name](#name)
 - [id](#id)
+- [stop_area](#stop_area)
+- [stop_point](#stop_point)
 ===
 ||| Methods
 === Functions
-- [stop_area](#stop_area)
-- [stop_point](#stop_point)
 |||
 ## Properties
-## .embedded_type
+## .type
 
-=== embedded_type
+=== type
 
-
+Return the type of the place
 
 
 ```javascript
-place.embedded_type
+place.type
 ```
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
 ===
 
 ## .quality
 
 === quality
 
-
+Return a quality level of the place
 
 
 ```javascript
 place.quality
 ```
+**Type: [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**
+
 ===
 
 ## .name
 
 === name
 
-
+Return the name of the place
 
 
 ```javascript
 place.name
 ```
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
 ===
 
 ## .id
 
 === id
 
-
+Return the id of the place
 
 
 ```javascript
 place.id
 ```
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
 ===
 
----
-## Methods
 ## .stop_area
 
-=== stop_area()
+=== stop_area
 
-
+Return the data of this stop area
 
 
 ```javascript
-stop_area()
+place.stop_area
 ```
-**Type: null**
+**Type: [stoparea](../structures/stoparea)**
 
 ===
 
 ## .stop_point
 
-=== stop_point()
+=== stop_point
 
-
+Return the data of this stop point
 
 
 ```javascript
-stop_point()
+place.stop_point
 ```
-**Type: null**
+**Type: [object :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**
 
 ===
 
+---
+## Methods

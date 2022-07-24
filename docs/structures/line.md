@@ -1,10 +1,6 @@
 ---
 title: line
 author:
-  name: Alexis06030631
-  avatar: https://avatars.githubusercontent.com/u/61119747
-
-date: 2022-07-24T11:41
 ---
 
 # line
@@ -31,84 +27,98 @@ date: 2022-07-24T11:41
 
 === network
 
-
+the network of the line
 
 
 ```javascript
 line.network
 ```
+**Type: [object :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+
 ===
 
 ## .routes
 
 === routes
 
-
+Return the routes of the line
 
 
 ```javascript
 line.routes
 ```
+**Type: [array :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**
+
 ===
 
 ## .physical_modes
 
 === physical_modes
 
-
+Return the list of physical mode used by the line
 
 
 ```javascript
 line.physical_modes
 ```
+**Type: [array :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**
+
 ===
 
 ## .closing_time
 
 === closing_time
 
-
+Return when the closing time of the line
 
 
 ```javascript
 line.closing_time
 ```
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
 ===
 
 ## .opening_time
 
 === opening_time
 
-
+Return when the opening time of the line
 
 
 ```javascript
 line.opening_time
 ```
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
 ===
 
 ## .name
 
 === name
 
-
+Return the name of the line
 
 
 ```javascript
 line.name
 ```
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
 ===
 
 ## .id
 
 === id
 
-
+Return the id of the line
 
 
 ```javascript
 line.id
 ```
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
 ===
 
 ---
@@ -117,18 +127,18 @@ line.id
 
 === vehicle_journeys()
 
- * Get the vehicles of the line at a given time
+Get the vehicles of the line at a given time
 
 | PARAMETER | TYPE | OPTIONAL | DESCRIPTION |
 | --- | --- | :---: | --- |
-| since_date | string;Date;number | :icon-check: | defines the start date to search for vehicles |
-| until_date | string;Date;number | :icon-check: | defines the end date to search for vehicles |
-| count=10 | number | :icon-check: | The number of vehicles to get |
+| since_date | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) [date :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)  | :icon-check: | defines the start date to search for vehicles |
+| until_date | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) [date :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)  | :icon-check: | defines the end date to search for vehicles |
+| count=10 | [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | :icon-check: | The number of vehicles to get |
 
 ```javascript
-vehicle_journeys()
+[object Object]()
 ```
-**Type: promise<[Vehicle](../structures/Vehicle)>**
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[vehicle](../structures/vehicle)[]>**
 
 ===
 
@@ -136,32 +146,24 @@ vehicle_journeys()
 
 === stop_areas()
 
- * Get the stop areas of the line
-
-
-```javascript
-stop_areas()
-```
-**Type: promise<[Place](../structures/Place)>**
-
-===
+Get the stop areas of the line
 
 ## .departures
 
 === departures()
 
- * Get the departure of the line at a given time
+Get the departure of the line at a given time
 
 | PARAMETER | TYPE | OPTIONAL | DESCRIPTION |
 | --- | --- | :---: | --- |
-| from_date | string;Date;number | :icon-check: | defines the start date to search departures |
-| until_date | string;Date;number | :icon-check: | defines the end date to search departures |
-| count=10 | number | :icon-check: | The number of departures to get |
+| from_date | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) [date :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)  | :icon-check: | defines the start date to search departures |
+| until_date | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) [date :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)  | :icon-check: | defines the end date to search departures |
+| count=10 | [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | :icon-check: | The number of departures to get |
 
 ```javascript
-departures()
+[object Object]()
 ```
-**Type: promise<[Vehicle](../structures/Vehicle)>**
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[vehicle](../structures/vehicle)[]>**
 
 ===
 
@@ -169,18 +171,18 @@ departures()
 
 === arrivals()
 
- * Get the arrivals of the line at a given time
+Get the arrivals of the line at a given time
 
 | PARAMETER | TYPE | OPTIONAL | DESCRIPTION |
 | --- | --- | :---: | --- |
-| from_date | string;Date;number | :icon-check: | defines the start date to search arrivals |
-| until_date | string;Date;number | :icon-check: | defines the end date to search arrivals |
-| count=10 | number | :icon-check: | The number of arrivals to get |
+| from_date | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) [date :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)  | :icon-check: | defines the start date to search arrivals |
+| until_date | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) [date :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)  | :icon-check: | defines the end date to search arrivals |
+| count=10 | [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | :icon-check: | The number of arrivals to get |
 
 ```javascript
-arrivals()
+[object Object]()
 ```
-**Type: promise<[Vehicle](../structures/Vehicle)>**
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[vehicle](../structures/vehicle)[]>**
 
 ===
 
