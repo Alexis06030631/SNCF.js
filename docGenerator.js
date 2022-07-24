@@ -59,13 +59,12 @@ function content_creator(data, name, file){
     // add properties
     content += `||| Properties\n` + `=== Elements\n`;
     const constructor_data = file.match(/constructor.*\{((.*\n*\s*)*?)\}/gm)
+    const properties = constructor_data[0].match(/(this\.)(\S*)/g)
     if(constructor_data){
-        const properties = constructor_data[0].match(/(this\.)(\S*)/g)
         if(properties){
-            for(let i=0; properties.length>i; i++){
-                properties[i] = properties[i].replace("this.", '')
-                content += `- [${properties[i]}](#${properties[i]})\n`;
-            }
+            properties.filter(prt => !prt.includes('#')).forEach(property => {
+                content += `- [${property.replace('this.', '')}](#${property.replace('this.', '')})\n`;
+            })
         }
     }
     content += `===\n`;
@@ -81,6 +80,25 @@ function content_creator(data, name, file){
 
     // add properties descriptions
     content += `## Properties\n`;
+    if(properties){
+        properties.filter(prt => !prt.includes('#')).forEach(property => {
+            property = property.replace('this.', '')
+
+            content += `## .${property}\n\n`
+            // Set return type
+            content += `=== ${property}\n\n`
+            // Set description
+            content += `\n\n`
+            // add parameters
+            // Set example
+            content += "\n"
+            content += "```javascript\n"
+            content += `${name}.${property}\n`
+            content += "```\n"
+            //content += `**Type: ${return_type|| 'null'}**\n\n`
+            content += "===\n\n"
+        })
+    }
 
     // add methods descriptions
     content += `---\n## Methods\n`;
