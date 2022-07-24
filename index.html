@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/SNCF.js">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.711975879239">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.711978137557">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -34,12 +34,12 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/SNCF.js/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="favicon.ico" rel="icon" />
-    <link href="resources/css/retype.css?v=2.4.0.711975879239" rel="stylesheet" />
+    <link href="resources/css/retype.css?v=2.4.0.711978137557" rel="stylesheet" />
 
-    <script type="text/javascript" src="resources/js/config.js?v=2.4.0.711975879239" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="resources/js/config.js?v=2.4.0.711978137557" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=2.4.0.711975879239" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="resources/js/prism.js?v=2.4.0.711975879239" defer></script>
+    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=2.4.0.711978137557" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="resources/js/prism.js?v=2.4.0.711978137557" defer></script>
 
     <!-- Add content to _includes/head.html to include here -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -50,11 +50,11 @@
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#000000">
     <script>
-        let delete_order
-        delete_order = setInterval(function(){
+        
+        window.delete_order = setInterval(function(){
             try {
                 document.querySelector("#docs-app > div.container.relative.flex.bg-white > aside > div:nth-child(4)").setAttribute("style", "opacity: 0;");
-                clearInterval(delete_order)
+                clearInterval(window.delete_order)
                 setTimeout(function(){
                     document.querySelector("#docs-app > div.container.relative.flex.bg-white > aside > div:nth-child(4)").remove()
                 }, 1000)
