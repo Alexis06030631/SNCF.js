@@ -4,14 +4,13 @@ author:
   name: Alexis06030631
   avatar: https://avatars.githubusercontent.com/u/61119747
 
-date: 2022-07-23T22:05
+date: 2022-07-24T11:41
 ---
 
 # place
 
 ||| Properties
 === Elements
-- [#data](##data)
 - [embedded_type](#embedded_type)
 - [quality](#quality)
 - [name](#name)
@@ -23,6 +22,54 @@ date: 2022-07-23T22:05
 - [stop_point](#stop_point)
 |||
 ## Properties
+## .embedded_type
+
+=== embedded_type
+
+
+
+
+```javascript
+place.embedded_type
+```
+===
+
+## .quality
+
+=== quality
+
+
+
+
+```javascript
+place.quality
+```
+===
+
+## .name
+
+=== name
+
+
+
+
+```javascript
+place.name
+```
+===
+
+## .id
+
+=== id
+
+
+
+
+```javascript
+place.id
+```
+===
+
 ---
 ## Methods
 ## .stop_area

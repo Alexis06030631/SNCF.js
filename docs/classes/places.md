@@ -4,7 +4,7 @@ author:
   name: Alexis06030631
   avatar: https://avatars.githubusercontent.com/u/61119747
 
-date: 2022-07-23T22:05
+date: 2022-07-24T11:41
 ---
 
 # Places
@@ -20,6 +20,30 @@ date: 2022-07-23T22:05
 - [get](#get)
 |||
 ## Properties
+## .utils
+
+=== utils
+
+
+
+
+```javascript
+Places.utils
+```
+===
+
+## .structures
+
+=== structures
+
+
+
+
+```javascript
+Places.structures
+```
+===
+
 ---
 ## Methods
 ## .search

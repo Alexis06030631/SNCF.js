@@ -4,7 +4,7 @@ author:
   name: Alexis06030631
   avatar: https://avatars.githubusercontent.com/u/61119747
 
-date: 2022-07-23T22:05
+date: 2022-07-24T11:41
 ---
 
 # line
@@ -27,6 +27,90 @@ date: 2022-07-23T22:05
 - [arrivals](#arrivals)
 |||
 ## Properties
+## .network
+
+=== network
+
+
+
+
+```javascript
+line.network
+```
+===
+
+## .routes
+
+=== routes
+
+
+
+
+```javascript
+line.routes
+```
+===
+
+## .physical_modes
+
+=== physical_modes
+
+
+
+
+```javascript
+line.physical_modes
+```
+===
+
+## .closing_time
+
+=== closing_time
+
+
+
+
+```javascript
+line.closing_time
+```
+===
+
+## .opening_time
+
+=== opening_time
+
+
+
+
+```javascript
+line.opening_time
+```
+===
+
+## .name
+
+=== name
+
+
+
+
+```javascript
+line.name
+```
+===
+
+## .id
+
+=== id
+
+
+
+
+```javascript
+line.id
+```
+===
+
 ---
 ## Methods
 ## .vehicle_journeys

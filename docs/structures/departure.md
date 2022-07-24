@@ -4,14 +4,13 @@ author:
   name: Alexis06030631
   avatar: https://avatars.githubusercontent.com/u/61119747
 
-date: 2022-07-23T22:05
+date: 2022-07-24T11:41
 ---
 
 # departure
 
 ||| Properties
 === Elements
-- [#departure](##departure)
 - [arrival_date_time](#arrival_date_time)
 - [base_arrival_date_time](#base_arrival_date_time)
 ===
@@ -22,6 +21,30 @@ date: 2022-07-23T22:05
 - [isLate](#isLate)
 |||
 ## Properties
+## .arrival_date_time
+
+=== arrival_date_time
+
+
+
+
+```javascript
+departure.arrival_date_time
+```
+===
+
+## .base_arrival_date_time
+
+=== base_arrival_date_time
+
+
+
+
+```javascript
+departure.base_arrival_date_time
+```
+===
+
 ---
 ## Methods
 ## .stop_area

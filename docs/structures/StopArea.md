@@ -4,7 +4,7 @@ author:
   name: Alexis06030631
   avatar: https://avatars.githubusercontent.com/u/61119747
 
-date: 2022-07-23T22:05
+date: 2022-07-24T11:41
 ---
 
 # StopArea
@@ -21,5 +21,65 @@ date: 2022-07-23T22:05
 === Functions
 |||
 ## Properties
+## .id
+
+=== id
+
+
+
+
+```javascript
+StopArea.id
+```
+===
+
+## .name
+
+=== name
+
+
+
+
+```javascript
+StopArea.name
+```
+===
+
+## .zip_code
+
+=== zip_code
+
+
+
+
+```javascript
+StopArea.zip_code
+```
+===
+
+## .timezone
+
+=== timezone
+
+
+
+
+```javascript
+StopArea.timezone
+```
+===
+
+## .coord
+
+=== coord
+
+
+
+
+```javascript
+StopArea.coord
+```
+===
+
 ---
 ## Methods
