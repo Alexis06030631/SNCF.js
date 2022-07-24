@@ -19,7 +19,7 @@ The development of V2 is not finished yet, these pages are only a preview of the
 
 [SNCF.JS](/) is a JavaScript library that allows you to easily use the [SNCF](https://www.sncf.com/) api.
 
-![](https://www.sncf.com/themes/contrib/sncf_theme/images/logo-sncf.svg)
+![](https://www.sncf.com/themes/contrib/sncf_theme/images/logo-sncf.svg "SNCF_icon")
 
 ---
 
@@ -28,13 +28,13 @@ The development of V2 is not finished yet, these pages are only a preview of the
 | Elements                                  | Version                                       |
 |-------------------------------------------|-----------------------------------------------|
 | [NodeJs](https://nodejs.org/en/download/) | [>= V16.0.0](https://nodejs.org/en/download/) |
-| [SNCF Api Key](#get-your-sncf-token)      | :icon-shield-check:                           |
+| [SNCF Api Key](#get-your-sncf-token)      |                                               |
 
 ---
 
 ## Installation
 
-You can install Retype using `npm` or `yarn`.
+You can install SNCF.js using `npm` or `yarn`.
 
 +++ NPM
 ```
@@ -68,7 +68,7 @@ const {Client} = require('sncf.js');
 const sncf = new Client();
 
 // Login to the SNCF api
-sncf.login('your token [OR] nothing -> auto get SNCF_TOKEN in .env' ) // returns a promise 
+sncf.login('your token' ) // returns a promise 
 
 ```
 
