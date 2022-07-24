@@ -6,7 +6,15 @@ module.exports = class Arrival extends Client{
         super()
         this.#arrival = arrival;
 
+        /**
+         * Returns the arrival time
+         * @returns {string}
+         */
         this.arrival_date_time = arrival.stop_date_time.arrival_date_time;
+        /**
+         * Returns the default arrival time
+         * @returns {string}
+         */
         this.base_arrival_date_time = arrival.stop_date_time.base_arrival_date_time;
 
     }

@@ -1,7 +1,7 @@
 const CachedManager = require("./CachedManager");
 const place_types = require("../utils/place_types.json");
 
-class PlacesManager extends CachedManager {
+module.exports = class PlacesManager extends CachedManager {
     constructor(client) {
         super()
 
@@ -54,5 +54,3 @@ class PlacesManager extends CachedManager {
         return placesMany
     }
 }
-
-module.exports = PlacesManager;

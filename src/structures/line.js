@@ -4,12 +4,46 @@ module.exports = class Line extends Client{
     constructor(data) {
         super();
 
+        /**
+         * the network of the line
+         * @returns {object}
+         */
         this.network = data.network
+
+        /**
+         * Return the routes of the line
+         * @returns {array}
+         */
         this.routes = data.routes
+
+        /**
+         * Return the list of physical mode used by the line
+         * @returns {array}
+         */
         this.physical_modes = data.physical_modes
+
+        /**
+         * Return when the closing time of the line
+         * @returns {string}
+         */
         this.closing_time = data.closing_time
+
+        /**
+         * Return when the opening time of the line
+         * @returns {string}
+         */
         this.opening_time = data.opening_time
+
+        /**
+         * Return the name of the line
+         * @returns {string}
+         */
         this.name = data.name
+
+        /**
+         * Return the id of the line
+         * @returns {string}
+         */
         this.id = data.id
 
     }

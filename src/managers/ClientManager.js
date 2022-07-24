@@ -12,6 +12,7 @@ module.exports = class Client extends Base {
 
 
     /**
+     * Get the utils functions
      * @returns {Utils}
      */
     get utils() {
@@ -19,6 +20,7 @@ module.exports = class Client extends Base {
     }
 
     /**
+     * Get all the structures' manager available
      * @returns {StructuresManager}
      */
     get structures() {

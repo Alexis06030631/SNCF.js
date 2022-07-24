@@ -3,12 +3,36 @@ const Client = require("../managers/ClientManager");
 module.exports = class Vehicle extends Client{
     constructor(data) {
         super()
+
+        /**
+         * Return the vehicle id
+         * @returns {string}
+         */
         this.id = data.id
+
+        /**
+         * Return the vehicle name
+         * @returns {string}
+         */
         this.name = data.name
+
+        /**
+         * Return the vehicle network
+         * @returns {object}
+         */
         this.network = data.network
+
+        /**
+         * Return the list of the disruptions id
+         * @returns {array<string>}
+         */
         this.disruptions_id = data.disruptions?.map(e => e.id) || []
     }
 
+    /**
+     * Return the vehicle disruptions
+     * @returns {array<Disruption>}
+     */
     async disruptions() {
 
         let disruptions

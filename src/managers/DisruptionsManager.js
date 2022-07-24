@@ -4,7 +4,15 @@ module.exports = class Disruptions extends CachedManager {
     constructor(client) {
         super()
 
+        /**
+         * The utils functions.
+         * @returns {Utils}
+         */
         this.utils = client.utils
+        /**
+         * All the structures available.
+         * @returns {StructuresManager}
+         */
         this.structures = client.structures
     }
 
