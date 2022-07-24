@@ -1,4 +1,4 @@
-name: Publish Retype powered website to GitHub
+name: Publish SNCF.JS website to GitHub
 on:
   workflow_dispatch:
   push:
