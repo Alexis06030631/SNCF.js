@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/SNCF.js">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.711981238935">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.712016183281">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -32,12 +32,12 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/SNCF.js/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../favicon.ico" rel="icon" />
-    <link href="../../resources/css/retype.css?v=2.4.0.711981238935" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.712016183281" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.711981238935" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.712016183281" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.711981238935" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.711981238935" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.712016183281" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.712016183281" defer></script>
 
     <!-- Add content to _includes/head.html to include here -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -320,21 +320,19 @@
     <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
 <doc-panel id="elements">
     <template #title>Elements</template>
-</doc-panel>
-    </div>
-    <div class="px-5 py-3 docs-columns-content">
-<doc-panels>
-   <doc-panel id="functions">
-       <template #title>Functions</template>
 <ul>
 <li><doc-anchor-trigger to="#utils">utils</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#structures">structures</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#lines">lines</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#disruptions">disruptions</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#places">places</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#login">login</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#logout">logout</doc-anchor-trigger></li>
 </ul>
+</doc-panel>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<doc-panels>
+   <doc-panel id="functions">
+       <template #title>Functions</template>
    </doc-panel>
     </div>
 </div>
@@ -344,13 +342,6 @@
         <span>Properties</span>
     </h2>
 </doc-anchor-target>
-<hr />
-<doc-anchor-target id="methods">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#methods">#</doc-anchor-trigger>
-        <span>Methods</span>
-    </h2>
-</doc-anchor-target>
 <doc-anchor-target id="utils">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#utils">#</doc-anchor-trigger>
@@ -358,11 +349,12 @@
     </h2>
 </doc-anchor-target>
 <doc-panel id="utils">
-    <template #title>utils()</template>
+    <template #title>utils</template>
+<p>Get the utils functions</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">utils()</code></pre>
+<pre class="language-javascript"><code v-pre class="language-javascript">Client.utils</code></pre>
 </doc-codeblock></div>
-<p><strong>Type: <a href="utils">Utils</a></strong></p>
+<p><strong>Type: <a href="../classes/utils">utils</a></strong></p>
 </doc-panel>
 <doc-anchor-target id="structures">
     <h2>
@@ -371,11 +363,12 @@
     </h2>
 </doc-anchor-target>
 <doc-panel id="structures">
-    <template #title>structures()</template>
+    <template #title>structures</template>
+<p>Get all the structures&#x27; manager available</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">structures()</code></pre>
+<pre class="language-javascript"><code v-pre class="language-javascript">Client.structures</code></pre>
 </doc-codeblock></div>
-<p><strong>Type: <a href="structuresmanager">StructuresManager</a></strong></p>
+<p><strong>Type: <a href="../structures/structuresmanager">structuresmanager</a></strong></p>
 </doc-panel>
 <doc-anchor-target id="lines">
     <h2>
@@ -384,11 +377,12 @@
     </h2>
 </doc-anchor-target>
 <doc-panel id="lines">
-    <template #title>lines()</template>
+    <template #title>lines</template>
+<p>All of the <a href="../lines/">lines</a> objects that have been cached at any point</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">lines()</code></pre>
+<pre class="language-javascript"><code v-pre class="language-javascript">Client.lines</code></pre>
 </doc-codeblock></div>
-<p><strong>Type: <a href="../lines/">Lines</a></strong></p>
+<p><strong>Type: <a href="../lines/">lines</a></strong></p>
 </doc-panel>
 <doc-anchor-target id="disruptions">
     <h2>
@@ -397,11 +391,12 @@
     </h2>
 </doc-anchor-target>
 <doc-panel id="disruptions">
-    <template #title>disruptions()</template>
+    <template #title>disruptions</template>
+<p>All of the <a href="../classes/dirsuptions">dirsuptions</a> objects at custom date</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">disruptions()</code></pre>
+<pre class="language-javascript"><code v-pre class="language-javascript">Client.disruptions</code></pre>
 </doc-codeblock></div>
-<p><strong>Type: <a href="../disruptions/">Disruptions</a></strong></p>
+<p><strong>Type: <a href="../disruptions/">disruptions</a></strong></p>
 </doc-panel>
 <doc-anchor-target id="places">
     <h2>
@@ -410,38 +405,19 @@
     </h2>
 </doc-anchor-target>
 <doc-panel id="places">
-    <template #title>places()</template>
+    <template #title>places</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">places()</code></pre>
+<pre class="language-javascript"><code v-pre class="language-javascript">Client.places</code></pre>
 </doc-codeblock></div>
-<p><strong>Type: <a href="../places/">Places</a></strong></p>
+<p><strong>Type: <a href="../places/">places</a></strong></p>
 </doc-panel>
-<doc-anchor-target id="login">
+<hr />
+<doc-anchor-target id="methods">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#login">#</doc-anchor-trigger>
-        <span>.login</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#methods">#</doc-anchor-trigger>
+        <span>Methods</span>
     </h2>
 </doc-anchor-target>
-<doc-panel id="login">
-    <template #title>login()</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">login()</code></pre>
-</doc-codeblock></div>
-<p><strong>Type: null</strong></p>
-</doc-panel>
-<doc-anchor-target id="logout">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#logout">#</doc-anchor-trigger>
-        <span>.logout</span>
-    </h2>
-</doc-anchor-target>
-<doc-panel id="logout">
-    <template #title>logout()</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">logout()</code></pre>
-</doc-codeblock></div>
-<p><strong>Type: null</strong></p>
-</doc-panel>
 
                                 
                                 <!-- Required only on API pages -->

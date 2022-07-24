@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/SNCF.js">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.711981238935">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.712016183281">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>departure - SNCF.JS a javascript library</title>
     <meta name="title" content="departure - SNCF.JS a javascript library">
-    <meta name="description" content="arrival_date_time" />
+    <meta name="description" content="departure_date_time" />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://github.com/SNCF.js/structures/departure/" />
@@ -21,23 +21,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.com/SNCF.js/structures/departure/">
     <meta property="og:title" content="departure - SNCF.JS a javascript library">
-    <meta property="og:description" content="arrival_date_time">
+    <meta property="og:description" content="departure_date_time">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://github.com/SNCF.js/structures/departure/">
     <meta property="twitter:title" content="departure - SNCF.JS a javascript library">
-    <meta property="twitter:description" content="arrival_date_time">
+    <meta property="twitter:description" content="departure_date_time">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/SNCF.js/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../favicon.ico" rel="icon" />
-    <link href="../../resources/css/retype.css?v=2.4.0.711981238935" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.712016183281" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.711981238935" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.712016183281" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.711981238935" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.711981238935" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.712016183281" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.712016183281" defer></script>
 
     <!-- Add content to _includes/head.html to include here -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -321,8 +321,11 @@
 <doc-panel id="elements">
     <template #title>Elements</template>
 <ul>
-<li><doc-anchor-trigger to="#arrival_date_time">arrival_date_time</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#base_arrival_date_time">base_arrival_date_time</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#departure_date_time">departure_date_time</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#base_departure_date_time">base_departure_date_time</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#stop_area">stop_area</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#line">line</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#isLate">isLate</doc-anchor-trigger></li>
 </ul>
 </doc-panel>
     </div>
@@ -330,11 +333,6 @@
 <doc-panels>
    <doc-panel id="functions">
        <template #title>Functions</template>
-<ul>
-<li><doc-anchor-trigger to="#stop_area">stop_area</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#line">line</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#isLate">isLate</doc-anchor-trigger></li>
-</ul>
    </doc-panel>
     </div>
 </div>
@@ -344,37 +342,34 @@
         <span>Properties</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="arrival_date_time">
+<doc-anchor-target id="departure_date_time">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#arrival_date_time">#</doc-anchor-trigger>
-        <span>.arrival_date_time</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#departure_date_time">#</doc-anchor-trigger>
+        <span>.departure_date_time</span>
     </h2>
 </doc-anchor-target>
-<doc-panel id="arrival-date-time">
-    <template #title>arrival_date_time</template>
+<doc-panel id="departure-date-time">
+    <template #title>departure_date_time</template>
+<p>Returns the departure time</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">departure.arrival_date_time</code></pre>
+<pre class="language-javascript"><code v-pre class="language-javascript">departure.departure_date_time</code></pre>
 </doc-codeblock></div>
+<p><strong>Type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.5 2.25a.75.75 0 01.75-.75h5.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0V4.06l-6.22 6.22a.75.75 0 11-1.06-1.06L19.94 3h-3.69a.75.75 0 01-.75-.75z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 010 1.5h-8.5a.25.25 0 00-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 00.25-.25v-8.5a.75.75 0 011.5 0v8.5a1.75 1.75 0 01-1.75 1.75H4.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg></a></strong></p>
 </doc-panel>
-<doc-anchor-target id="base_arrival_date_time">
+<doc-anchor-target id="base_departure_date_time">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#base_arrival_date_time">#</doc-anchor-trigger>
-        <span>.base_arrival_date_time</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#base_departure_date_time">#</doc-anchor-trigger>
+        <span>.base_departure_date_time</span>
     </h2>
 </doc-anchor-target>
-<doc-panel id="base-arrival-date-time">
-    <template #title>base_arrival_date_time</template>
+<doc-panel id="base-departure-date-time">
+    <template #title>base_departure_date_time</template>
+<p>Returns the default departure time</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">departure.base_arrival_date_time</code></pre>
+<pre class="language-javascript"><code v-pre class="language-javascript">departure.base_departure_date_time</code></pre>
 </doc-codeblock></div>
+<p><strong>Type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.5 2.25a.75.75 0 01.75-.75h5.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0V4.06l-6.22 6.22a.75.75 0 11-1.06-1.06L19.94 3h-3.69a.75.75 0 01-.75-.75z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 010 1.5h-8.5a.25.25 0 00-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 00.25-.25v-8.5a.75.75 0 011.5 0v8.5a1.75 1.75 0 01-1.75 1.75H4.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg></a></strong></p>
 </doc-panel>
-<hr />
-<doc-anchor-target id="methods">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#methods">#</doc-anchor-trigger>
-        <span>Methods</span>
-    </h2>
-</doc-anchor-target>
 <doc-anchor-target id="stop_area">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#stop_area">#</doc-anchor-trigger>
@@ -382,14 +377,12 @@
     </h2>
 </doc-anchor-target>
 <doc-panel id="stop-area">
-    <template #title>stop_area()</template>
-<ul>
-<li>Get the stop departure data</li>
-</ul>
+    <template #title>stop_area</template>
+<p>Get the stop departure data</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">stop_area()</code></pre>
+<pre class="language-javascript"><code v-pre class="language-javascript">departure.stop_area</code></pre>
 </doc-codeblock></div>
-<p><strong>Type: <a href="../stoparea/">StopArea</a></strong></p>
+<p><strong>Type: <a href="../stoparea/">stoparea</a></strong></p>
 </doc-panel>
 <doc-anchor-target id="line">
     <h2>
@@ -398,14 +391,12 @@
     </h2>
 </doc-anchor-target>
 <doc-panel id="line">
-    <template #title>line()</template>
-<ul>
-<li>Get the line data</li>
-</ul>
+    <template #title>line</template>
+<p>Get the line data</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">line()</code></pre>
+<pre class="language-javascript"><code v-pre class="language-javascript">departure.line</code></pre>
 </doc-codeblock></div>
-<p><strong>Type: <a href="../line/">Line</a></strong></p>
+<p><strong>Type: <a href="../line/">line</a></strong></p>
 </doc-panel>
 <doc-anchor-target id="islate">
     <h2>
@@ -414,15 +405,20 @@
     </h2>
 </doc-anchor-target>
 <doc-panel id="islate">
-    <template #title>isLate()</template>
-<ul>
-<li>Return boolean if the train is in late</li>
-</ul>
+    <template #title>isLate</template>
+<p>Return boolean if the train is in late</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">isLate()</code></pre>
+<pre class="language-javascript"><code v-pre class="language-javascript">departure.isLate</code></pre>
 </doc-codeblock></div>
-<p><strong>Type: <a href="boolean">boolean</a></strong></p>
+<p><strong>Type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.5 2.25a.75.75 0 01.75-.75h5.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0V4.06l-6.22 6.22a.75.75 0 11-1.06-1.06L19.94 3h-3.69a.75.75 0 01-.75-.75z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 010 1.5h-8.5a.25.25 0 00-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 00.25-.25v-8.5a.75.75 0 011.5 0v8.5a1.75 1.75 0 01-1.75 1.75H4.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg></a></strong></p>
 </doc-panel>
+<hr />
+<doc-anchor-target id="methods">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#methods">#</doc-anchor-trigger>
+        <span>Methods</span>
+    </h2>
+</doc-anchor-target>
 
                                 
                                 <!-- Required only on API pages -->

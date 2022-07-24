@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/SNCF.js">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.711981238935">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.712016183281">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -32,12 +32,12 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/SNCF.js/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../favicon.ico" rel="icon" />
-    <link href="../../resources/css/retype.css?v=2.4.0.711981238935" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.712016183281" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.711981238935" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.712016183281" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.711981238935" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.711981238935" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.712016183281" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.712016183281" defer></script>
 
     <!-- Add content to _includes/head.html to include here -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -329,7 +329,7 @@
 <li><doc-anchor-trigger to="#periods">periods</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#updated_at">updated_at</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#messages">messages</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#impacted_objects_length">impacted_objects_length</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#impacted_objects">impacted_objects</doc-anchor-trigger></li>
 </ul>
 </doc-panel>
     </div>
@@ -337,9 +337,6 @@
 <doc-panels>
    <doc-panel id="functions">
        <template #title>Functions</template>
-<ul>
-<li><doc-anchor-trigger to="#impacted_objects">impacted_objects</doc-anchor-trigger></li>
-</ul>
    </doc-panel>
     </div>
 </div>
@@ -357,9 +354,11 @@
 </doc-anchor-target>
 <doc-panel id="id">
     <template #title>id</template>
+<p>Return the id of the disruption</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">disruption.id</code></pre>
 </doc-codeblock></div>
+<p><strong>Type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.5 2.25a.75.75 0 01.75-.75h5.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0V4.06l-6.22 6.22a.75.75 0 11-1.06-1.06L19.94 3h-3.69a.75.75 0 01-.75-.75z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 010 1.5h-8.5a.25.25 0 00-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 00.25-.25v-8.5a.75.75 0 011.5 0v8.5a1.75 1.75 0 01-1.75 1.75H4.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg></a></strong></p>
 </doc-panel>
 <doc-anchor-target id="status">
     <h2>
@@ -369,9 +368,11 @@
 </doc-anchor-target>
 <doc-panel id="status">
     <template #title>status</template>
+<p>Return the status of the disruption</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">disruption.status</code></pre>
 </doc-codeblock></div>
+<p><strong>Type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.5 2.25a.75.75 0 01.75-.75h5.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0V4.06l-6.22 6.22a.75.75 0 11-1.06-1.06L19.94 3h-3.69a.75.75 0 01-.75-.75z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 010 1.5h-8.5a.25.25 0 00-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 00.25-.25v-8.5a.75.75 0 011.5 0v8.5a1.75 1.75 0 01-1.75 1.75H4.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg></a></strong></p>
 </doc-panel>
 <doc-anchor-target id="cause">
     <h2>
@@ -381,9 +382,11 @@
 </doc-anchor-target>
 <doc-panel id="cause">
     <template #title>cause</template>
+<p>Return the cause of the disruption</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">disruption.cause</code></pre>
 </doc-codeblock></div>
+<p><strong>Type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.5 2.25a.75.75 0 01.75-.75h5.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0V4.06l-6.22 6.22a.75.75 0 11-1.06-1.06L19.94 3h-3.69a.75.75 0 01-.75-.75z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 010 1.5h-8.5a.25.25 0 00-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 00.25-.25v-8.5a.75.75 0 011.5 0v8.5a1.75 1.75 0 01-1.75 1.75H4.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg></a></strong></p>
 </doc-panel>
 <doc-anchor-target id="routes">
     <h2>
@@ -393,9 +396,11 @@
 </doc-anchor-target>
 <doc-panel id="routes">
     <template #title>routes</template>
+<p>Return the routes of the disruption</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">disruption.routes</code></pre>
 </doc-codeblock></div>
+<p><strong>Type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.5 2.25a.75.75 0 01.75-.75h5.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0V4.06l-6.22 6.22a.75.75 0 11-1.06-1.06L19.94 3h-3.69a.75.75 0 01-.75-.75z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 010 1.5h-8.5a.25.25 0 00-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 00.25-.25v-8.5a.75.75 0 011.5 0v8.5a1.75 1.75 0 01-1.75 1.75H4.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg></a></strong></p>
 </doc-panel>
 <doc-anchor-target id="severity">
     <h2>
@@ -405,9 +410,11 @@
 </doc-anchor-target>
 <doc-panel id="severity">
     <template #title>severity</template>
+<p>Return the severity of the disruption</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">disruption.severity</code></pre>
 </doc-codeblock></div>
+<p><strong>Type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.5 2.25a.75.75 0 01.75-.75h5.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0V4.06l-6.22 6.22a.75.75 0 11-1.06-1.06L19.94 3h-3.69a.75.75 0 01-.75-.75z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 010 1.5h-8.5a.25.25 0 00-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 00.25-.25v-8.5a.75.75 0 011.5 0v8.5a1.75 1.75 0 01-1.75 1.75H4.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg></a></strong></p>
 </doc-panel>
 <doc-anchor-target id="periods">
     <h2>
@@ -417,9 +424,11 @@
 </doc-anchor-target>
 <doc-panel id="periods">
     <template #title>periods</template>
+<p>Return the periods of the disruption</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">disruption.periods</code></pre>
 </doc-codeblock></div>
+<p><strong>Type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.5 2.25a.75.75 0 01.75-.75h5.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0V4.06l-6.22 6.22a.75.75 0 11-1.06-1.06L19.94 3h-3.69a.75.75 0 01-.75-.75z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 010 1.5h-8.5a.25.25 0 00-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 00.25-.25v-8.5a.75.75 0 011.5 0v8.5a1.75 1.75 0 01-1.75 1.75H4.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg></a></strong></p>
 </doc-panel>
 <doc-anchor-target id="updated_at">
     <h2>
@@ -429,9 +438,11 @@
 </doc-anchor-target>
 <doc-panel id="updated-at">
     <template #title>updated_at</template>
+<p>Return the date on which the disruption was updated</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">disruption.updated_at</code></pre>
 </doc-codeblock></div>
+<p><strong>Type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.5 2.25a.75.75 0 01.75-.75h5.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0V4.06l-6.22 6.22a.75.75 0 11-1.06-1.06L19.94 3h-3.69a.75.75 0 01-.75-.75z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 010 1.5h-8.5a.25.25 0 00-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 00.25-.25v-8.5a.75.75 0 011.5 0v8.5a1.75 1.75 0 01-1.75 1.75H4.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg></a></strong></p>
 </doc-panel>
 <doc-anchor-target id="messages">
     <h2>
@@ -441,21 +452,25 @@
 </doc-anchor-target>
 <doc-panel id="messages">
     <template #title>messages</template>
+<p>Return the list messages of the raison of this disruption</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">disruption.messages</code></pre>
 </doc-codeblock></div>
+<p><strong>Type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.5 2.25a.75.75 0 01.75-.75h5.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0V4.06l-6.22 6.22a.75.75 0 11-1.06-1.06L19.94 3h-3.69a.75.75 0 01-.75-.75z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 010 1.5h-8.5a.25.25 0 00-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 00.25-.25v-8.5a.75.75 0 011.5 0v8.5a1.75 1.75 0 01-1.75 1.75H4.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg></a></strong></p>
 </doc-panel>
-<doc-anchor-target id="impacted_objects_length">
+<doc-anchor-target id="impacted_objects">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#impacted_objects_length">#</doc-anchor-trigger>
-        <span>.impacted_objects_length</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#impacted_objects">#</doc-anchor-trigger>
+        <span>.impacted_objects</span>
     </h2>
 </doc-anchor-target>
-<doc-panel id="impacted-objects-length">
-    <template #title>impacted_objects_length</template>
+<doc-panel id="impacted-objects">
+    <template #title>impacted_objects</template>
+<p>Return the list of impacted objects</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">disruption.impacted_objects_length</code></pre>
+<pre class="language-javascript"><code v-pre class="language-javascript">disruption.impacted_objects</code></pre>
 </doc-codeblock></div>
+<p><strong>Type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.5 2.25a.75.75 0 01.75-.75h5.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0V4.06l-6.22 6.22a.75.75 0 11-1.06-1.06L19.94 3h-3.69a.75.75 0 01-.75-.75z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 010 1.5h-8.5a.25.25 0 00-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 00.25-.25v-8.5a.75.75 0 011.5 0v8.5a1.75 1.75 0 01-1.75 1.75H4.25a1.75 1.75 0 01-1.75-1.75V4.25z"/></g></g></svg></a></strong></p>
 </doc-panel>
 <hr />
 <doc-anchor-target id="methods">
@@ -464,19 +479,6 @@
         <span>Methods</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="impacted_objects">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#impacted_objects">#</doc-anchor-trigger>
-        <span>.impacted_objects</span>
-    </h2>
-</doc-anchor-target>
-<doc-panel id="impacted-objects">
-    <template #title>impacted_objects()</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">impacted_objects()</code></pre>
-</doc-codeblock></div>
-<p><strong>Type: null</strong></p>
-</doc-panel>
 
                                 
                                 <!-- Required only on API pages -->
