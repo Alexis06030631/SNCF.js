@@ -169,7 +169,7 @@ function content_creator(file_url, data, name, file){
             // Set example
             content += "\n"
             content += "```javascript\n"
-            content += `${method}()\n`
+            content += `${method.name}()\n`
             content += "```\n"
             content += `**Type: ${method.return_type}**\n\n`
             content += "===\n\n"
