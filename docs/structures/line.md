@@ -148,6 +148,14 @@ vehicle_journeys()
 
 Get the stop areas of the line
 
+
+```javascript
+stop_areas()
+```
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[place](../structures/place)[]>**
+
+===
+
 ## .departures
 
 === departures()

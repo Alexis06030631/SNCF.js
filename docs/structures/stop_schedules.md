@@ -186,3 +186,11 @@ stop_schedules.arrival
 
 Returns the stop dates of this stop schedule
 
+
+```javascript
+stops_dates()
+```
+**Type: [array :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**
+
+===
+

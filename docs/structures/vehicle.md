@@ -81,3 +81,11 @@ vehicle.disruptions_id
 
 Return the vehicle disruptions
 
+
+```javascript
+disruptions()
+```
+**Type: [array :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) <[disruption](../structures/disruption)>**
+
+===
+

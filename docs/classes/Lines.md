@@ -7,6 +7,8 @@ author:
 
 ||| Properties
 === Elements
+- [utils](#utils)
+- [structures](#structures)
 ===
 ||| Methods
 === Functions
@@ -14,6 +16,34 @@ author:
 - [get](#get)
 |||
 ## Properties
+## .utils
+
+=== utils
+
+The utils functions for the client.
+
+
+```javascript
+Lines.utils
+```
+**Type: string**
+
+===
+
+## .structures
+
+=== structures
+
+The structure available for the client.
+
+
+```javascript
+Lines.structures
+```
+**Type: string**
+
+===
+
 ---
 ## Methods
 ## .search

@@ -4,7 +4,10 @@ module.exports = class Lines extends CachedManager {
     constructor(client) {
         super()
 
+        // The utils functions for the client.
         this.utils = client.utils
+
+        // The structure available for the client.
         this.structures = client.structures
     }
 
