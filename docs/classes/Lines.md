@@ -27,7 +27,7 @@ Search a line by name (departure - arrival)
 | line | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | :icon-x: | The name of the line |
 
 ```javascript
-[object Object]()
+search()
 ```
 **Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[line](../structures/line)[]>**
 
@@ -44,7 +44,7 @@ Get a line by id
 | lineID | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | :icon-x: | The id of the line |
 
 ```javascript
-[object Object]()
+get()
 ```
 **Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[line](../structures/line)>**
 

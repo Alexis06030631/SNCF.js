@@ -136,7 +136,7 @@ Get the vehicles of the line at a given time
 | count=10 | [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | :icon-check: | The number of vehicles to get |
 
 ```javascript
-[object Object]()
+vehicle_journeys()
 ```
 **Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[vehicle](../structures/vehicle)[]>**
 
@@ -161,7 +161,7 @@ Get the departure of the line at a given time
 | count=10 | [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | :icon-check: | The number of departures to get |
 
 ```javascript
-[object Object]()
+departures()
 ```
 **Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[vehicle](../structures/vehicle)[]>**
 
@@ -180,7 +180,7 @@ Get the arrivals of the line at a given time
 | count=10 | [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | :icon-check: | The number of arrivals to get |
 
 ```javascript
-[object Object]()
+arrivals()
 ```
 **Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[vehicle](../structures/vehicle)[]>**
 

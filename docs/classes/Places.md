@@ -28,7 +28,7 @@ Search for a place by name
 | type | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | :icon-x: | The filters to apply to the search |
 
 ```javascript
-[object Object]()
+search()
 ```
 **Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[place](../structures/place)[]>**
 
@@ -45,7 +45,7 @@ Get a place by id
 | stationID | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | :icon-x: | The id of the station to get |
 
 ```javascript
-[object Object]()
+get()
 ```
 **Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[place](../structures/place)>**
 

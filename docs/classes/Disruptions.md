@@ -59,7 +59,7 @@ Search the disruptions
 | count=10 | [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | :icon-check: | The number of disruptions to get |
 
 ```javascript
-[object Object]()
+search()
 ```
 **Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[disruption](../structures/disruption)[]>**
 
@@ -76,7 +76,7 @@ Get a disruption by id
 | disruptionID | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | :icon-x: | The id of the disruption to get |
 
 ```javascript
-[object Object]()
+get()
 ```
 **Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[disruption](../structures/disruption)>**
 
