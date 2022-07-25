@@ -165,15 +165,15 @@ function content_creator(file_url, data, name, file){
             method.params.forEach(parameter => {
                 content += `| ${parameter.name} | ${parameter.type} | ${parameter.optional?':icon-check:': ':icon-x:'} | ${parameter.description} |\n`
             })
-
-            // Set example
-            content += "\n"
-            content += "```javascript\n"
-            content += `${method.name}()\n`
-            content += "```\n"
-            content += `**Type: ${method.return_type}**\n\n`
-            content += "===\n\n"
         }
+
+        // Set example
+        content += "\n"
+        content += "```javascript\n"
+        content += `${method.name}()\n`
+        content += "```\n"
+        content += `**Type: ${method.return_type}**\n\n`
+        content += "===\n\n"
     })
 
     return content;
@@ -186,8 +186,16 @@ function get_functions_and_proprieties(fileName, file){
 
     let data = file.match(/module\.exports\s\=.*((\n*.*)*)\}/g)
     if(data){
-        data = data[0].match(/\/\*\*\s*(\n[^\*]|\*[^\/]*)\*\/.*\n*(.*)/g)
-        if(data) {
+        const constructor = data[0].match(/constructor.*\{((.*\n*\s*)*?)\}/)[1]
+        let constructor_data
+        data = data[0].match(/\/\*\*\s*(\n[^\*]|\*[^\/]*)\*\/.*\n*(.*)/g) || []
+
+        if(constructor) constructor_data = constructor.match(/this\.(\w*)\s?=.*/g)?.map(match => match.match(/this\.(\w*)\s?=.*/))?.map(match => constructor.match(`\/\/\\s?(.*).*\n{0,2}(.*)this.${match[1]}\\s?=.*`))?.map(match => match?match[0]:null).filter(match => match)
+        else throw new Error(`File ${fileName} is malformed, no constructor found`)
+
+        if(constructor_data?.length) constructor_data.forEach(e => data.push(e))
+
+        if(data.length) {
             data.forEach(function (match) {
                 const mdata = matchJSdocs(fileName, match)
 
@@ -202,6 +210,7 @@ function get_functions_and_proprieties(fileName, file){
         }
     }else throw new Error(`File ${fileName} is malformed`)
 
+    check_is_commented(fileName, file, {functions: functions, proprieties: proprieties})
     return {functions: functions, proprieties: proprieties}
 }
 
@@ -230,16 +239,15 @@ function matchJSdocs(fileName, match){
     }
 
     // Match all jsdocs in function return array
-    match = match.match(/\s\*\s([^].*)/g).map(m => m.replace(/.*\*\s/, ''))
-
+    match = match.match(/\s\*\s([^].*)|\/\/\s?(.*)/g).map(m => m.replace(/.*\*\s/, ''))
 
     // Check if is a function or a property
 
     for (let jsdoc of match){
 
         // Get description
-        if(!jsdoc.startsWith('@') && !jsdoc.includes('*/')) {
-            return_object.description = contain_link(jsdoc);
+        if(jsdoc.startsWith('//') || (!jsdoc.startsWith('@') && !jsdoc.includes('*/'))) {
+            return_object.description = contain_link(jsdoc.replace(/^\/\/\s?/g, ''));
         }
 
         // Get return type
