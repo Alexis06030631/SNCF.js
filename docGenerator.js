@@ -1,4 +1,6 @@
 const fs = require('fs');
+const clc = require('cli-color');
+
 
 const folder_classes = './src/managers/';
 const doc_folder_classes = './docs/classes/'
@@ -59,9 +61,10 @@ const type_of_list = {
     }
 }
 const type_of = ["undefined", "object", "function", "boolean", "string", "number", "symbol", "bigint", "promise"];
+let missing_data = {proprieties: 0, functions: 0};
 
 create_classes_doc()
-create_structures_doc()
+//create_structures_doc()
 
 
 function create_classes_doc(){
@@ -310,10 +313,50 @@ function is_type_of(elem){
     }
 }
 
-function contain_link(elem){
-    if(elem.includes('{@link')){
+function contain_link(elem) {
+    if (elem.includes('{@link')) {
         const link = /\{@link\s([^}]*)\}/g.exec(elem)
         elem = elem.replace(link[0], is_type_of(link[1]))
     }
     return elem
 }
+
+function check_is_commented(fileName, file, {functions: functions, proprieties: proprieties}) {
+    const missing = {proprieties: [], functions: []}
+    console.log(clc.whiteBright(`${fileName}`))
+    console.log(clc.cyan('Details:'))
+    console.log(clc.blackBright(`   ${clc.yellow('[detected]')} Functions: ${functions.length}`))
+    console.log(clc.blackBright(`   ${clc.yellow('[detected]')} Properties: ${proprieties.length}`))
+
+    let data = file.match(/module\.exports\s\=.*((\n*.*)*)\}/g);
+
+    // Check properties
+    (data[0].match(/constructor.*\{((.*\n*\s*)*?)\}/)[1])?.match(/this\.(\w*)\s?=.*/g)?.map(match => match.match(/this\.(\w*)\s?=.*/))?.forEach(m => {
+        if(!proprieties.find(p => p.name === m[1]))missing.proprieties.push(m[1])
+    })
+    missing.proprieties.forEach(p => {
+        missing_data.proprieties++
+        console.log(clc.red(`${clc.yellow('[missing]')} Propriety ${p} is not commented`))
+    })
+
+    // Check functions
+    data[0].match(/\/\*\*\s*(\n[^\*]|\*[^\/]*)\*\/.*\n*(.*)/g)?.forEach(match => {
+        const lastLine = (match.split('\n')[match.split('\n').length-1])
+        if(lastLine.match(/.*(get)\s*\w+\(.*\)/g)){
+            if(!proprieties.find(p => p.name === lastLine.match(/.*get\s*(\w+)\(.*\)/)[1])) missing.proprieties.push(lastLine.match(/.*get\s*(\w+)\(.*\)/)[1])
+        }else if(!lastLine.match(/this\.\w*.*=.*/g) && !functions.find(f => f.name === lastLine.match(/(\w+)\s?\(.*\)/)[1])){
+            missing.functions.push(lastLine.match(/(\w+)\s?\(.*\)/)[1])
+        }
+    })
+    missing.functions.forEach(f => {
+        missing_data.functions++
+        console.log(clc.red(`${clc.yellow('[missing]')} Function ${f} is not commented`))
+    })
+
+    console.log('\n')
+}
+
+console.log(clc.whiteBright('Recap:'))
+if(missing_data.proprieties) console.log(clc.red(`${clc.yellow('[missing]')} ${missing_data.proprieties} proprieties`))
+if(missing_data.functions) console.log(clc.red(`${clc.yellow('[missing]')} ${missing_data.functions} functions`))
+if(!missing_data.proprieties && !missing_data.functions) console.log(clc.green(`${clc.yellow('[ok]')} No missing data`))
