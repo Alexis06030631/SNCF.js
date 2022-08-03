@@ -4,7 +4,7 @@
   "description": "An easy to use javascript module to get all the information in real time about the trains ©SNCF (only in France)",
   "main": "index.js",
   "scripts": {
-    "test": "node ./workflows/index",
+    "test": "echo \"Error: no test specified\"",
     "dev": "nodemon test.js",
     "update_doc_data": "node ./.github/action/update_version.js",
     "build_docs": "node ./.github/action/update_version.js && retype build --override \"{ \"version\": $npm_package_version }\"",
