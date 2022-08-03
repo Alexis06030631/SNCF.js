@@ -1,6 +1,6 @@
 {
   "name": "sncf.js",
-  "version": "2.0.1",
+  "version": "2.0.0",
   "description": "An easy to use javascript module to get all the information in real time about the trains ©SNCF (only in France)",
   "main": "index.js",
   "scripts": {
@@ -33,7 +33,7 @@
   "devDependencies": {
     "nodemon": "^2.0.19"
   },
-  "homepage": "alexis06030631.github.io/sncf.js/",
+  "homepage": "alexis06030631.github.io/SNCF.js/",
   "repository": {
     "type": "git",
     "url": "https://github.com/Alexis06030631/SNCF.js.git"
