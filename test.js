@@ -3,12 +3,11 @@ require("dotenv").config();
 const sncf = new Client()
 
 // Connect to sncf API with your credentials
-sncf.login().then(_ =>{
+sncf.login(process.env.TOKEN_SNCF).then(_ =>{
 
-    console.log(Object.getOwnPropertyNames(Object.getPrototypeOf(sncf.places)))
     // Get all stations including the name "Paris
-    sncf.places.search('Toulouse matabiau').then(async place => {
-        console.log(await place[0].disruptions())
+    sncf.places.search('Paris').then(async place => {
+        console.log(place[0])
     })
 
 }).catch(err => {
