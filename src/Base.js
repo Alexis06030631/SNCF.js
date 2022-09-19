@@ -1,7 +1,7 @@
 module.exports = class BaseClient {
     #token
     constructor() {
-        this.#token = process.env.SNCF_TOKEN
+        this.#token = process.env.SNCF_TOKEN || null
     }
 
     get token() {

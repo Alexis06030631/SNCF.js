@@ -59,10 +59,10 @@ module.exports = class Client extends Base {
 
             // Check and set the token
             if (!token) reject(new Error('TOKEN_INVALID'));
-            else if(this.token !== token) this.setToken(token);
+            else this.setToken(token);
 
             // Establish the connection
-            this.utils.request('', 'GET').then(r => {
+            this.utils.request('', 'GET', this.token).then(r => {
                 this.connected = true;
                 this.readyDate = r.regions[0].last_load_at;
                 this.connectionType = r.regions[0].name;
