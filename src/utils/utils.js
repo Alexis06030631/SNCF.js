@@ -21,10 +21,8 @@ module.exports = class Utils extends Base{
         }
     }
 
-    async request(url, method = 'GET', token = this.token) {
+    async request(url, method = 'GET') {
         try {
-            if(!token) return new Error(Error.code.TOKEN_INVALID)
-            if(token !== this.token) this.setToken(token)
             const data = await axios({
                 method: method,
                 url: encodeURI(this.SNCFapi + url),
