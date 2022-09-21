@@ -22,16 +22,15 @@
   "private": false,
   "dependencies": {
     "axios": "^0.26.1",
-    "chalk": "^5.0.1",
-    "cli-color": "^2.0.3",
-    "dotenv": "^16.0.1",
-    "gitlog": "^4.0.4",
-    "glob": "^8.0.3",
-    "js-yaml": "^4.1.0",
     "moment": "^2.29.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "gitlog": "^4.0.4",
+    "dotenv": "^16.0.1",
+    "js-yaml": "^4.1.0",
+    "cli-color": "^2.0.3",
+    "glob": "^8.0.3"
   },
   "homepage": "alexis06030631.github.io/SNCF.js/",
   "repository": {
