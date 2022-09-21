@@ -123,6 +123,7 @@ module.exports = class Line extends Client{
     _VehicleMany(vehicles) {
         const vehiclesMany = [];
         for(let vehicle of vehicles.vehicle_journeys) {
+            vehicle.lineName = this.name;
             vehiclesMany.push(new this.structures.vehicle(vehicle))
         }
         return vehiclesMany
