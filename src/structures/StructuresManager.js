@@ -27,6 +27,11 @@ module.exports = class StructuresManager {
         this.disruption = require("./disruption");
 
         /**
+         * @returns {StopTime}
+         */
+        this.stop_time = require("./stop_time");
+
+        /**
          * @returns {StopArea}
          */
         this.stop_area = require("./StopArea");
