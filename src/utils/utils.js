@@ -14,7 +14,9 @@ module.exports = class Utils extends Base{
             case 401:
                 return new Error(Error.code.TOKEN_INVALID)
             case 404:
-                return []
+                if(error.response.data?.error?.message){
+                    return new Error(error.response.data?.error?.id + ': ' + error.response.data.error.message)
+                }else return new Error(Error.code.NOT_FOUND)
 
             default:
                 return new Error(error)
@@ -23,6 +25,7 @@ module.exports = class Utils extends Base{
 
     async request(url, method = 'GET') {
         try {
+            console.log(encodeURI(this.SNCFapi + url))
             const data = await axios({
                 method: method,
                 url: encodeURI(this.SNCFapi + url),

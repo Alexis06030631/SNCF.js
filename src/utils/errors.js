@@ -3,6 +3,7 @@
 module.exports = {
     TOKEN_INVALID: 'An invalid token was provided.',
     TOKEN_MISSING: 'Request to use token, but token was unavailable to the client.',
+    NOT_FOUND: 'The requested resource was not found.',
 
     ID_INVALID: 'The id is not valid.',
     ID_IS_NOT_A_NUMBER: 'The id is not a number.',
