@@ -17,6 +17,16 @@ module.exports = class Vehicle extends Client{
         this.name = data.name
 
         /**
+         * Return the calendar of the vehicle
+         */
+        this.calendar = data.calendars
+
+        /**
+         * Return stops of the vehicle
+         */
+        this.stop_times = data.stop_times.sort((a,b) => a.arrival_time - b.departure_time)
+
+        /**
          * Return the vehicle network
          * @returns {object}
          */
