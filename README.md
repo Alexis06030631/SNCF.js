@@ -1,70 +1,92 @@
-# [SNCF.js](https://www.npmjs.com/package/sncf.js)
+# SNCF.JS - Introduction
 
-## About
+## <div style="display:none">Introduction</div>
 
-SNCF.js is an JavaScript library to get all the information in real time about the ©SNCF a French company.
-It is based on the [official api](https://www.digital.sncf.com/startup/api) of the SNCF.
+[SNCF.JS](https://alexis06030631.github.io/SNCF.js/) is a JavaScript library that allows you to easily use the [SNCF](https://www.sncf.com/) api.
 
-- Currently under development
-- Easy to use
-- Open to any request
-- It is not an official library, but we use the official SNCF API to get our data.
+![](https://www.sncf.com/themes/contrib/sncf_theme/images/logo-sncf.svg "SNCF_icon")
 
+---
 
-## Getting started
+## Requirements
 
-#### Install the library with [npm](https://www.npmjs.com/):
+| Elements                                  | Version                                       |
+|-------------------------------------------|-----------------------------------------------|
+| [NodeJs](https://nodejs.org/en/download/) | [>= V16.0.0](https://nodejs.org/en/download/) |
+| [SNCF Api Key](#get-your-sncf-token)      |                                               |
 
-```sh-session
-npm i sncf.js
+---
+
+## Installation
+
+You can install SNCF.js using `npm` or `yarn`.
+
+NPM
+```
+npm install sncf.js
+```
+Yarn
+```
+yarn install sncf.js
 ```
 
-#### Get your SNCF Token:
-https://www.digital.sncf.com/startup/api/token-developpeur
 
-## Documentation
+_All operating systems are supported, including Mac, Windows, and Linux._
 
-#### Start to use the api:
-JS
-```javascript
-// Call the module
+---
+
+## Quick start
+
+#### [Get your SNCF Token](https://www.digital.sncf.com/startup/api/token-developpeur)
+
+Copy .env.backup to .env and fill the token in the file.
+```env .env
+SNCF_TOKEN=<your token>
+```
+
+#### Import the library have fun!
+
+```js
 const {Client} = require('sncf.js');
-// init the module
 const sncf = new Client();
 
 // Login to the SNCF api
-sncf.login("YOUR TOKEN").then(async () =>{
-    // The client was connected !
-}).catch(err => {
-    // Oups, something went wrong, Check your console
-    console.log(err)
-})
+sncf.login('your token' ) // returns a promise 
+
 ```
 
-#### Functions available:
+## Documentation
 
-```javascript
-// Places
-sncf.places.search('STATION_NAME') // Search for a station
-sncf.places.get('STATION_ID') // Get a specific station
+The documentation is available [here](https://alexis06030631.github.io/SNCF.js/)
+---
 
-//Routes
-sncf.routes.search('ROUTE_NAME') // Search for a route
-sncf.routes.get('ROUTE_ID') // Get a specific route
-sncf.routes.stop_areas('ROUTE_ID') // Get the stop areas of a specific route
+## Features
 
-// User (Get the information about the current session)
-sncf.user // Get all informations
-sncf.user.id // Get the user id
-sncf.user.readyAt // Get the time when the client is ready
-sncf.user.connectionType // Get the connection type
-sncf.user.shape // Get the shape of the client
-sncf.user.uptime // Get the uptime of the client
-sncf.user.timezone // Get the timezone of the client
-```
-*** all functions are async ***
+#### Easy to use
+
+SNCF.JS is object oriented which makes its use simple, fast and efficient
+
+#### Lightning fast
+
+SNCF.js is optimized to the maximum, and will soon have a caching system limiting the requests
+
+#### Easy install
+
+[Installation](#installation) takes only a few seconds because the package is very light.
 
 
-### Need help ?
-* [GitHub discussion](https://github.com/Alexis06030631/SNCF.js/discussions)
-* [Seed me a private message on instagram](https://www.instagram.com/leko_system/)
+#### ✋ Responsive and friendly support
+
+A bug, a request, need help? Do not hesitate to ask, we will be happy to answer you in the smallest details
+
+---
+
+## Support
+
+A technical support that listens, efficient and fast, join the [Discussions](https://github.com/Alexis06030631/sncf.js/discussions).
+
+If you find a defect or would like to submit a feature request, please create an [Issue](https://github.com/Alexis06030631/sncf.js/issues) and we will investigate right away.
+
+Do you have a general inquiry? Please feel free to contact me on [instagram](https://instagram.com/leko_system).
+
+We :heart: feedback.

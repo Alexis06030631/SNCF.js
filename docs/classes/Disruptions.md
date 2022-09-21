@@ -1,6 +1,10 @@
 ---
 title: Disruptions
 author:
+  name: Alexis06030631
+  avatar: https://avatars.githubusercontent.com/u/61119747
+
+date: 2022-07-25T08:23
 ---
 
 # Disruptions
