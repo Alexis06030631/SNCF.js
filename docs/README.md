@@ -10,7 +10,7 @@ date: 2022-07-23T21:56
 ---
 
 !!!danger Please pay attention to the following notice
-The development of V2 is not finished yet, these pages are only a preview of the documentation to come.
+The development of V2 is not finished yet
 !!!
 
 # SNCF.JS - Introduction
