@@ -22,29 +22,33 @@ module.exports = class StopTime extends Client {
 
         /**
          * Return the departure time of the train stop
-         * @returns {number}
+         * @returns {date}
          */
-        this.departure.date = data.departure_time
+        this.departure.date = transformDate(data.departure_time)
 
         /**
          * Return the departure UTC time of the train stop
-         * @returns {number}
+         * @returns {date}
          */
-        this.departure.UTC_date = data.utc_departure_time
+        this.departure.UTC_date = transformDate(data.utc_departure_time)
 
 
         this.arrival = {}
 
         /**
          * Return the arrival time of the train stop
-         * @returns {number}
+         * @returns {date}
          */
-        this.arrival.date = data.arrival_time
+        this.arrival.date = transformDate(data.arrival_time)
 
         /**
          * Return the arrival UTC time of the train stop
-         * @returns {number}
+         * @returns {date}
          */
-        this.departure.UTC_date = data?.utc_arrival_time
+        this.arrival.UTC_date = transformDate(data?.utc_arrival_time)
     }
+}
+
+function transformDate(date) {
+    return date.match(/.{0,2}/g).join(":").match(/(.*):/)[1]
 }

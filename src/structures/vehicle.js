@@ -1,4 +1,5 @@
 const Client = require("../managers/ClientManager");
+const moment = require("moment");
 
 module.exports = class Vehicle extends Client{
     #stoptimes
@@ -20,8 +21,21 @@ module.exports = class Vehicle extends Client{
 
         /**
          * Return the calendar of the vehicle
+         * @returns {object}
          */
-        this.calendar = data.calendars
+        this.calendar = data.calendars[0]
+
+        /**
+         * Return the departure date of the vehicle
+         * @returns {date}
+         */
+        this.departure_date = getDateDeparture(this.id, this.stop_times[0])
+
+        /**
+         * Return the arrival date of the vehicle
+         * @returns {date}
+         */
+        this.arrival_date = getDateDeparture(this.id, this.stop_times[this.stop_times.length - 1])
 
         /**
          * Return the list of the disruptions id
@@ -73,4 +87,8 @@ module.exports = class Vehicle extends Client{
         }
         return linesMany
     }
+}
+
+function getDateDeparture(id_train, stTime) {
+    return new moment(id_train.match(/:((\d*|\-)+):/)[1], "YYYYMMDD").hour(stTime.departure.date.split(":")?.[0]).minute(stTime.departure.date.split(":")?.[1]).second(stTime.departure.date.split(":")?.[2]).format()
 }

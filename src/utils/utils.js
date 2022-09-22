@@ -5,7 +5,6 @@ const {Base} = require("../../index");
 module.exports = class Utils extends Base{
     constructor() {
         super()
-        this.SNCFapi = 'https://api.sncf.com/v1/coverage/sncf/'
         this.version = process.version
     }
 
@@ -25,10 +24,9 @@ module.exports = class Utils extends Base{
 
     async request(url, method = 'GET') {
         try {
-            console.log(encodeURI(this.SNCFapi + url))
             const data = await axios({
                 method: method,
-                url: encodeURI(this.SNCFapi + url),
+                url: encodeURI(super.api + url),
                 headers: {
                     'Authorization': this.token
                 }
