@@ -71,11 +71,8 @@ module.exports = class Client extends Base {
                 this.id = r.regions[0].id;
                 this.shape = r.regions[0].shape;
                 this.timezone = r.context.timezone;
-                //this.places = new places(this.#token)
-                //this.lines = new lines(this.#token)
-                //this.disruptions = new Disruptions(this.#token)
                 resolve(this);
-            })
+            }).catch(e =>{reject(e)})
         })
     }
 
