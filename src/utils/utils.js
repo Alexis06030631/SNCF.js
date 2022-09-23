@@ -61,17 +61,13 @@ module.exports = class Utils extends Base{
          return moment(date).format('YYYYMMDDTHHmmss')
      }
 
-     date_options(since, until) {
+     date_options(since, until, sinceName='since', UntilName='until') {
          // Check if the dates are valid
-         if(since) since = this.check_date(since);
-         else since = this.check_date(new Date());
+         if(since) since = this.to_navitia_date(this.check_date(since));
 
-         if(until) until = this.check_date(until);
-         else until = this.check_date(new Date(since), 1);
+         if(until) until = this.to_navitia_date(this.check_date(until));
 
-         return {
-             since: this.to_navitia_date(since),
-             until: this.to_navitia_date(until)
-         }
+         // return as url params
+         return `${since? `${sinceName}=${since}${until? `&${UntilName}=${until}&`: '&'}`: until? `${UntilName}=${until}&`: ''}`
      }
 }

@@ -56,9 +56,9 @@ module.exports = class Line extends Client{
      * @returns {Promise<Vehicle[]>}
      */
     async vehicle_journeys(since_date, until_date, count= 10) {
-        let {since, until} = this.utils.date_options(since_date, until_date);
+        let paramsDates = this.utils.date_options(since_date, until_date);
 
-        return this._VehicleMany(await this.utils.request(`lines/${this.id}/vehicle_journeys?since=${since}&until=${until}&count=${count}`))
+        return this._VehicleMany(await this.utils.request(`lines/${this.id}/vehicle_journeys?${paramsDates}count=${count}`))
     }
 
     /**
@@ -77,10 +77,10 @@ module.exports = class Line extends Client{
      * @param {number} [count=10] The number of departures to get
      * @returns {Promise<Vehicle[]>}
      */
-    async departures(from_date, until_date, count= 10) {
-        let {since, until} = this.utils.date_options(from_date, until_date);
+    async departures(since_date, until_date, count= 10) {
+        let paramsDates = this.utils.date_options(since_date, until_date, "from_datetime", "until_datetime");
 
-        return this._DeparturesMany(await this.utils.request(`lines/${this.id}/departures?from_datetime=${since}&until_datetime=${until}&count=${count}`))
+        return this._DeparturesMany(await this.utils.request(`lines/${this.id}/departures?${paramsDates}count=${count}`))
     }
 
     /**
@@ -90,10 +90,10 @@ module.exports = class Line extends Client{
      * @param {number} [count=10] The number of arrivals to get
      * @returns {Promise<Vehicle[]>}
      */
-    async arrivals(from_date, until_date, count= 10) {
-        let {since, until} = this.utils.date_options(from_date, until_date);
+    async arrivals(since_date, until_date, count= 10) {
+        let paramsDates = this.utils.date_options(since_date, until_date, "from_datetime", "until_datetime");
 
-        return this._ArrivalsMany(await this.utils.request(`lines/${this.id}/arrivals?from_datetime=${since}&until_datetime=${until}&count=${count}`))
+        return this._ArrivalsMany(await this.utils.request(`lines/${this.id}/arrivals?${paramsDates}count=${count}`))
     }
 
     _ArrivalsMany(arrivals) {
