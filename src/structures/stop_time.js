@@ -1,4 +1,5 @@
 const Client = require("../managers/ClientManager");
+const moment = require("moment");
 module.exports = class StopTime extends Client {
     #data
     constructor(data) {
@@ -24,13 +25,13 @@ module.exports = class StopTime extends Client {
          * Return the departure time of the train stop
          * @returns {date}
          */
-        this.departure.date = transformDate(data.departure_time)
+        this.departure.date = this.#transformDate(data.departure_time)
 
         /**
          * Return the departure UTC time of the train stop
          * @returns {date}
          */
-        this.departure.UTC_date = transformDate(data.utc_departure_time)
+        this.departure.UTC_date = this.#transformDate(data.utc_departure_time)
 
 
         this.arrival = {}
@@ -39,16 +40,18 @@ module.exports = class StopTime extends Client {
          * Return the arrival time of the train stop
          * @returns {date}
          */
-        this.arrival.date = transformDate(data.arrival_time)
+        this.arrival.date = this.#transformDate(data.arrival_time)
 
         /**
          * Return the arrival UTC time of the train stop
          * @returns {date}
          */
-        this.arrival.UTC_date = transformDate(data?.utc_arrival_time)
+        this.arrival.UTC_date = this.#transformDate(data?.utc_arrival_time)
     }
-}
 
-function transformDate(date) {
-    return date.match(/.{0,2}/g).join(":").match(/(.*):/)[1]
+    get #transformDate() {
+        return (date) => {
+            return moment(this.#data.date + ' ' + date, 'YYYY-MM-DD  HHmmss').toDate()
+        }
+    }
 }

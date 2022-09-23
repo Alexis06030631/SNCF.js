@@ -62,6 +62,7 @@ module.exports = class Vehicle extends Client{
     get stop_times() {
         let stopTimes = []
         for(let stoptime of this.#stoptimes.sort((a,b) => a.arrival_time - b.departure_time)) {
+            stoptime.date = moment(this.id.match(/:((\d*|\-)+):/)[1], "YYYYMMDD").format("YYYY-MM-DD")
             stopTimes.push(new this.structures.stop_time(stoptime))
         }
         return stopTimes
@@ -90,5 +91,5 @@ module.exports = class Vehicle extends Client{
 }
 
 function getDateDeparture(id_train, stTime) {
-    return new moment(id_train.match(/:((\d*|\-)+):/)[1], "YYYYMMDD").hour(stTime.departure.date.split(":")?.[0]).minute(stTime.departure.date.split(":")?.[1]).second(stTime.departure.date.split(":")?.[2]).format()
+    return new moment(id_train.match(/:((\d*|\-)+):/)[1], "YYYYMMDD").hour(moment(stTime.departure.date).get('hours')).minute(moment(stTime.departure.date).get('minutes')).second(moment(stTime.departure.date).get('seconds')).format()
 }
