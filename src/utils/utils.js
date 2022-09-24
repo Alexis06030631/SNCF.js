@@ -24,6 +24,7 @@ module.exports = class Utils extends Base{
 
     async request(url, method = 'GET') {
         try {
+            if(super.debug) console.log(encodeURI(super.api + url))
             const data = await axios({
                 method: method,
                 url: encodeURI(super.api + url),
