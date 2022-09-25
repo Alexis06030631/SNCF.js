@@ -62,6 +62,28 @@ module.exports = class Utils extends Base{
          return moment(date).format('YYYYMMDDTHHmmss')
      }
 
+     navitia_date(date) {
+            return moment(date, 'YYYYMMDDTHHmmss')
+     }
+
+    /**
+     * Check if is a valid stop area id
+     * @param id
+     * @returns {boolean}
+     */
+    is_stop_area(id) {
+        return id.startsWith('stop_area')
+    }
+
+
+    /**
+     * Check if a date is valid
+     * @param since
+     * @param until
+     * @param sinceName
+     * @param UntilName
+     * @returns {string}
+     */
      date_options(since, until, sinceName='since', UntilName='until') {
          // Check if the dates are valid
          if(since) since = this.to_navitia_date(this.check_date(since));
@@ -71,4 +93,19 @@ module.exports = class Utils extends Base{
          // return as url params
          return `${since? `${sinceName}=${since}${until? `&${UntilName}=${until}&`: '&'}`: until? `${UntilName}=${until}&`: ''}`
      }
+
+    /**
+     * Encode the options for the request
+     * @param options
+     * @returns {string}
+     */
+    encode_options(options) {
+        let params = '';
+
+        for (const [key, value] of Object.entries(options)) {
+            if(value) params += `${key}=${value}&`
+        }
+
+        return params
+    }
 }
