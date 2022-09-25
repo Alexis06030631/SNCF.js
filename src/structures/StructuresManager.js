@@ -22,6 +22,12 @@ module.exports = class StructuresManager {
         this.vehicle = require("./vehicle");
 
         /**
+         * @returns {Journey}
+         * @type {Journey}
+         */
+        this.journey = require("./journey");
+
+        /**
          * @returns {Disruption}
          */
         this.disruption = require("./disruption");

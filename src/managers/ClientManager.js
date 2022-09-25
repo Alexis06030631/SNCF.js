@@ -1,6 +1,7 @@
 const Utils = require("../utils/utils");
 const Base = require("../Base")
 const Lines = require("./LinesManager");
+const Journeys = require("./JourneysManager");
 const Disruptions = require("./DisruptionsManager");
 const Places = require("./PlacesManager");
 const StructuresManager = require("../structures/StructuresManager");
@@ -35,6 +36,15 @@ module.exports = class Client extends Base {
      */
     get lines() {
         return new Lines(this);
+    }
+
+    /**
+     * All of the {@link Journeys} objects that have been cached at any point
+     * @type {Journeys}
+     * @returns {Journeys}
+     */
+    get journeys() {
+        return new Journeys(this);
     }
 
     /**
