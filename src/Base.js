@@ -1,12 +1,13 @@
 module.exports = class BaseClient {
     #token
+    #debugMode
     constructor() {
         this.#token = process.env.SNCF_TOKEN || null
-        this.debugMode = !!process.env.SNCF_debug || false
+        this.#debugMode = !!process.env.SNCF_debug || false
     }
 
     get debug() {
-        return this.debugMode
+        return this.#debugMode
     }
 
     get token() {
