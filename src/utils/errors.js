@@ -6,6 +6,8 @@ module.exports = {
     NOT_FOUND: 'The requested resource was not found.',
     NETWORK_ERR: 'Cannot connect to api.',
 
+    JOURNEY_MULTIPLE_SECTIONS: 'The trip has several sections, which is not currently supported by this library.',
+
     ID_INVALID: 'The id is not valid.',
     ID_IS_NOT_A_NUMBER: 'The id is not a number.',
     ID_MISSING: 'The id is missing.',
