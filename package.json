@@ -1,6 +1,6 @@
 {
   "name": "sncf.js",
-  "version": "2.1.6",
+  "version": "2.2.0",
   "description": "An easy to use javascript module to get all the information in real time about the trains ©SNCF (only in France)",
   "main": "index.js",
   "scripts": {
