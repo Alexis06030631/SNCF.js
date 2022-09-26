@@ -1,5 +1,5 @@
 const Utils = require("../utils/utils");
-const Base = require("../Base")
+const Base = require("../base")
 const Lines = require("./LinesManager");
 const Journeys = require("./JourneysManager");
 const Disruptions = require("./DisruptionsManager");
