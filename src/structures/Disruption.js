@@ -1,7 +1,7 @@
 const StructuresManager = require("./StructuresManager");
 const {navitiaDateToDate} = require("../util/Converter");
 
-module.exports = class Vehicle extends StructuresManager{
+module.exports = class Disruption extends StructuresManager{
     constructor(Client, data) {
         super()
         Object.defineProperty(this, 'client', {value: Client})
@@ -28,7 +28,7 @@ module.exports = class Vehicle extends StructuresManager{
          * Return the messages of the disruption
          * @returns {array}
          */
-        this.messages = data.messages.map(message => message.text)
+        this.messages = data?.messages?.map(message => message.text) || []
 
         /**
          * Return the start date of the disruption
@@ -58,7 +58,7 @@ module.exports = class Vehicle extends StructuresManager{
          * Return if the journey is delayed or not
          * @returns {boolean}
          */
-        this.delayed = data.severity?.effect === 'SIGNIFICANT_DELAYS'
+        this.delayed = data.severity?.effect === 'SIGNIFICANT_DELAYS' || data.severity?.effect === 'REDUCED_SERVICE' || data.severity?.effect === 'DETOUR'
 
         /**
          * Return the severity of the disruption
@@ -70,7 +70,7 @@ module.exports = class Vehicle extends StructuresManager{
          * Return the impacted stops of the disruption
          * @returns {array<ImpactedStop>}
          */
-        this.impacted_stops = data.impacted_objects[0].impacted_stops.map(impacted_object => new this.class_impacted_stop(this.client, impacted_object))
+        this.impacted_stops = data.impacted_objects[0]?.impacted_stops?.map(impacted_object => new this.class_impacted_stop(this.client, impacted_object)) || []
 
     }
 
