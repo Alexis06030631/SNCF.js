@@ -1,5 +1,6 @@
 const {dateToNavitiaDate} = require("../util/Converter");
 const StructuresManager = require("./StructuresManager");
+const {isValidID} = require("../util/Validator");
 module.exports = class StopArea extends StructuresManager{
     constructor(Client, data) {
         super()
@@ -32,12 +33,12 @@ module.exports = class StopArea extends StructuresManager{
          * Return the stop area timezone
          * @returns {string}
          */
-        this.timezone = data.timezone
+        if(data.timezone) this.timezone = data.timezone
     }
 
     /**
      * Get the departures of the stop area
-     * @param {date} date - The date of the departures
+     * @param {Date} date - The date of the departures
      * @returns {Promise<Departure[]>}
      */
     departures(date= new Date()) {
@@ -53,7 +54,8 @@ module.exports = class StopArea extends StructuresManager{
 
     /**
      * Get the arrivals of the stop area
-     * @param {date} date - The date of the arrivals
+     * @param {Date} date - The date of the arrivals
+     * @returns {Promise<Arrival[]>}
      */
     arrivals(date= new Date()) {
         return new Promise(async (resolve, reject) => {
@@ -62,6 +64,30 @@ module.exports = class StopArea extends StructuresManager{
                 reject(request.error)
             }else {
                 resolve(request.arrivals.map(arrival => new this.class_arrival(this.client, arrival)))
+            }
+        })
+    }
+
+    /**
+     * Get Journeys from the stop area
+     * @param {string} [to] - The id or name of the destination
+     * @param {Date} [date] - The date of the journey
+     * @returns {Promise<Journey[]>}
+     */
+    journeys(to, date= new Date()) {
+        return new Promise(async (resolve, reject) => {
+            if(to && !isValidID(to)) {
+                const place = await this.client.place.search(to)
+                if(place.stop_areas[0]) to = place.stop_areas[0].id
+                else if(place.administrative_regions[0]) to = place.administrative_regions[0].id
+            }
+            let options = {datetime: dateToNavitiaDate(date)}
+            if(to) options.to = to
+            const request = await this.client.requestManager.request(`stop_areas/${this.id}/journeys`, options)
+            if(request.error) {
+                reject(request.error)
+            }else {
+                resolve(request.journeys.map(journey => new this.class_journey(this.client, journey)))
             }
         })
     }
