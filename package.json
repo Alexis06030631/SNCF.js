@@ -1,6 +1,6 @@
 {
   "name": "sncf.js",
-  "version": "2.2.4",
+  "version": "2.3.0",
   "description": "An easy to use javascript module to get all the information in real time about the trains ©SNCF (only in France)",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,6 @@
   "dependencies": {
     "axios": "^0.26.1"
   },
-  "public": true,
   "devDependencies": {
     "cli-color": "^2.0.3",
     "dotenv": "^16.0.1",
