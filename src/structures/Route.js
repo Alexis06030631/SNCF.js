@@ -32,5 +32,11 @@ module.exports = class Route extends StructuresManager{
 		 * @returns {array}
 		 */
 		this.physical_modes = data.physical_modes
+
+		/**
+		 * Return the route line
+		 * @returns {Line}
+		 */
+		this.line = new this.class_line(Client, data.line);
 	}
 }
