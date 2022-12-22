@@ -71,7 +71,7 @@ module.exports = class Vehicle extends StructuresManager{
      */
     get disruptions() {
         return this.data.disruptions.map(disruption => {
-            if(!disruption.status) new SncfjsError(ErrorCodes.NotImplemented, "Disruption fetching is not implemented yet. Please open an issue on GitHub.")
+            if(!disruption.status) disruption = this.client.disruptions.get(disruption.id)
             return new this.class_disruption(this.client, disruption)
         })
     }
