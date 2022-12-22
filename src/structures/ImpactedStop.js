@@ -22,13 +22,20 @@ module.exports = class ImpactedStop extends StructuresManager{
 		 * Return the Arrival data of the stop
 		 * @returns {TimeImpact}
 		 */
-		this.arrival = {base_time: hourNativiaToHour(data.base_arrival_time), real_time: hourNativiaToHour(data.amended_arrival_time), status: data.arrival_status}
+		this.arrival = {
+			base_time: hourNativiaToHour(data.base_arrival_time, true),
+			real_time: hourNativiaToHour(data.amended_arrival_time, true),
+			status: data.arrival_status
+		}
 
 		/**
 		 * Return the Departure data of the stop
 		 * @returns {TimeImpact}
 		 */
-		this.departure = {base_time: hourNativiaToHour(data.base_departure_time), real_time: hourNativiaToHour(data.amended_departure_time), status: data.departure_status}
+		this.departure = {
+			base_time: hourNativiaToHour(data.base_departure_time, true),
+			real_time: hourNativiaToHour(data.amended_departure_time, true),
+			status: data.departure_status}
 
 		/**
 		 * Return the stop area
