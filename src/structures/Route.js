@@ -37,6 +37,6 @@ module.exports = class Route extends StructuresManager{
 		 * Return the route line
 		 * @returns {Line}
 		 */
-		this.line = new this.class_line(Client, data.line);
+		if(data.line) this.line = new this.class_line(Client, data.line);
 	}
 }

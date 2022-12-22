@@ -1,14 +1,10 @@
 const CachedManager = require("./CachedManager");
-
-module.exports = class Lines extends CachedManager {
+const Line = require("../structures/Line");
+const Disruption = require("../structures/Disruption");
+module.exports = class LineManager extends CachedManager {
     constructor(client) {
         super()
-
-        // The utils functions for the client.
-        this.utils = client.utils
-
-        // The structure available for the client.
-        this.structures = client.structures
+        Object.defineProperty(this, "client", {value: client})
     }
 
 
@@ -18,7 +14,12 @@ module.exports = class Lines extends CachedManager {
      * @returns {Promise<Line[]>}
      * */
     async search(line) {
-        return this._lineMany(await this.utils.request(`pt_objects?q=${line}&type[]=line`))
+        return new Promise(async (resolve, reject) => {
+            const request = await this.client.requestManager.request(`pt_objects`, {q: line, "type[]":'line'})
+            if(request.error) {
+                return reject(request.error)
+            }else resolve(request.pt_objects.map(line => new Line(this.client, line.line)))
+        })
     }
 
     /**
@@ -27,11 +28,14 @@ module.exports = class Lines extends CachedManager {
      * @returns {Promise<Line>}
      */
     async get(lineID){
-        if(lineID.length === 0) {
-            throw new Error(Error.code.ID_MISSING)
-        }
-
-        return new this.structures.line((await this.utils.request(`lines/${lineID}`)).lines[0])
+        return new Promise(async (resolve, reject) => {
+            const request = await this.client.requestManager.request(`lines/${lineID}`)
+            if(request.error) {
+                return reject(request.error)
+            }else {
+                return resolve(new Line(this.client, request.lines[0]))
+            }
+        })
     }
 
 

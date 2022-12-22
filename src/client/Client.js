@@ -4,6 +4,7 @@ const RequestManager = require("../request/requestManager");
 const PlacesManager = require("../managers/placesManager");
 const Status = require("../util/Status");
 const DisruptionManager = require("../managers/DisruptionsManager");
+const LineManager = require("../managers/LinesManager");
 /**
  * The main hub for interacting with the Navitia API.
  * @extends {BaseClient}
@@ -56,6 +57,12 @@ module.exports = class Client extends BaseClient {
 		 * @type {DisruptionManager}
 		 */
 		this.disruption = new DisruptionManager(this);
+
+		/**
+		 * LineManager class
+		 * @type {LineManager}
+		 */
+		this.line = new LineManager(this);
 	}
 
 	/**
