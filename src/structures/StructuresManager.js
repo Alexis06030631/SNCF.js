@@ -1,43 +1,5 @@
 module.exports = class StructuresManager {
-    constructor() {
-
-        /**
-         * @returns {Arrival}
-         */
-        //this.arrival = require("./Arrival");
-
-        /**
-         * @returns {Line}
-         */
-        //this.line = require("./Line");
-
-        /**
-         * @returns {Vehicle}
-         */
-        //this.vehicle = require("./Vehicle");
-
-        /**
-         * @returns {Journey}
-         * @type {Journey}
-         */
-        //this.journey = require("./Journey");
-
-        /**
-         * @returns {Disruption}
-         */
-        //this.disruption = require("./Disruption");
-
-        /**
-         * @returns {StopTime}
-         */
-        //this.stop_time = require("./StopTime");
-
-        /**
-         * @returns {StopArea}
-         */
-        //this.stop_area = require("./StopArea");
-
-    }
+    constructor() {}
 
     /**
      * Get departure constructor
@@ -97,10 +59,18 @@ module.exports = class StructuresManager {
     }
 
     /**
-     * Get StopPoint constructor
-     * @returns {Class<StopPoint>}
+     * Get Journey constructor
+     * @returns {Class<Journey>}
      */
-    get class_stop_point() {
-        return require("./StopPoint");
+    get class_journey() {
+        return require("./Journey");
+    }
+
+    /**
+     * Get Step constructor
+     * @returns {Class<Step>}
+     */
+    get class_step() {
+        return require("./Step");
     }
 };
