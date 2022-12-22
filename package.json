@@ -17,20 +17,23 @@
     "TRAIN",
     "EASY TO USE"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Alexis06030631",
   "license": "ISC",
-  "private": false,
   "dependencies": {
-    "axios": "^0.26.1",
-    "moment": "^2.29.2"
+    "axios": "^0.26.1"
   },
+  "public": true,
   "devDependencies": {
     "cli-color": "^2.0.3",
     "dotenv": "^16.0.1",
     "gitlog": "^4.0.4",
     "glob": "^8.0.3",
     "js-yaml": "^4.1.0",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "np": "^7.6.2"
   },
   "homepage": "alexis06030631.github.io/SNCF.js/",
   "repository": {

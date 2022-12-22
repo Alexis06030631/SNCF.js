@@ -4,7 +4,7 @@ url: github.com/SNCF.js
 branding:
   logo: static/sncf-logo_dark.png
   logoDark: static/sncf-logo.png
-  label: V2.1.0
+  label: V2.3.0
 meta:
   title: ' - SNCF.JS a javascript library'
 edit:
