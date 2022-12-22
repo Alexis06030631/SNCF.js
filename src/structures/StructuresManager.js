@@ -79,4 +79,20 @@ module.exports = class StructuresManager {
     get class_line() {
         return require("./Line");
     }
+
+    /**
+     * Get Route constructor
+     * @returns {Class<Route>}
+     */
+    get class_route() {
+        return require("./Route");
+    }
+
+    /**
+     * Get StopPoint constructor
+     * @returns {Class<StopPoint>}
+     */
+    get class_stop_point() {
+        return require("./StopPoint");
+    }
 };

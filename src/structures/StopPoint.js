@@ -1,6 +1,6 @@
 const {dateToNavitiaDate} = require("../util/Converter");
 const StructuresManager = require("./StructuresManager");
-module.exports = class StopArea extends StructuresManager{
+module.exports = class StopPoint extends StructuresManager{
     constructor(Client, data) {
         super()
         Object.defineProperty(this, "client", {value: Client})
@@ -26,7 +26,7 @@ module.exports = class StopArea extends StructuresManager{
          * Return the Administative Region of the stop area (if exist)
          * @returns {AdministrativeRegion|null}
          */
-        this.administrative_region = data.administrative_regions ? new this.class_administrative_region(this.client, data.administrative_regions[0]) : null
+        this.administrative_region = data.administrative_region ? new this.class_administrative_region(this.client, data.administrative_region[0]) : null
 
         /**
          * Return the stop area timezone
@@ -42,7 +42,7 @@ module.exports = class StopArea extends StructuresManager{
      */
     departures(date= new Date()) {
         return new Promise(async (resolve, reject) => {
-            const request = await this.client.requestManager.request(`stop_areas/${this.id}/departures`, {from_datetime: dateToNavitiaDate(date)})
+            const request = await this.client.requestManager.request(`stop_points/${this.id}/departures`, {from_datetime: dateToNavitiaDate(date)})
             if(request.error) {
                 reject(request.error)
             }else {
