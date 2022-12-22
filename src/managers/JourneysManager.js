@@ -1,48 +1,48 @@
 const CachedManager = require("./CachedManager");
+const {SncfjsError, ErrorCodes} = require("../errors");
+const {dateToNavitiaDate} = require("../util/Converter");
+const {isValidID} = require("../util/Validator");
+const Journey = require("../structures/Journey");
 
-module.exports = class Journeys extends CachedManager {
+module.exports = class JourneyManager extends CachedManager {
     constructor(client) {
         super()
-
-        // The utils functions for the client.
-        this.utils = client.utils
-
-        // The structure available for the client.
-        this.structures = client.structures
+        Object.defineProperty(this, "client", {value: client})
     }
 
     /**
      * Get a journey details with departure and arrival stop areas ids
-     * @param {JourneyOptions} options The options for the journey
-     * @returns {Promise<Journeys>}
+     * @param {string} from The departure stop area id or name
+     * @param {string} to The arrival stop area id or name
+     * @param {Date} [date=now] The date of the journey to get
+     * @returns {Promise<Journey[]>}
      */
-    async get(options){
-        // Check if the required options are present
-        if(!options.from || !options.to) throw new Error("Missing required options: from and to are required");
+    async get(from, to, date=new Date()){
+        return new Promise(async (resolve, reject) => {
+            if(!from || !to) {
+                const missing = []
+                if(!from) missing.push("from")
+                if(!to) missing.push("to")
+                return reject(new SncfjsError(ErrorCodes.MissingParameter, missing.join(" and "), missing.length > 1))
+            }
+            if(!isValidID(from)) {
+                const place = await this.client.place.search(from)
+                if(place.stop_areas[0]) from = place.stop_areas[0].id
+                else if(place.administrative_regions[0]) from = place.administrative_regions[0].id
+            }
+            if(!isValidID(to)) {
+                const place = await this.client.place.search(to)
+                if(place.stop_areas[0]) to = place.stop_areas[0].id
+                else if(place.administrative_regions[0]) to = place.administrative_regions[0].id
+            }
 
-        // Check if the from and to options are valid stop areas ids
-        if(!this.utils.is_stop_area(options.from) || !this.utils.is_stop_area(options.to)) throw new Error("Invalid options: from and to must be valid stop areas ids");
-
-        // Options for the request
-        let paramsEncoded = this.utils.encode_options({
-            from: options.from,
-            to: options.to,
-            datetime: options.date? this.utils.to_navitia_date(options.date) : null,
-            count: options.count? options.count : null,
+            const request = await this.client.requestManager.request(`journeys`, {from: from, to: to, datetime: dateToNavitiaDate(date)})
+            if(request.error) {
+                return reject(request.error)
+            }else {
+                return resolve(request.journeys.map(journey => new Journey(this.client, journey)))
+            }
         })
-
-        // Request the journeys
-        const data = await this.utils.request(`journeys?${paramsEncoded}`);
-
-        // Search for disruptions
-        if(data.disruptions.length > 0) {
-            data.disruptions.map(d => new this.structures.disruption(d)).forEach(d => d.impacted_objects.forEach(o => {
-                data.journeys.forEach(j => j.sections.filter(sct => !!sct.display_informations).forEach(s => {
-                    if(s.display_informations.headsign === o.trip_id) j.disruptions? j.disruptions.push(d) : j.disruptions = [d]
-                }))
-            }))
-        }
-        return data.journeys.map(journey => new this.structures.journey(journey))
     }
 
 }
