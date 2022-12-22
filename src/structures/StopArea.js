@@ -91,6 +91,59 @@ module.exports = class StopArea extends StructuresManager{
             }
         })
     }
+
+    /**
+     * Get the lines of the stop area
+     * @returns {Promise<Line[]>}
+     */
+    lines() {
+        return new Promise(async (resolve, reject) => {
+            const request = await this.client.requestManager.request(`stop_areas/${this.id}/lines`)
+            if(request.error) {
+                reject(request.error)
+            }else {
+                resolve(request.lines.map(line => new this.class_line(this.client, line)))
+            }
+        })
+    }
+
+    /**
+     * Get the routes of the stop area
+     * @returns {Promise<Route[]>}
+     */
+    routes() {
+        return new Promise(async (resolve, reject) => {
+            const request = await this.client.requestManager.request(`stop_areas/${this.id}/routes`)
+            if(request.error) {
+                reject(request.error)
+            }else {
+                resolve(request.routes.map(route => new this.class_route(this.client, route)))
+            }
+        })
+    }
+
+    /**
+     * Get vehicle journeys of the stop area
+     * @param {Date} [date] - The date of the vehicle journeys
+     * @returns {Promise<VehicleJourney[]>}
+     */
+    vehicle_journeys(date= new Date()) {
+        return new Promise(async (resolve, reject) => {
+            const request = await this.client.requestManager.request(`stop_areas/${this.id}/vehicle_journeys`, {from_datetime: dateToNavitiaDate(date)})
+            if(request.error) {
+                reject(request.error)
+            }else {
+                resolve(request.vehicle_journeys.map(vehicle_journey => {
+                    vehicle_journey.disruptions.forEach(disruption => {
+                        if(request.disruptions.map(disruption => disruption.id).includes(disruption.id)) {
+                            vehicle_journey.disruptions[vehicle_journey.disruptions.indexOf(disruption)] = request.disruptions.find(disruption2 => disruption2.id === disruption.id)
+                        }
+                    })
+                    return new this.class_vehicle(this.client, vehicle_journey)
+                }))
+            }
+        })
+    }
 }
 
 /**

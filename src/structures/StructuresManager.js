@@ -73,4 +73,35 @@ module.exports = class StructuresManager {
     get class_step() {
         return require("./Step");
     }
+
+    /**
+     * Get Vehicle constructor
+     * @returns {Class<Vehicle>}
+     */
+    get class_vehicle() {
+        return require("./Vehicle");
+    }
+
+    /**
+     * Get StopTime constructor
+     * @returns {Class<StopTime>}
+     */
+    get class_stop_time() {
+        return require("./StopTime");
+    }
+
+    /**
+     * Get class_disruption constructor
+     * @returns {Class<Disruption>}
+     */
+    get class_disruption() {
+        return require("./Disruption");
+    }
+
+    /**
+     * Get ImpactedStop constructor
+     */
+    get class_impacted_stop() {
+        return require("./ImpactedStop");
+    }
 };
