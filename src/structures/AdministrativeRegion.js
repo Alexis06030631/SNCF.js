@@ -1,5 +1,7 @@
-module.exports = class AdministrativeRegion{
+const StructuresManager = require("./StructuresManager");
+module.exports = class AdministrativeRegion extends StructuresManager{
 	constructor(Client, data) {
+		super();
 		/**
 		 * Return the stop area id
 		 * @returns {string}
