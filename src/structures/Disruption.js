@@ -1,12 +1,10 @@
-const Client = require("../managers/ClientManager");
-const moment = require("moment");
+const StructuresManager = require("./StructuresManager");
+const {navitiaDateToDate} = require("../util/Converter");
 
-module.exports = class Disruption extends Client{
-    #data
-
-    constructor(data) {
+module.exports = class Vehicle extends StructuresManager{
+    constructor(Client, data) {
         super()
-        this.#data = data
+        Object.defineProperty(this, 'client', {value: Client})
 
         /**
          * Return the id of the disruption
@@ -27,96 +25,65 @@ module.exports = class Disruption extends Client{
         this.cause = data.cause
 
         /**
-         * Return the date on which the disruption was updated
-         * @returns {string}
-         */
-        this.updated_at = this.utils.navitia_date(data.updated_at).toDate()
-
-        /**
-         * Return the list messages of the raison of this disruption
+         * Return the messages of the disruption
          * @returns {array}
          */
-        this.messages = data.messages?.map(e => e.text) || []
+        this.messages = data.messages.map(message => message.text)
+
+        /**
+         * Return the start date of the disruption
+         * @returns {Date}
+         */
+        this.start = navitiaDateToDate(data.application_periods[0].begin)
+
+        /**
+         * Return the end date of the disruption
+         * @returns {Date}
+         */
+        this.end = navitiaDateToDate(data.application_periods[0].end)
+
+        /**
+         * Return the date on which the disruption was updated
+         * @returns {Date}
+         */
+        this.updated_at = navitiaDateToDate(data.updated_at)
 
         /**
          * Return if the journey is canceled or not
          * @returns {boolean}
          */
-        this.canceled = data.severity?.name?.includes('canceled')
+        this.canceled = data.severity?.effect === 'NO_SERVICE'
 
         /**
          * Return if the journey is delayed or not
          * @returns {boolean}
          */
-        this.delayed = data.severity?.name?.includes('delayed')
+        this.delayed = data.severity?.effect === 'SIGNIFICANT_DELAYS'
 
         /**
-         * Return the delay at the departure
-         * @returns {string}
+         * Return the severity of the disruption
+         * @returns {Severity}
          */
-        this.departure_delay = this.delayed? this.impacted_stops[0].departure.delay : null
+        this.severity = {code: data.severity?.effect, name: data.severity?.name, priority: data.severity?.priority}
 
         /**
-         * Return the delay at the arrival
-         * @returns {string}
+         * Return the impacted stops of the disruption
+         * @returns {array<ImpactedStop>}
          */
-        this.arrival_delay = this.delayed? this.impacted_stops[this.impacted_stops.length - 1].arrival.delay : null
+        this.impacted_stops = data.impacted_objects[0].impacted_stops.map(impacted_object => new this.class_impacted_stop(this.client, impacted_object))
 
-        /**
-         * Return the delay of the disruption
-         * @returns {string}
-         */
-        this.delay = null
-
-        /**
-         * Return if the journey the severity effect
-         * @returns {string}
-         */
-        this.effect = data.severity?.effect
     }
 
-    /**
-     * Return the list of impacted objects
-     * @returns {array}
-     */
-    get impacted_objects() {
-        return this.#data.impacted_objects.map(impacted_object => {
-            return {
-                id: impacted_object.pt_object.id,
-                trip_id: impacted_object.pt_object.trip?.name,
-                type: impacted_object.pt_object.embedded_type
-            }
-        })
-    }
-
-    /**
-     * Return the list of impacted stops
-     * @returns {array}
-     */
-    get impacted_stops() {
-        const impacted_stops = []
-        if(this.canceled) return {error: 'This trip is canceled'}
-        this.#data.impacted_objects.forEach(impacted_object => {
-            impacted_object.impacted_stops.forEach(impacted_stop => {
-                impacted_stops.push(
-                    {
-                        id: impacted_stop.stop_point.id,
-                        name: impacted_stop.stop_point.name,
-                        arrival: {
-                            base: moment(impacted_stop.base_arrival_time, 'HHmmss').format('HH:mm:ss'),
-                            realtime: moment(impacted_stop.amended_arrival_time, 'HHmmss').format('HH:mm:ss'),
-                            delay: moment.utc(moment(impacted_stop.amended_departure_time, 'HHmmss').diff(moment(impacted_stop.base_departure_time, 'HHmmss'))).format('HH:mm:ss')
-                        },
-                        departure: {
-                            base: moment(impacted_stop.base_departure_time, 'HHmmss').format('HH:mm:ss'),
-                            realtime: moment(impacted_stop.amended_departure_time, 'HHmmss').format('HH:mm:ss'),
-                            delay: moment.utc(moment(impacted_stop.amended_departure_time, 'HHmmss').diff(moment(impacted_stop.base_departure_time, 'HHmmss'))).format('HH:mm:ss')
-                        },
-                        cause: impacted_stop.cause,
-                    }
-                )
-            })
-        })
-        return impacted_stops
-    }
 }
+
+
+/**
+ * @typedef {Object} Severity
+ * @property {string} code - The code of the severity
+ * @property {string} name - The name of the severity
+ * @property {string} priority - The priority of the severity
+ */
+/**
+ * @type {Severity}
+ * @ignore
+ */
