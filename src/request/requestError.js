@@ -13,5 +13,13 @@ module.exports = {
 		}
 
 		return new SncfjsError(ErrorCodes.UnknownError, response?.response?.data?.message);
+	},
+
+	navitiaReturnError: (response) => {
+		console.log(response)
+		switch (response?.id) {
+			case "unable_to_parse":
+				return {error:ErrorCodes.UnableToParse, message: response?.message, id: response?.id};
+		}
 	}
 }

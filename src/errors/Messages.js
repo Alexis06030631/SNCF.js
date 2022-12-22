@@ -9,6 +9,12 @@ const Messages = {
 	[SncfjsErrorCodes.TokenInvalid]: 'An invalid token was provided.',
 	[SncfjsErrorCodes.TokenMissing]: 'Request to use token, but token was unavailable to the client.',
 	[SncfjsErrorCodes.UrlNotFound]: 'The requested resource was not found.',
+	[SncfjsErrorCodes.TokenNotInitialized]: 'The token was not initialized. Please use the login function to initialize the token.',
+	[SncfjsErrorCodes.NotReady]: 'The client is not ready. Please make sure you are logged in (client.login()) and that the token is valid.',
+	[SncfjsErrorCodes.IdIsMissing]: 'The id is missing. Please provide a valid id.',
+
+	// Navitia errors codes
+	[SncfjsErrorCodes.unable_to_parse]: 'Unable to parse the data from the API. Please try again later or change the parameters.'
 };
 
 module.exports = Messages;
