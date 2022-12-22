@@ -38,7 +38,8 @@ module.exports = class RequestManager extends EventEmitter {
 	 * @returns {string} The encoded parameters
 	 */
 	encodeURL(path='', params = {}) {
-		return encodeURI(`${this.config.base_url}${path}?${(new URLSearchParams(params)).toString()}`);
+		const url = encodeURI(`${this.config.base_url}${path}?${(new URLSearchParams(params)).toString()}`);
+		return url.replaceAll('%253A', '%3A')
 	}
 
 	/**
