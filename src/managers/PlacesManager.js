@@ -1,26 +1,58 @@
 const CachedManager = require("./CachedManager");
-const place_types = require("../utils/place_types.json");
+const {navitiaDateToDate} = require("../util/Converter");
+const SncfjsErrorCodes = require("../errors/ErrorCodes");
+const Place = require("../structures/Place");
+const StopArea = require("../structures/StopArea");
+const AdministrativeRegion = require("../structures/AdministrativeRegion");
 
 module.exports = class PlacesManager extends CachedManager {
     constructor(client) {
         super()
+        Object.defineProperty(this, 'client', { value: client });
+    }
 
-        this.utils = client.utils
-        this.structures = client.structures
+    /**
+     * Place Class
+     * @type {Place}
+     * @param {object} data The data of the place
+     * @return {Place}
+     */
+    #place(data) {
+        return new Place(this.client, data);
+    }
+
+    /**
+     * Get The stop areas of the place
+     * @param data
+     * @return {StopArea}
+     */
+    #StopArea(data) {
+        return new StopArea(this.client, data)
+    }
+
+    /**
+     * Get the administrative regions of the place
+     * @param data
+     * @return {AdministrativeRegion}
+     */
+    #AdministrativeRegion(data) {
+        return new AdministrativeRegion(this.client, data)
     }
 
 
     /**
      * Search for a place by name
      * @param {string} station The name of the station to search for
-     * @param {string.<place_types>} type The filters to apply to the search
-     * @returns {Promise<Place[]>}
+     * @param {string.<place_types>} [type] The filters to apply to the search
+     * @returns {Promise<PlaceManagerResult>}
      * */
-    async search(station, type) {
-        if(type && !place_types.includes(type)) {
-            throw new Error(Error.code.INVALID_PLACE_TYPE.replace("%s", place_types.join(", ")))
-        }
-        return this._placesMany(await this.utils.request(`places/?q=${station}&${type? `type[]=${type}`: ""}`))
+    search(station) {
+        return new Promise(async (resolve, reject) => {
+            const request = await this.client.requestManager.request(`places`, {q: station})
+            if(request.error) {
+                reject(request.error)
+            }else resolve(this._placesMany(request))
+        })
     }
 
     /**
@@ -41,16 +73,35 @@ module.exports = class PlacesManager extends CachedManager {
         return new this.structures.place((await this.utils.request(`places/${stationID}`)).places[0])
     }
 
-
-
-
     _placesMany(places) {
-        const placesMany = [];
+        const result = {
+            date: navitiaDateToDate(places.context.current_datetime),
+            administrative_regions: [],
+            stop_areas: [],
+        }
         if(places?.places) {
-            for(let place of places.places) {
-                placesMany.push(new this.structures.place(place))
+            for(let place of places.places.filter(place => place.embedded_type === 'stop_area')) {
+                result.stop_areas.push(this.#StopArea(place.stop_area))
+            }
+            for (let place of places.places.filter(place => place.embedded_type === 'administrative_region')) {
+                result.administrative_regions.push(this.#AdministrativeRegion(place.administrative_region))
             }
         }
-        return placesMany
+        return result
     }
 }
+
+
+/**
+ * @typedef {Object} PlaceManagerResult
+
+ * @property {date} date - The date of the search
+ * @property {array<AdministrativeRegion>} administrative_regions
+ * @property {array<StopArea>} stop_areas
+ */
+
+// JSDoc for IntelliSense purposes
+/**
+ * @type {PlaceManagerResult}
+ * @ignore
+ */

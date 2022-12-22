@@ -2,49 +2,81 @@ module.exports = class StructuresManager {
     constructor() {
 
         /**
-         * @returns {Departure}
-         */
-        this.departure = require("./departure");
-
-        /**
          * @returns {Arrival}
          */
-        this.arrival = require("./arrival");
+        //this.arrival = require("./Arrival");
 
         /**
          * @returns {Line}
          */
-        this.line = require("./line");
+        //this.line = require("./Line");
 
         /**
          * @returns {Vehicle}
          */
-        this.vehicle = require("./vehicle");
+        //this.vehicle = require("./Vehicle");
 
         /**
          * @returns {Journey}
          * @type {Journey}
          */
-        this.journey = require("./journey");
+        //this.journey = require("./Journey");
 
         /**
          * @returns {Disruption}
          */
-        this.disruption = require("./disruption");
+        //this.disruption = require("./Disruption");
 
         /**
          * @returns {StopTime}
          */
-        this.stop_time = require("./stop_time");
+        //this.stop_time = require("./StopTime");
 
         /**
          * @returns {StopArea}
          */
-        this.stop_area = require("./StopArea");
+        //this.stop_area = require("./StopArea");
 
-        /**
-         * @returns {Place}
-         */
-        this.place = require("./place");
+    }
+
+    /**
+     * Get departure constructor
+     * @returns {Class<Departure>}
+     */
+    get class_departure() {
+        return require("./Departure");
+    }
+
+
+    /**
+     * Get Place constructor
+     * @returns {Class<Place>}
+     */
+    get class_place() {
+        return require("./Place");
+    }
+
+    /**
+     * Get StopArea constructor
+     * @returns {Class<StopArea>}
+     */
+    get class_stop_area() {
+        return require("./StopArea");
+    }
+
+    /**
+     * Get AdministartiveRegion constructor
+     * @returns {Class<AdministrativeRegion>}
+     */
+    get class_administrative_region() {
+        return require("./AdministrativeRegion");
+    }
+
+    /**
+     * Get Line constructor
+     * @returns {Class<Line>}
+     */
+    get class_line() {
+        return require("./Line");
     }
 };
