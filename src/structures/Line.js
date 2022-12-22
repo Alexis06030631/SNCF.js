@@ -1,5 +1,5 @@
 const StructuresManager = require("./StructuresManager");
-const {navitiaDateToDate, hourNativiaToHour} = require("../util/Converter");
+const {hourNativiaToHour} = require("../util/Converter");
 module.exports = class Line extends StructuresManager{
 	constructor(Client, data) {
 		super()

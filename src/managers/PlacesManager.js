@@ -40,7 +40,7 @@ module.exports = class PlacesManager extends CachedManager {
             const request = await this.client.requestManager.request(`places`, {q: station})
             if(request.error) {
                 return reject(request.error)
-            }else resolve(this._placesMany(request))
+            }else resolve(this.#placesMany(request))
         })
     }
 
@@ -57,15 +57,14 @@ module.exports = class PlacesManager extends CachedManager {
             if(request.error) {
                 return reject(request.error)
             }else {
-                if(request.places[0].embedded_type === 'stop_area') {
-                    return resolve(this.#stop_area(request.places[0].stop_area))
-                }
-                return resolve(SncfjsErrorCodes.NotImplemented)
+                if(request.places[0].embedded_type === 'administrative_region') {
+                    return resolve(this.#AdministrativeRegion(request.places[0].administrative_region))
+                }else return resolve(this.#stop_area(request.places[0].stop_area))
             }
         })
     }
 
-    _placesMany(places) {
+    #placesMany(places) {
         const result = {
             date: navitiaDateToDate(places.context.current_datetime),
             administrative_regions: [],

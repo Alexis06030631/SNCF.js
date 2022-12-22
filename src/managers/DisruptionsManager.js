@@ -1,19 +1,11 @@
 const CachedManager = require("./CachedManager");
+const Disruption = require("../structures/Disruption");
+const SncfjsErrorCodes = require("../errors/ErrorCodes");
 
-module.exports = class Disruptions extends CachedManager {
+module.exports = class DisruptionManager extends CachedManager {
     constructor(client) {
         super()
-
-        /**
-         * The utils functions.
-         * @returns {Utils}
-         */
-        this.utils = client.utils
-        /**
-         * All the structures available.
-         * @returns {StructuresManager}
-         */
-        this.structures = client.structures
+        Object.defineProperty(this, 'client', { value: client });
     }
 
 
@@ -21,14 +13,15 @@ module.exports = class Disruptions extends CachedManager {
      * Search the disruptions
      * @param {string||Date||number} [since_date] defines the start date of the disruptions to search for
      * @param {string||Date||number} [until_date] defines the end date of the disruptions to search for
-     * @param {number} [count=10] The number of disruptions to get
-     * @returns {Promise<Disruption[]>} The disruptions found
+     * @returns {Promise<Disruption[]>}
      * */
-    async search(since_date, until_date, count=10) {
-        let paramsDates = this.utils.date_options(since_date, until_date);
-
-
-        return this._disruptionsMany(await this.utils.request(`disruptions/?${paramsDates}count=${count}`))
+    async search(since_date, until_date) {
+        return new Promise(async (resolve, reject) => {
+            const request = await this.client.requestManager.request(`disruptions`, {since_date: since_date, until_date: until_date})
+            if(request.error) {
+                return reject(request.error)
+            }else resolve(request.disruptions.map(disruption => new Disruption(this.client, disruption)))
+        })
     }
 
     /**
@@ -37,11 +30,14 @@ module.exports = class Disruptions extends CachedManager {
      * @returns {Promise<Disruption>}
      */
     async get(disruptionID){
-        if(disruptionID.length === 0) {
-            throw new Error(Error.code.ID_MISSING)
-        }
-
-        return new this.structures.disruption((await this.utils.request(`disruptions/${disruptionID}`)).disruptions[0])
+        return new Promise(async (resolve, reject) => {
+            const request = await this.client.requestManager.request(`disruptions/${disruptionID}`)
+            if(request.error) {
+                return reject(request.error)
+            }else {
+                return resolve(new Disruption(this.client, request.disruptions[0]))
+            }
+        })
     }
 
 

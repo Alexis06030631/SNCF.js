@@ -3,7 +3,7 @@ const {SncfjsError, ErrorCodes} = require("../errors");
 const RequestManager = require("../request/requestManager");
 const PlacesManager = require("../managers/placesManager");
 const Status = require("../util/Status");
-const Place = require("../structures/Place");
+const DisruptionManager = require("../managers/DisruptionsManager");
 /**
  * The main hub for interacting with the Navitia API.
  * @extends {BaseClient}
@@ -50,6 +50,12 @@ module.exports = class Client extends BaseClient {
 		 * @type {PlacesManager}
 		 */
 		this.place = new PlacesManager(this);
+
+		/**
+		 * DisruptionManager class
+		 * @type {DisruptionManager}
+		 */
+		this.disruption = new DisruptionManager(this);
 	}
 
 	/**
