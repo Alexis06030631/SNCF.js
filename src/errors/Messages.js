@@ -14,7 +14,9 @@ const Messages = {
 	[SncfjsErrorCodes.IdIsMissing]: 'The id is missing. Please provide a valid id.',
 
 	// Navitia errors codes
-	[SncfjsErrorCodes.unable_to_parse]: 'Unable to parse the data from the API. Please try again later or change the parameters.'
+	[SncfjsErrorCodes.unable_to_parse]: 'Unable to parse the data from the API. Please try again later or change the parameters.',
+	[SncfjsErrorCodes.UnknownObject]: 'The object you are trying to access does not exist.',
+	[SncfjsErrorCodes.date_out_of_bounds]: 'The date you are trying to access is out of bounds.',
 };
 
 module.exports = Messages;

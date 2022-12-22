@@ -14,6 +14,8 @@
  * @property {'IdIsMissing'} IdIsMissing
  *
  * @property {'unable_to_parse'} unable_to_parse
+ * @property {'UnknownObject'} UnknownObject
+ * @property {'date_out_of_bounds'} date_out_of_bounds
  */
 
 const keys = [
@@ -28,7 +30,9 @@ const keys = [
 	'InvalidFunction',
 
 	// Navitia errors codes
-	'unable_to_parse'
+	'unable_to_parse',
+	'UnknownObject',
+	'date_out_of_bounds'
 ];
 
 // JSDoc for IntelliSense purposes
