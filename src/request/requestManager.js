@@ -5,6 +5,7 @@ const axios = require("axios");
 const {defineRequestError} = require("./requestError");
 const Status = require("../util/Status");
 const config = require('./requestConfig.json');
+const {SncfjsError, ErrorCodes} = require("../errors");
 
 module.exports = class RequestManager extends EventEmitter {
 	constructor(client) {
@@ -69,6 +70,8 @@ module.exports = class RequestManager extends EventEmitter {
 	 */
 	request(path, params = {}) {
 		return new Promise((resolve, reject) => {
+			if (!this.client.token) throw new SncfjsError(ErrorCodes.TokenNotInitialized);
+			if (!this.client.isReady) throw new SncfjsError(ErrorCodes.NotReady);
 			axios.get(this.encodeURL(path, params), {
 				headers: {
 					'Authorization': this.client.token
