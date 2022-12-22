@@ -12,6 +12,7 @@
  * @property {'NotImplemented'} NotImplemented
  * @property {'InvalidFunction'} InvalidFunction
  * @property {'IdIsMissing'} IdIsMissing
+ * @property {'MissingParameter'} MissingParameter
  *
  * @property {'unable_to_parse'} unable_to_parse
  * @property {'UnknownObject'} UnknownObject
@@ -28,6 +29,7 @@ const keys = [
 	'UrlNotFound',
 	'NotImplemented',
 	'InvalidFunction',
+	'MissingParameter',
 
 	// Navitia errors codes
 	'unable_to_parse',

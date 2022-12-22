@@ -12,6 +12,7 @@ const Messages = {
 	[SncfjsErrorCodes.TokenNotInitialized]: 'The token was not initialized. Please use the login function to initialize the token.',
 	[SncfjsErrorCodes.NotReady]: 'The client is not ready. Please make sure you are logged in (client.login()) and that the token is valid.',
 	[SncfjsErrorCodes.IdIsMissing]: 'The id is missing. Please provide a valid id.',
+	[SncfjsErrorCodes.MissingParameter]: (param, mult) => `The parameter${mult? 's':''} ${param} ${mult? 'are':'is'} missing. Please provide a valid${mult? '':'ly'} ${param}.`,
 
 	// Navitia errors codes
 	[SncfjsErrorCodes.unable_to_parse]: 'Unable to parse the data from the API. Please try again later or change the parameters.',
