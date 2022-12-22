@@ -1,7 +1,6 @@
 const CachedManager = require("./CachedManager");
 const {navitiaDateToDate} = require("../util/Converter");
 const SncfjsErrorCodes = require("../errors/ErrorCodes");
-const Place = require("../structures/Place");
 const StopArea = require("../structures/StopArea");
 const AdministrativeRegion = require("../structures/AdministrativeRegion");
 
@@ -12,21 +11,11 @@ module.exports = class PlacesManager extends CachedManager {
     }
 
     /**
-     * Place Class
-     * @type {Place}
-     * @param {object} data The data of the place
-     * @return {Place}
-     */
-    #place(data) {
-        return new Place(this.client, data);
-    }
-
-    /**
      * Get The stop areas of the place
      * @param data
      * @return {StopArea}
      */
-    #StopArea(data) {
+    #stop_area(data) {
         return new StopArea(this.client, data)
     }
 
@@ -50,7 +39,7 @@ module.exports = class PlacesManager extends CachedManager {
         return new Promise(async (resolve, reject) => {
             const request = await this.client.requestManager.request(`places`, {q: station})
             if(request.error) {
-                reject(request.error)
+                return reject(request.error)
             }else resolve(this._placesMany(request))
         })
     }
@@ -61,16 +50,22 @@ module.exports = class PlacesManager extends CachedManager {
      * @returns {Promise<Place>}
      */
     async get(stationID){
-        if(stationID.length === 0) {
-            throw new Error(Error.code.ID_MISSING)
-        }else if(!stationID.includes('stop_area:SNCF:')){
-            if(isNaN(Number(stationID))) {
-                throw new Error(Error.code.ID_IS_NOT_A_NUMBER)
-            }
-            stationID = `stop_area:SNCF:${stationID}`
-        }
+        return new Promise(async (resolve, reject) => {
+            if(!stationID) reject(new Error(SncfjsErrorCodes.IdIsMissing))
 
-        return new this.structures.place((await this.utils.request(`places/${stationID}`)).places[0])
+            const request = await this.client.requestManager.request(`places/${stationID}`)
+            if(request.error) {
+                return reject(request.error)
+            }else {
+                const result = {
+                    date: navitiaDateToDate(request.context.current_datetime),
+                }
+                if(request.places[0].embedded_type === 'stop_area') {
+                    result.stop_area = this.#stop_area(request.places[0].stop_area)
+                }
+                return resolve(result)
+            }
+        })
     }
 
     _placesMany(places) {
@@ -81,7 +76,7 @@ module.exports = class PlacesManager extends CachedManager {
         }
         if(places?.places) {
             for(let place of places.places.filter(place => place.embedded_type === 'stop_area')) {
-                result.stop_areas.push(this.#StopArea(place.stop_area))
+                result.stop_areas.push(this.#stop_area(place.stop_area))
             }
             for (let place of places.places.filter(place => place.embedded_type === 'administrative_region')) {
                 result.administrative_regions.push(this.#AdministrativeRegion(place.administrative_region))
