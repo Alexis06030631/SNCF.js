@@ -1,12 +1,12 @@
-const Client = require("../managers/ClientManager");
-const moment = require("moment");
+const StructuresManager = require("./StructuresManager");
+const {hourNativiaToHour} = require("../util/Converter");
+const {SncfjsError, ErrorCodes} = require("../errors");
 
-module.exports = class Vehicle extends Client{
-    #stoptimes
-    constructor(data) {
+module.exports = class Vehicle extends StructuresManager{
+    constructor(Client, data) {
         super()
-        this.#stoptimes = data.stop_times
-
+        Object.defineProperty(this, "client", {value: Client})
+        Object.defineProperty(this, "data", {value: data})
         /**
          * Return the vehicle id
          * @returns {string}
@@ -14,82 +14,65 @@ module.exports = class Vehicle extends Client{
         this.id = data.id
 
         /**
-         * Return the vehicle name
+         * Return the vehicle headsign
          * @returns {string}
          */
-        this.name = data.name
+        this.headsign = data.headsign
+
+        /**
+         * Return trip ID
+         * @returns {string}
+         */
+        this.trip_id = data.trip.id
+
+        /**
+         * Return boolean if the vehicle has disruptions
+         * @returns {boolean}
+         */
+        this.has_disruptions = !!data?.disruptions?.length
 
         /**
          * Return the calendar of the vehicle
-         * @returns {object}
+         * @returns {array<Calendar>}
          */
-        this.calendar = data.calendars[0]
+        this.calendar = data.calendars
 
         /**
-         * Return the departure date of the vehicle
-         * @returns {date}
+         * Return the departure time of the vehicle
+         * @returns {string}
          */
-        this.departure_date = getDateDeparture(this.id, this.stop_times[0])
+        this.departure_time = this.get_departure_time
 
         /**
-         * Return the arrival date of the vehicle
-         * @returns {date}
+         * Return the arrival time of the vehicle
+         * @returns {string}
          */
-        this.arrival_date = getDateDeparture(this.id, this.stop_times[this.stop_times.length - 1])
+        this.arrival_time = this.get_arrival_time
 
         /**
-         * Return the list of the disruptions id
-         * @returns {array<string>}
+         * Return the steps of the vehicle
+         * @returns {array<StopTime>}
          */
-        this.disruptions_id = data.disruptions?.map(e => e.id) || []
-
-        /**
-         * Get the vehicle direction
-         * @returns {object}
-         */
-        this.direction = {
-            start: this.stop_times[0].name,
-            end: this.stop_times[this.stop_times.length - 1].name,
-            train_direction: data.lineName?((data.lineName.match(/(.*) - (.*)/))[1] === this.stop_times[0].name) ? "forward" : "backward": 'unknown'
-        }
+        this.stop_times = data.stop_times.sort((a, b) => Number(a.departure_time) - Number(b.departure_time)).map(stop_time => new this.class_stop_time(this.client, stop_time))
 
     }
 
-    /**
-     * Return the stops of the vehicle
-     * @returns {array<StopTimes>}
-     */
-    get stop_times() {
-        let stopTimes = []
-        for(let stoptime of this.#stoptimes.sort((a,b) => a.arrival_time - b.departure_time)) {
-            stoptime.date = moment(this.id.match(/:((\d*|\-)+):/)[1], "YYYYMMDD").format("YYYY-MM-DD")
-            stopTimes.push(new this.structures.stop_time(stoptime))
-        }
-        return stopTimes
+    get get_departure_time() {
+        return hourNativiaToHour(this.data.stop_times.sort((a, b) => Number(a.departure_time) - Number(b.departure_time))[0].departure_time)
+    }
+
+    get get_arrival_time() {
+        return hourNativiaToHour(this.data.stop_times.sort((a, b) => Number(b.arrival_time) - Number(a.arrival_time))[0].arrival_time)
     }
 
     /**
      * Return the vehicle disruptions
      * @returns {array<Disruption>}
      */
-    async disruptions() {
-
-        let disruptions
-        for(let id of this.disruptions_id) {
-            disruptions = this._disruptionsMany(await this.utils.request(`disruptions/${id}/`))
-        }
-        return disruptions
+    get disruptions() {
+        return this.data.disruptions.map(disruption => {
+            if(!disruption.status) new SncfjsError(ErrorCodes.NotImplemented, "Disruption fetching is not implemented yet. Please open an issue on GitHub.")
+            return new this.class_disruption(this.client, disruption)
+        })
     }
-
-    _disruptionsMany(disruptions) {
-        const linesMany = [];
-        for(let disruption of disruptions.disruptions) {
-            linesMany.push(new this.structures.disruption(disruption))
-        }
-        return linesMany
-    }
-}
-
-function getDateDeparture(id_train, stTime) {
-    return new moment(id_train.match(/:((\d*|\-)+):/)[1], "YYYYMMDD").hour(moment(stTime.departure.date).get('hours')).minute(moment(stTime.departure.date).get('minutes')).second(moment(stTime.departure.date).get('seconds')).format()
 }
