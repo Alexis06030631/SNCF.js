@@ -29,7 +29,7 @@ module.exports = class Client extends BaseClient {
 		 * The request manager of the client
 		 * @type {RequestManager}
 		 */
-		this.requestManager = new RequestManager({token: this.token});
+		this.requestManager = new RequestManager(this);
 
 		/**
 		 * Reduce dir for request
@@ -60,7 +60,7 @@ module.exports = class Client extends BaseClient {
 	 */
 	async login(token = this.token) {
 		return new Promise(async (resolve, reject) => {
-			if (!token || typeof token !== 'string') throw new SncfjsError(ErrorCodes.TokenInvalid);
+			if (!token || typeof token !== 'string') throw new SncfjsError(ErrorCodes.TokenMissing);
 			this.token = token;
 			try {
 				await this.requestManager.connect();
