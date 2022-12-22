@@ -47,6 +47,14 @@ module.exports = class StructuresManager {
         return require("./Departure");
     }
 
+    /**
+     * Get arrival constructor
+     * @returns {Class<Arrival>}
+     */
+    get class_arrival() {
+        return require("./Arrival");
+    }
+
 
     /**
      * Get Place constructor

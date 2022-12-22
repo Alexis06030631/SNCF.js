@@ -47,7 +47,7 @@ module.exports = class PlacesManager extends CachedManager {
     /**
      * Get a place by id
      * @param {string} stationID The id of the station to get
-     * @returns {Promise<Place>}
+     * @returns {Promise<StopArea>}
      */
     async get(stationID){
         return new Promise(async (resolve, reject) => {
@@ -57,13 +57,10 @@ module.exports = class PlacesManager extends CachedManager {
             if(request.error) {
                 return reject(request.error)
             }else {
-                const result = {
-                    date: navitiaDateToDate(request.context.current_datetime),
-                }
                 if(request.places[0].embedded_type === 'stop_area') {
-                    result.stop_area = this.#stop_area(request.places[0].stop_area)
+                    return resolve(this.#stop_area(request.places[0].stop_area))
                 }
-                return resolve(result)
+                return resolve(SncfjsErrorCodes.NotImplemented)
             }
         })
     }

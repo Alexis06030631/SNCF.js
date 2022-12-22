@@ -50,6 +50,21 @@ module.exports = class StopArea extends StructuresManager{
             }
         })
     }
+
+    /**
+     * Get the arrivals of the stop area
+     * @param {date} date - The date of the arrivals
+     */
+    arrivals(date= new Date()) {
+        return new Promise(async (resolve, reject) => {
+            const request = await this.client.requestManager.request(`stop_areas/${this.id}/arrivals`, {from_datetime: dateToNavitiaDate(date)})
+            if(request.error) {
+                reject(request.error)
+            }else {
+                resolve(request.arrivals.map(arrival => new this.class_arrival(this.client, arrival)))
+            }
+        })
+    }
 }
 
 /**
