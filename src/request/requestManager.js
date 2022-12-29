@@ -72,6 +72,8 @@ module.exports = class RequestManager extends EventEmitter {
 		return new Promise((resolve, reject) => {
 			if (!this.client.token) throw new SncfjsError(ErrorCodes.TokenNotInitialized);
 			if (!this.client.isReady) throw new SncfjsError(ErrorCodes.NotReady);
+			if(this.client.debug) console.log(`[DEBUG] Request ${this.requestNumber} : ${this.encodeURL(path, params)}`);
+			this.requestNumber++;
 			axios.get(this.encodeURL(path, params), {
 				headers: {
 					'Authorization': this.client.token
