@@ -104,4 +104,12 @@ module.exports = class StructuresManager {
     get class_impacted_stop() {
         return require("./ImpactedStop");
     }
+
+    /**
+     * Get StopStep constructor
+     * @returns {Class<StopStep>}
+     */
+    get class_stop_step() {
+        return require("./StopStep");
+    }
 };
