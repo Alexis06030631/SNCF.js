@@ -1,3 +1,7 @@
 .github
 docs
 docGenerator.js
+.idea
+workflows
+.env
+retype.yml

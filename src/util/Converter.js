@@ -1,3 +1,4 @@
+const {SncfjsError, ErrorCodes} = require("../errors");
 module.exports = {
 	/**
 	 * Transform a navitia date to a Date object
@@ -20,6 +21,12 @@ module.exports = {
 	 * @return {string} The navitia date format: YYYYMMDD[T]HHmmss
 	 */
 	dateToNavitiaDate: (date) => {
+		let initDate = date;
+		// Check if the date is a string date or a Date object
+		if (typeof date === 'string') date = new Date(date);
+		if (!date instanceof Date || isNaN(date.getTime())) {
+			throw new SncfjsError(ErrorCodes.InvalidDate, initDate);
+		}
 		const year = date.getFullYear();
 		const month = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
 		const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
