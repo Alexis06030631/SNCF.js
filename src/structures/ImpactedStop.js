@@ -35,7 +35,8 @@ module.exports = class ImpactedStop extends StructuresManager{
 		this.departure = {
 			base_time: hourNativiaToHour(data.base_departure_time, true),
 			real_time: hourNativiaToHour(data.amended_departure_time, true),
-			status: data.departure_status}
+			status: data.departure_status
+		}
 
 		/**
 		 * Return the stop area
