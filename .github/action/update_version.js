@@ -2,6 +2,7 @@ const yaml = require('js-yaml');
 const glob = require('glob');
 const fs = require('fs');
 const gitlog = require("gitlog").default;
+require('../../docGenerator')
 
 
 // Update the version in website app

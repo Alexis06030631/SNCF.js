@@ -3,7 +3,7 @@ const clc = require('cli-color');
 
 
 const folder_classes = './src/managers/';
-const doc_folder_classes = './docs/classes/'
+const doc_folder_classes = './docs/managers/'
 
 const folder_structures = './src/structures/';
 const doc_folder_structures = './docs/structures/'
@@ -64,7 +64,7 @@ const type_of = ["undefined", "object", "function", "boolean", "string", "number
 let missing_data = {proprieties: 0, functions: 0};
 
 create_classes_doc()
-//create_structures_doc()
+create_structures_doc()
 
 
 function create_classes_doc(){
@@ -73,9 +73,9 @@ function create_classes_doc(){
             const file_content = fs.readFileSync(folder_classes + file, 'utf8');
             let name = file.replaceAll('.js', '').replaceAll('Manager', '');
             exports[name] = require(folder_classes + file);
+            if(name.toLowerCase().includes('cached')) return
 
-            fs.writeFileSync(doc_folder_classes + name + '.md', content_creator(file, exports[name], name, file_content))
-
+            fs.writeFileSync(doc_folder_classes + name + '.md', CreateDocFile(file, name, file_content))
         }
     });
 }
@@ -88,7 +88,7 @@ function create_structures_doc(){
             exports[name] = require(folder_structures + file);
 
             try {
-                fs.writeFileSync(doc_folder_structures + name + '.md', content_creator(file, exports[name], name, file_content))
+                fs.writeFileSync(doc_folder_structures + name + '.md', CreateDocFile(file, name, file_content))
             }catch (e) {
                 new Error('Error on create file ' + name + '.md')
             }
@@ -98,7 +98,7 @@ function create_structures_doc(){
 }
 
 
-function content_creator(file_url, data, name, file){
+function CreateDocFile(file_url, name, file){
     const {proprieties, functions} = get_functions_and_proprieties(file_url, file)
     let content = '';
     let separator = '---';
@@ -114,17 +114,14 @@ function content_creator(file_url, data, name, file){
     // add properties
     content += `||| Properties\n`;
     if(proprieties){
-        content += `=== Elements\n`;
         proprieties.forEach(property => {
             content += `- [${property.name}](#${property.name.replaceAll('.','')})\n`;
         })
-        content += `===\n`;
     }else content += '\n'
 
     // add methods
     content += `||| Methods\n`;
     if(functions){
-        content += `=== Functions\n`;
         functions.forEach(method => {
             content += `- [${method.name}](#${method.name.replaceAll('.','')})\n`;
         })
@@ -145,7 +142,7 @@ function content_creator(file_url, data, name, file){
             // Set example
             content += "\n"
             content += "```javascript\n"
-            content += `${name}.${property.name}\n`
+            content += `this.${property.name}\n`
             content += "```\n"
             content += `**Type: ${property.return_type || 'string'}**\n\n`
             content += "===\n\n"
@@ -187,6 +184,10 @@ function get_functions_and_proprieties(fileName, file){
     const functions = []
     const proprieties = []
 
+    // Delete JSDoc at the beginning of the file
+    file = file.replace(/(\/\*\*\n.*?\*.*@type(.|\n)*?\*\/)|(\/\/.*JSDoc.*)/gi, '');
+
+    // Get the zone of the file where the functions and properties are
     let data = file.match(/module\.exports\s\=.*((\n*.*)*)\}/g)
     if(data){
         const constructor = data[0].match(/constructor.*\{((.*\n*\s*)*?)\}/)[1]
