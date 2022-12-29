@@ -7,6 +7,17 @@ module.exports = class Journey extends StructuresManager{
 		Object.defineProperty(this, "client", {value: Client})
 		Object.defineProperty(this, "steps_data", {value: data.sections})
 
+		/**
+		 * Return value if status is define
+		 * @returns {string}
+		 */
+		if(data.status) this.status = data.status
+
+		/**
+		 * If the journey has disruptions return the disruptions
+		 * @returns {Disruption[]}
+		 */
+		if(data.disruptions) this.disruptions = data.disruptions
 
 		/**
 		 * Define the journey average

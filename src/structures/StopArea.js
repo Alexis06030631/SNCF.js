@@ -87,7 +87,10 @@ module.exports = class StopArea extends StructuresManager{
             if(request.error) {
                 reject(request.error)
             }else {
-                resolve(request.journeys.map(journey => new this.class_journey(this.client, journey)))
+                return resolve(request.journeys.map(journey => {
+                    if(request.disruptions) journey.disruptions = request.disruptions.map(disruption => new this.class_disruption(this.client, disruption))
+                    return new this.class_journey(this.client, journey)
+                }))
             }
         })
     }

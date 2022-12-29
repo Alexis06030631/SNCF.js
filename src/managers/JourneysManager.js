@@ -3,6 +3,7 @@ const {SncfjsError, ErrorCodes} = require("../errors");
 const {dateToNavitiaDate} = require("../util/Converter");
 const {isValidID} = require("../util/Validator");
 const Journey = require("../structures/Journey");
+const Disruption = require("../structures/Disruption");
 
 module.exports = class JourneyManager extends CachedManager {
     constructor(client) {
@@ -40,7 +41,10 @@ module.exports = class JourneyManager extends CachedManager {
             if(request.error) {
                 return reject(request.error)
             }else {
-                return resolve(request.journeys.map(journey => new Journey(this.client, journey)))
+                return resolve(request.journeys.map(journey => {
+                    if(request.disruptions) journey.disruptions = request.disruptions.map(disruption => new Disruption(this.client, disruption))
+                    return new Journey(this.client, journey)
+                }))
             }
         })
     }
