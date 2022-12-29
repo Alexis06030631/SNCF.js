@@ -28,6 +28,13 @@ module.exports = class Client extends BaseClient {
 		}
 
 		/**
+		 * If app run as debug mode
+		 * @type {boolean}
+		 */
+		this.debug = options.debug || false;
+
+
+		/**
 		 * The request manager of the client
 		 * @type {RequestManager}
 		 */
