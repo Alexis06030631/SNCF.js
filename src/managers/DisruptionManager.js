@@ -1,6 +1,5 @@
 const CachedManager = require("./CachedManager");
 const Disruption = require("../structures/Disruption");
-const SncfjsErrorCodes = require("../errors/ErrorCodes");
 
 module.exports = class DisruptionManager extends CachedManager {
     constructor(client) {
@@ -11,8 +10,8 @@ module.exports = class DisruptionManager extends CachedManager {
 
     /**
      * Search the disruptions
-     * @param {string||Date||number} [since_date] defines the start date of the disruptions to search for
-     * @param {string||Date||number} [until_date] defines the end date of the disruptions to search for
+     * @param {Date} [since_date] defines the start date of the disruptions to search for
+     * @param {Date} [until_date] defines the end date of the disruptions to search for
      * @returns {Promise<Disruption[]>}
      * */
     async search(since_date, until_date) {
@@ -38,16 +37,5 @@ module.exports = class DisruptionManager extends CachedManager {
                 return resolve(new Disruption(this.client, request.disruptions[0]))
             }
         })
-    }
-
-
-
-
-    _disruptionsMany(disruptions) {
-        const linesMany = [];
-        for(let disruption of disruptions.disruptions) {
-            linesMany.push(new this.structures.disruption(disruption))
-        }
-        return linesMany
     }
 }

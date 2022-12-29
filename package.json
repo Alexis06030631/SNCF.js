@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "dev": "nodemon test.js",
+    "devDoc": "nodemon docGenerator.js",
     "update_doc_data": "node ./.github/action/update_version.js",
     "build_docs": "node ./.github/action/update_version.js && retype build",
     "dev_docs": "node ./.github/action/update_version.js && retype watch"

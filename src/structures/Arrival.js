@@ -20,25 +20,25 @@ module.exports = class Arrival extends StructuresManager{
 
         /**
          * Returns the arrival time
-         * @returns {string}
+         * @returns {Date}
          */
         this.arrival_date_time = navitiaDateToDate(data.stop_date_time.arrival_date_time);
 
         /**
          * Returns the default arrival time
-         * @returns {string}
+         * @returns {Date}
          */
         this.base_arrival_date_time = navitiaDateToDate(data.stop_date_time.base_arrival_date_time);
 
         /**
          * Returns the departure time
-         * @returns {string}
+         * @returns {Date}
          */
         this.departure_date_time = navitiaDateToDate(data.stop_date_time.departure_date_time);
 
         /**
          * Returns the default departure time
-         * @returns {string}
+         * @returns {Date}
          */
         this.base_departure_date_time = navitiaDateToDate(data.stop_date_time.base_departure_date_time);
 

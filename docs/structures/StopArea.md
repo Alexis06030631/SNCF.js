@@ -1,24 +1,23 @@
 ---
 title: StopArea
 author:
-  name: Alexis06030631
-  avatar: https://avatars.githubusercontent.com/u/61119747
-
-date: 2022-12-22T21:14
 ---
 
 # StopArea
 
 ||| Properties
-=== Elements
 - [id](#id)
 - [name](#name)
-- [zip_code](#zip_code)
-- [timezone](#timezone)
 - [coord](#coord)
-===
+- [administrative_region](#administrative_region)
+- [timezone](#timezone)
 ||| Methods
-=== Functions
+- [departures](#departures)
+- [arrivals](#arrivals)
+- [journeys](#journeys)
+- [lines](#lines)
+- [routes](#routes)
+- [vehicle_journeys](#vehicle_journeys)
 |||
 ## Properties
 ## .id
@@ -29,7 +28,7 @@ Return the stop area id
 
 
 ```javascript
-StopArea.id
+this.id
 ```
 **Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
@@ -43,23 +42,37 @@ Return the stop area name
 
 
 ```javascript
-StopArea.name
+this.name
 ```
 **Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
 ===
 
-## .zip_code
+## .coord
 
-=== zip_code
+=== coord
 
 Return the stop area zip code
 
 
 ```javascript
-StopArea.zip_code
+this.coord
 ```
-**Type: [number :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**
+**Type: [object :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+
+===
+
+## .administrative_region
+
+=== administrative_region
+
+Return the Administative Region of the stop area (if exist)
+
+
+```javascript
+this.administrative_region
+```
+**Type: [administrativeregion|null](../structures/administrativeregion|null)**
 
 ===
 
@@ -71,25 +84,108 @@ Return the stop area timezone
 
 
 ```javascript
-StopArea.timezone
+this.timezone
 ```
 **Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
 ===
 
-## .coord
+---
+## Methods
+## .departures
 
-=== coord
+=== departures()
 
-Return the coordinates of the stop area
+Get the departures of the stop area
 
+| PARAMETER | TYPE | OPTIONAL | DESCRIPTION |
+| --- | --- | :---: | --- |
+| date | [date :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :icon-x: | - The date of the departures |
 
 ```javascript
-StopArea.coord
+departures()
 ```
-**Type: [object :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[departure](../structures/departure)[]>**
 
 ===
 
----
-## Methods
+## .arrivals
+
+=== arrivals()
+
+Get the arrivals of the stop area
+
+| PARAMETER | TYPE | OPTIONAL | DESCRIPTION |
+| --- | --- | :---: | --- |
+| date | [date :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :icon-x: | - The date of the arrivals |
+
+```javascript
+arrivals()
+```
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[arrival](../structures/arrival)[]>**
+
+===
+
+## .journeys
+
+=== journeys()
+
+Get Journeys from the stop area
+
+| PARAMETER | TYPE | OPTIONAL | DESCRIPTION |
+| --- | --- | :---: | --- |
+| to | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | :icon-check: | - The id or name of the destination |
+| date | [date :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :icon-check: | - The date of the journey |
+
+```javascript
+journeys()
+```
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[journey](../structures/journey)[]>**
+
+===
+
+## .lines
+
+=== lines()
+
+Get the lines of the stop area
+
+
+```javascript
+lines()
+```
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[line](../structures/line)[]>**
+
+===
+
+## .routes
+
+=== routes()
+
+Get the routes of the stop area
+
+
+```javascript
+routes()
+```
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[route](../structures/route)[]>**
+
+===
+
+## .vehicle_journeys
+
+=== vehicle_journeys()
+
+Get vehicle journeys of the stop area
+
+| PARAMETER | TYPE | OPTIONAL | DESCRIPTION |
+| --- | --- | :---: | --- |
+| date | [date :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :icon-check: | - The date of the vehicle journeys |
+
+```javascript
+vehicle_journeys()
+```
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[vehiclejourney](../structures/vehiclejourney)[]>**
+
+===
+

@@ -1,53 +1,16 @@
 ---
-title: Lines
+title: Line
 author:
-  name: Alexis06030631
-  avatar: https://avatars.githubusercontent.com/u/61119747
-
-date: 2022-12-22T21:14
 ---
 
-# Lines
+# Line
 
 ||| Properties
-=== Elements
-- [utils](#utils)
-- [structures](#structures)
-===
 ||| Methods
-=== Functions
 - [search](#search)
 - [get](#get)
 |||
 ## Properties
-## .utils
-
-=== utils
-
-The utils functions for the client.
-
-
-```javascript
-Lines.utils
-```
-**Type: string**
-
-===
-
-## .structures
-
-=== structures
-
-The structure available for the client.
-
-
-```javascript
-Lines.structures
-```
-**Type: string**
-
-===
-
 ---
 ## Methods
 ## .search

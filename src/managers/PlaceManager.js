@@ -11,25 +11,6 @@ module.exports = class PlacesManager extends CachedManager {
     }
 
     /**
-     * Get The stop areas of the place
-     * @param data
-     * @return {StopArea}
-     */
-    #stop_area(data) {
-        return new StopArea(this.client, data)
-    }
-
-    /**
-     * Get the administrative regions of the place
-     * @param data
-     * @return {AdministrativeRegion}
-     */
-    #AdministrativeRegion(data) {
-        return new AdministrativeRegion(this.client, data)
-    }
-
-
-    /**
      * Search for a place by name
      * @param {string} station The name of the station to search for
      * @param {string.<place_types>} [type] The filters to apply to the search
@@ -58,8 +39,8 @@ module.exports = class PlacesManager extends CachedManager {
                 return reject(request.error)
             }else {
                 if(request.places[0].embedded_type === 'administrative_region') {
-                    return resolve(this.#AdministrativeRegion(request.places[0].administrative_region))
-                }else return resolve(this.#stop_area(request.places[0].stop_area))
+                    return resolve(new AdministrativeRegion(this.client, request.places[0].administrative_region))
+                }else return resolve(new StopArea(this.client, request.places[0].stop_area))
             }
         })
     }
@@ -72,10 +53,10 @@ module.exports = class PlacesManager extends CachedManager {
         }
         if(places?.places) {
             for(let place of places.places.filter(place => place.embedded_type === 'stop_area')) {
-                result.stop_areas.push(this.#stop_area(place.stop_area))
+                result.stop_areas.push(new StopArea(this.client,place.stop_area))
             }
             for (let place of places.places.filter(place => place.embedded_type === 'administrative_region')) {
-                result.administrative_regions.push(this.#AdministrativeRegion(place.administrative_region))
+                result.administrative_regions.push(new AdministrativeRegion(this.client, place.administrative_region))
             }
         }
         return result

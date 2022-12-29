@@ -1,11 +1,11 @@
 const BaseClient = require('./BaseClient');
 const {SncfjsError, ErrorCodes} = require("../errors");
 const RequestManager = require("../request/requestManager");
-const PlacesManager = require("../managers/placesManager");
+const PlacesManager = require("../managers/PlaceManager");
 const Status = require("../util/Status");
-const DisruptionManager = require("../managers/DisruptionsManager");
-const LineManager = require("../managers/LinesManager");
-const JourneyManager = require("../managers/JourneysManager");
+const DisruptionManager = require("../managers/DisruptionManager");
+const LineManager = require("../managers/LineManager");
+const JourneyManager = require("../managers/JourneyManager");
 /**
  * The main hub for interacting with the Navitia API.
  * @extends {BaseClient}

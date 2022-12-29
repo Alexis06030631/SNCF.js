@@ -1,19 +1,12 @@
 ---
-title: Places
+title: Place
 author:
-  name: Alexis06030631
-  avatar: https://avatars.githubusercontent.com/u/61119747
-
-date: 2022-12-22T21:14
 ---
 
-# Places
+# Place
 
 ||| Properties
-=== Elements
-===
 ||| Methods
-=== Functions
 - [search](#search)
 - [get](#get)
 |||
@@ -29,12 +22,12 @@ Search for a place by name
 | PARAMETER | TYPE | OPTIONAL | DESCRIPTION |
 | --- | --- | :---: | --- |
 | station | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | :icon-x: | The name of the station to search for |
-| type | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | :icon-x: | The filters to apply to the search |
+| type | [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | :icon-check: | The filters to apply to the search |
 
 ```javascript
 search()
 ```
-**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[place](../structures/place)[]>**
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[placemanagerresult](../structures/placemanagerresult)>**
 
 ===
 
@@ -51,7 +44,7 @@ Get a place by id
 ```javascript
 get()
 ```
-**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[place](../structures/place)>**
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[stoparea](../structures/stoparea)>**
 
 ===
 
