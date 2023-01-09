@@ -57,7 +57,7 @@ module.exports = class RequestManager extends EventEmitter {
 				resolve(this);
 			}).catch(err => {
 				this.client.status = Status.Disconnected
-				reject(defineRequestError(err.response))
+				reject(defineRequestError(err))
 			});
 		})
 	}
