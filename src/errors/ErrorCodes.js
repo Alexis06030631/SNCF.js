@@ -14,7 +14,7 @@
  * @property {'IdIsMissing'} IdIsMissing
  * @property {'MissingParameter'} MissingParameter
  * @property {'InvalidDate'} InvalidDate
- * @property {'EnotFound'} EnotFound
+ * @property {'NetworkError'} NetworkError
  *
  * @property {'unable_to_parse'} unable_to_parse
  * @property {'UnknownObject'} UnknownObject
@@ -33,7 +33,7 @@ const keys = [
 	'InvalidFunction',
 	'MissingParameter',
 	'InvalidDate',
-	'EnotFound',
+	'NetworkError',
 
 	// Navitia errors codes
 	'unable_to_parse',

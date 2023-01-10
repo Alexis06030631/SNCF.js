@@ -14,7 +14,7 @@ const Messages = {
 	[SncfjsErrorCodes.IdIsMissing]: 'The id is missing. Please provide a valid id.',
 	[SncfjsErrorCodes.MissingParameter]: (param, mult) => `The parameter${mult? 's':''} ${param} ${mult? 'are':'is'} missing. Please provide a valid${mult? '':'ly'} ${param}.`,
 	[SncfjsErrorCodes.InvalidDate]: (date) => `The string ${date} is not valid date. Please provide a valid date.`,
-	[SncfjsErrorCodes.EnotFound]: (url) => `The url ${url} couldn't be found. Please verify your network connection and try again.`,
+	[SncfjsErrorCodes.NetworkError]: (details) => `The request at ${details.host} was failed with the code ${details.code}. Please verify it and try again.`,
 
 	// Navitia errors codes
 	[SncfjsErrorCodes.unable_to_parse]: 'Unable to parse the data from the API. Please try again later or change the parameters.',

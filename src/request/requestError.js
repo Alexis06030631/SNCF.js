@@ -18,10 +18,10 @@ module.exports = {
 			return new SncfjsError(ErrorCodes.TokenMissing, response.message);
 		}
 
-		if(response.code === "ENOTFOUND"){
-			return new SncfjsError(ErrorCodes.EnotFound, response.hostname, response.message);
+		if(response.isAxiosError){
+			return new SncfjsError(ErrorCodes.NetworkError, {host: response.hostname, code:response.code}, response.message);
 		}
 
-		return new SncfjsError(ErrorCodes.UnknownError, response?.response?.data?.code, response?.response?.data?.message);
+		return new SncfjsError(ErrorCodes.UnknownError, response?.response?.data?.code||response.code, response?.response?.data?.message || response?.message);
 	},
 }
