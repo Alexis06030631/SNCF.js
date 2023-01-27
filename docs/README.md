@@ -13,18 +13,15 @@ date: 2022-07-23T21:56
 
 ## <div style="display:none">Introduction</div>
 
-[SNCF.JS](/) is a JavaScript library that allows you to easily use the [SNCF](https://www.sncf.com/) api.
+[SNCF.JS](https://alexis06030631.github.io/SNCF.js/) is a JavaScript library that allows you to easily use the [SNCF](https://www.sncf.com/) api.
 
-![](https://www.sncf.com/themes/contrib/sncf_theme/images/logo-sncf.svg "SNCF_icon")
+<img src="https://www.sncf.com/themes/contrib/sncf_theme/images/logo-sncf.svg" alt="drawing" width="200"/>
 
 ---
 
 ## Requirements
 
-| Elements                                  | Version                                       |
-|-------------------------------------------|-----------------------------------------------|
-| [NodeJs](https://nodejs.org/en/download/) | [>= V16.0.0](https://nodejs.org/en/download/) |
-| [SNCF Api Key](#get-your-sncf-token)      |                                               |
+Only an api key is required to use the library. You can get one [here](https://www.digital.sncf.com/startup/api/token-developpeur)
 
 ---
 
@@ -32,19 +29,17 @@ date: 2022-07-23T21:56
 
 You can install SNCF.js using `npm` or `yarn`.
 
-+++ NPM
+NPM
 ```
 npm install sncf.js
 ```
-+++ Yarn
+Yarn
 ```
 yarn install sncf.js
 ```
-+++
 
-!!!
-All operating systems are supported, including Mac, Windows, and Linux.
-!!!
+
+_All operating systems are supported, including Mac, Windows, and Linux._
 
 ---
 
@@ -68,19 +63,24 @@ sncf.login('your token' ) // returns a promise
 
 ```
 
+## Documentation
+
+### The documentation is available [here](https://alexis06030631.github.io/SNCF.js/)
+### You can find some examples [here](https://alexis06030631.github.io/SNCF.js/examples)
+
 ---
 
 ## Features
 
-#### :icon-file-code: Easy to use
+#### Easy to use
 
-SNCF.JS is object oriented which makes its use simple, fast and efficient
+SNCF.JS is object-oriented which makes its use simple, fast and efficient
 
-#### :icon-zap: Lightning fast
+#### Lightning fast
 
 SNCF.js is optimized to the maximum, and will soon have a caching system limiting the requests
 
-#### :icon-gear: Easy install
+#### Easy install
 
 [Installation](#installation) takes only a few seconds because the package is very light.
 
