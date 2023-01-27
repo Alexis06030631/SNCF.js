@@ -4,16 +4,13 @@
 
 [SNCF.JS](https://alexis06030631.github.io/SNCF.js/) is a JavaScript library that allows you to easily use the [SNCF](https://www.sncf.com/) api.
 
-![](https://www.sncf.com/themes/contrib/sncf_theme/images/logo-sncf.svg "SNCF_icon")
+<img src="https://www.sncf.com/themes/contrib/sncf_theme/images/logo-sncf.svg" alt="drawing" width="200"/>
 
 ---
 
 ## Requirements
 
-| Elements                                  | Version                                       |
-|-------------------------------------------|-----------------------------------------------|
-| [NodeJs](https://nodejs.org/en/download/) | [>= V16.0.0](https://nodejs.org/en/download/) |
-| [SNCF Api Key](#get-your-sncf-token)      |                                               |
+Only an api key is required to use the library. You can get one [here](https://www.digital.sncf.com/startup/api/token-developpeur)
 
 ---
 
@@ -57,14 +54,16 @@ sncf.login('your token' ) // returns a promise
 
 ## Documentation
 
-The documentation is available [here](https://alexis06030631.github.io/SNCF.js/)
+### The documentation is available [here](https://alexis06030631.github.io/SNCF.js/)
+### You can find some examples [here](https://alexis06030631.github.io/SNCF.js/examples)
+
 ---
 
 ## Features
 
 #### Easy to use
 
-SNCF.JS is object oriented which makes its use simple, fast and efficient
+SNCF.JS is object-oriented which makes its use simple, fast and efficient
 
 #### Lightning fast
 
