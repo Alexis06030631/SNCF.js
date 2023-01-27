@@ -113,6 +113,7 @@ function CreateDocFile(file_url, name, file){
 
     // add properties
     content += `||| Properties\n`;
+    console.log(proprieties)
     if(proprieties){
         proprieties.forEach(property => {
             content += `- [${property.name}](#${property.name.replaceAll('.','')})\n`;
@@ -176,23 +177,26 @@ function CreateDocFile(file_url, name, file){
         content += "===\n\n"
     })
 
+    console.log('OKAYY')
     return content;
 }
 
 
 function get_functions_and_proprieties(fileName, file){
     const functions = []
-    const proprieties = []
+    const proprieties = getPropertyAtTheEnd(file.matchAll(/(\/\*\*\n.*?\*.*@typedef(.|\n|\r)*?\*\/)/gi))
 
     // Delete JSDoc at the beginning of the file
-    file = file.replace(/(\/\*\*\n.*?\*.*@type(.|\n)*?\*\/)|(\/\/.*JSDoc.*)/gi, '');
+    file = file.replace(/(\/\*\*\n.*?\*.*@type(.|\n|\r)*?\*\/)|(\/\/.*JSDoc.*)/gi, '');
 
     // Get the zone of the file where the functions and properties are
-    let data = file.match(/module\.exports\s\=.*((\n*.*)*)\}/g)
+    let data = file.match(/(module\.exports\s?\=*)(.|\n|\r)*/gi)
+    console.log(data)
     if(data){
-        const constructor = data[0].match(/constructor.*\{((.*\n*\s*)*?)\}/)[1]
+        const constructor = data[0].match(/constructor.*\{((.*\n*\s*\r*)*?)\}/)[1]
         let constructor_data
-        data = data[0].match(/\/\*\*\s*(\n[^\*]|\*[^\/]*)\*\/.*\n*(.*)/g) || []
+        console.log(data[0])
+        data = data[0].match(/\/\*\*\s*(\n|\r[^\*]|\*[^\/]*)\*\/.*[\n|\r]*(.*)/ig) || []
 
         if(constructor) constructor_data = constructor.match(/this\.(\w*)\s?=.*/g)?.map(match => match.match(/this\.(\w*)\s?=.*/))?.map(match => constructor.match(`\/\/\\s?(.*).*\n{0,2}(.*)this.${match[1]}\\s?=.*`))?.map(match => match?match[0]:null).filter(match => match)
         else throw new Error(`File ${fileName} is malformed, no constructor found`)
@@ -200,6 +204,7 @@ function get_functions_and_proprieties(fileName, file){
         if(constructor_data?.length) constructor_data.forEach(e => data.push(e))
 
         if(data.length) {
+            console.log(data)
             data.forEach(function (match) {
                 const mdata = matchJSdocs(fileName, match)
 
@@ -229,6 +234,7 @@ function matchJSdocs(fileName, match){
         type_of: ''
     }
 
+    match = match.replaceAll('\r', '\n')
     const lastLine = (match.split('\n')[match.split('\n').length-1])
     if(lastLine.match(/this\.\w*.*=.*/g)){
         return_object.name = lastLine.match(/this\.(\w*).*=.*/)[1]
@@ -237,7 +243,8 @@ function matchJSdocs(fileName, match){
         return_object.name = lastLine.match(/.*get\s*(\w+)\(.*\)/)[1]
         return_object.type_of = 'propriety'
     }else {
-        return_object.name = lastLine.match(/(\w+)\s?\(.*\)/)[1]
+        console.log(fileName, lastLine)
+        return_object.name = lastLine.match(/(\w+)\s?\(.*\)/i)[1]
         return_object.type_of = 'function'
         if(lastLine.startsWith('async')) return_object.async = true
     }
@@ -322,6 +329,10 @@ function contain_link(elem) {
     return elem
 }
 
+function getPropertyAtTheEnd(prop){
+    return []
+}
+
 function check_is_commented(fileName, file, {functions: functions, proprieties: proprieties}) {
     const missing = {proprieties: [], functions: []}
     console.log(clc.whiteBright(`${fileName}`))
@@ -329,7 +340,7 @@ function check_is_commented(fileName, file, {functions: functions, proprieties: 
     console.log(clc.blackBright(`   ${clc.yellow('[detected]')} Functions: ${functions.length}`))
     console.log(clc.blackBright(`   ${clc.yellow('[detected]')} Properties: ${proprieties.length}`))
 
-    let data = file.match(/module\.exports\s\=.*((\n*.*)*)\}/g);
+    let data = file.match(/(module\.exports\s?\=*)(.|\n|\r)*/gi);
 
     // Check properties
     (data[0].match(/constructor.*\{((.*\n*\s*)*?)\}/)[1])?.match(/this\.(\w*)\s?=.*/g)?.map(match => match.match(/this\.(\w*)\s?=.*/))?.forEach(m => {
@@ -341,7 +352,7 @@ function check_is_commented(fileName, file, {functions: functions, proprieties: 
     })
 
     // Check functions
-    data[0].match(/\/\*\*\s*(\n[^\*]|\*[^\/]*)\*\/.*\n*(.*)/g)?.forEach(match => {
+    data[0].match(/\/\*\*\s*(\n|\r[^\*]|\*[^\/]*)\*\/.*[\n|\r]*(.*)/ig)?.forEach(match => {
         const lastLine = (match.split('\n')[match.split('\n').length-1])
         if(lastLine.match(/.*(get)\s*\w+\(.*\)/g)){
             if(!proprieties.find(p => p.name === lastLine.match(/.*get\s*(\w+)\(.*\)/)[1])) missing.proprieties.push(lastLine.match(/.*get\s*(\w+)\(.*\)/)[1])
