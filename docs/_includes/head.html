@@ -6,38 +6,3 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f24848">
 <meta name="msapplication-TileColor" content="#00aba9">
 <meta name="theme-color" content="#000000">
-<script>
-    let delete_order = function (){
-        try {
-            document.querySelector("#docs-app > div.container.relative.flex.bg-white > aside > div:nth-child(4)").setAttribute("style", "opacity: 0;");
-            setTimeout(function(){
-                document.querySelector("#docs-app > div.container.relative.flex.bg-white > aside > div:nth-child(4)").remove()
-            }, 1000)
-            return true;
-        }catch (e) {
-            return false
-        }
-    }
-
-
-    window.delete_order = setInterval(function(){
-        if(delete_order()) clearInterval(window.delete_order);
-    }, 200);
-
-    document.addEventListener('click', event => {
-        window.hide = setInterval(function(){
-            try {
-                document.querySelector("#docs-app > div.container.relative.flex.bg-white > aside > div:nth-child(4)").setAttribute("style", "opacity: 0;");
-            }catch {}
-        }, 200);
-        setTimeout(function(){
-            window.delete_order = setInterval(function(){
-                if(delete_order()) clearInterval(window.delete_order);
-            }, 100);
-        }, 500);
-        setTimeout(function(){
-            clearInterval(window.hide);
-            clearInterval(window.delete_order);
-        }, 2000);
-    });
-</script>

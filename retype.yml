@@ -4,7 +4,7 @@ url: github.com/SNCF.js
 branding:
   logo: static/sncf-logo_dark.png
   logoDark: static/sncf-logo.png
-  label: V2.3.2
+  label: V2.3.6
 meta:
   title: ' - SNCF.JS a javascript library'
 edit:
@@ -34,3 +34,8 @@ footer:
     - text: License
       link: license.md
       icon: shield-check
+integrations:
+  googleAnalytics:
+    id: G-M3ZSYVDT7Y
+  googleTagManager:
+    id: GTM-57N5GWZ
