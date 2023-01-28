@@ -14,7 +14,6 @@ author:
 - [network](#network)
 - [physical_modes](#physical_modes)
 - [commercial_mode](#commercial_mode)
-||| Methods
 |||
 ## Properties
 ## .id
@@ -111,7 +110,7 @@ Return the physical mode
 ```javascript
 this.physical_modes
 ```
-**Type: [network[]](../structures/network[])**
+**Type: [array :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) <[network](../structures/network)>**
 
 ===
 
@@ -129,5 +128,3 @@ this.commercial_mode
 
 ===
 
----
-## Methods

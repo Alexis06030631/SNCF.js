@@ -42,7 +42,7 @@ module.exports = class Line extends StructuresManager{
 
 		/**
 		 * Return the physical mode
-		 * @returns {Network[]}
+		 * @returns {array<Network>}
 		 */
 		this.physical_modes = data.physical_modes.map(mode => {return {id: mode.id, name: mode.name}})
 

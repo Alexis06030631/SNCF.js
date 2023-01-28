@@ -72,7 +72,7 @@ Return the Administative Region of the stop area (if exist)
 ```javascript
 this.administrative_region
 ```
-**Type: [administrativeregion|null](../structures/administrativeregion|null)**
+**Type: [administrativeregion](../structures/administrativeregion)**
 
 ===
 
@@ -105,7 +105,7 @@ Get the departures of the stop area
 ```javascript
 departures()
 ```
-**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[departure](../structures/departure)[]>**
+**Type: [array :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) <[departure](../structures/departure)>**
 
 ===
 
@@ -185,7 +185,7 @@ Get vehicle journeys of the stop area
 ```javascript
 vehicle_journeys()
 ```
-**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[vehiclejourney](../structures/vehiclejourney)[]>**
+**Type: [promise :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) <[vehicle](../structures/vehicle)[]>**
 
 ===
 

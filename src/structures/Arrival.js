@@ -50,16 +50,14 @@ module.exports = class Arrival extends StructuresManager{
 
         /**
          * Return stop point data
-         * @returns {StopPoint}
+         * @returns {StopArea}
          */
         this.stop_area = new this.class_stop_area(Client, data.stop_point.stop_area);
-    }
 
-    /**
-     * Return boolean if the train is in late
-     * @returns {boolean}
-     */
-    get isLate() {
-        return this.departure_date_time !== this.base_departure_date_time || this.arrival_date_time !== this.base_arrival_date_time;
+        /**
+         * Return boolean if the train is in late
+         * @returns {boolean}
+         */
+        this.isLate = this.departure_date_time !== this.base_departure_date_time || this.arrival_date_time !== this.base_arrival_date_time;
     }
 }

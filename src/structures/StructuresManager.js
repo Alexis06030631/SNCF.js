@@ -112,4 +112,12 @@ module.exports = class StructuresManager {
     get class_stop_step() {
         return require("./StopStep");
     }
+
+    /**
+     * Get Calendar constructor
+     * @returns {Class<Calendar>}
+     */
+    get class_calendar() {
+        return require("./Calendar");
+    }
 };

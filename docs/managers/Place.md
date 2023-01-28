@@ -5,13 +5,11 @@ author:
 
 # Place
 
-||| Properties
+
 ||| Methods
 - [search](#search)
 - [get](#get)
 |||
-## Properties
----
 ## Methods
 ## .search
 

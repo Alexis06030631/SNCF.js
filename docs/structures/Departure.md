@@ -14,7 +14,6 @@ author:
 - [route](#route)
 - [stop_area](#stop_area)
 - [isLate](#isLate)
-||| Methods
 |||
 ## Properties
 ## .train
@@ -111,7 +110,7 @@ Return stop point data
 ```javascript
 this.stop_area
 ```
-**Type: [stoppoint](../structures/stoppoint)**
+**Type: [stoparea](../structures/stoparea)**
 
 ===
 
@@ -129,5 +128,3 @@ this.isLate
 
 ===
 
----
-## Methods

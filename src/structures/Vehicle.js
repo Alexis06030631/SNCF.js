@@ -35,7 +35,7 @@ module.exports = class Vehicle extends StructuresManager{
          * Return the calendar of the vehicle
          * @returns {array<Calendar>}
          */
-        this.calendar = data.calendars
+        this.calendar = data.calendars.map(calendar => {return new this.class_calendar(this.client, calendar)})
 
         /**
          * Return the departure time of the vehicle

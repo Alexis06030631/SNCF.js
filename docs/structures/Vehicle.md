@@ -15,7 +15,6 @@ author:
 - [arrival_time](#arrival_time)
 - [stop_times](#stop_times)
 - [disruptions](#disruptions)
-||| Methods
 |||
 ## Properties
 ## .id
@@ -144,5 +143,3 @@ this.disruptions
 
 ===
 
----
-## Methods

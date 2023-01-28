@@ -5,13 +5,11 @@ author:
 
 # Disruption
 
-||| Properties
+
 ||| Methods
 - [search](#search)
 - [get](#get)
 |||
-## Properties
----
 ## Methods
 ## .search
 

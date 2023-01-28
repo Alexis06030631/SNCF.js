@@ -25,7 +25,7 @@ module.exports = class StopArea extends StructuresManager{
 
         /**
          * Return the Administative Region of the stop area (if exist)
-         * @returns {AdministrativeRegion|null}
+         * @returns {AdministrativeRegion}
          */
         this.administrative_region = data.administrative_regions ? new this.class_administrative_region(this.client, data.administrative_regions[0]) : null
 
@@ -39,9 +39,9 @@ module.exports = class StopArea extends StructuresManager{
     /**
      * Get the departures of the stop area
      * @param {Date} date - The date of the departures
-     * @returns {Promise<Departure[]>}
+     * @returns {array<Departure>}
      */
-    departures(date= new Date()) {
+    async departures(date= new Date()) {
         return new Promise(async (resolve, reject) => {
             const request = await this.client.requestManager.request(`stop_areas/${this.id}/departures`, {from_datetime: dateToNavitiaDate(date)})
             if(request.error) {
@@ -128,7 +128,7 @@ module.exports = class StopArea extends StructuresManager{
     /**
      * Get vehicle journeys of the stop area
      * @param {Date} [date] - The date of the vehicle journeys
-     * @returns {Promise<VehicleJourney[]>}
+     * @returns {Promise<Vehicle[]>}
      */
     vehicle_journeys(date= new Date()) {
         return new Promise(async (resolve, reject) => {

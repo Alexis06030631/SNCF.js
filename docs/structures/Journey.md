@@ -15,7 +15,6 @@ author:
 - [price](#price)
 - [transfers](#transfers)
 - [steps](#steps)
-||| Methods
 |||
 ## Properties
 ## .status
@@ -42,7 +41,7 @@ If the journey has disruptions return the disruptions
 ```javascript
 this.disruptions
 ```
-**Type: [disruption[]](../structures/disruption[])**
+**Type: [array :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) <[disruption](../structures/disruption)>**
 
 ===
 
@@ -144,5 +143,3 @@ this.steps
 
 ===
 
----
-## Methods

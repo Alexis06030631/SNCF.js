@@ -5,3 +5,8 @@ docGenerator.js
 workflows
 .env
 retype.yml
+CODE_OF_CONDUCT.md
+LICENSE.md
+SECURITY.md
+test.js
+examples
