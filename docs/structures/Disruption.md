@@ -17,7 +17,6 @@ author:
 - [delayed](#delayed)
 - [severity](#severity)
 - [impacted_stops](#impacted_stops)
-||| Methods
 |||
 ## Properties
 ## .id
@@ -174,5 +173,3 @@ this.impacted_stops
 
 ===
 
----
-## Methods

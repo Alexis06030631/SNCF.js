@@ -1,28 +1,27 @@
 ---
-title: Route
+title: Train_info
 author:
 ---
 
-# Route
+# Train_info
 
 ||| Properties
-- [id](#id)
+- [headsign](#headsign)
 - [name](#name)
 - [direction](#direction)
-- [direction_type](#direction_type)
-- [physical_modes](#physical_modes)
-- [line](#line)
+- [commercial_mode](#commercial_mode)
+- [physical_mode](#physical_mode)
 |||
 ## Properties
-## .id
+## .headsign
 
-=== id
+=== headsign
 
-Return the route id
+The train identifier
 
 
 ```javascript
-this.id
+this.headsign
 ```
 **Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
@@ -32,7 +31,7 @@ this.id
 
 === name
 
-Return the route name
+The train name
 
 
 ```javascript
@@ -46,55 +45,41 @@ this.name
 
 === direction
 
-Return the route direction
+The train direction
 
 
 ```javascript
 this.direction
 ```
-**Type: [stoparea](../structures/stoparea)**
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
 ===
 
-## .direction_type
+## .commercial_mode
 
-=== direction_type
+=== commercial_mode
 
-Return the route direction type
+The train commercial mode
 
 
 ```javascript
-this.direction_type
+this.commercial_mode
 ```
 **Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
 ===
 
-## .physical_modes
+## .physical_mode
 
-=== physical_modes
+=== physical_mode
 
-Physical mode of the route
-
-
-```javascript
-this.physical_modes
-```
-**Type: [array :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**
-
-===
-
-## .line
-
-=== line
-
-Return the route line
+The train physical mode
 
 
 ```javascript
-this.line
+this.physical_mode
 ```
-**Type: [line](../structures/line)**
+**Type: [string :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
 ===
 

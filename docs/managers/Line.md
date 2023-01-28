@@ -5,13 +5,11 @@ author:
 
 # Line
 
-||| Properties
+
 ||| Methods
 - [search](#search)
 - [get](#get)
 |||
-## Properties
----
 ## Methods
 ## .search
 

@@ -11,7 +11,6 @@ author:
 - [coord](#coord)
 - [insee](#insee)
 - [timezone](#timezone)
-||| Methods
 |||
 ## Properties
 ## .id
@@ -84,5 +83,3 @@ this.timezone
 
 ===
 
----
-## Methods

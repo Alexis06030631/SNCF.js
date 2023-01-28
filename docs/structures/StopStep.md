@@ -9,7 +9,6 @@ author:
 - [arrival](#arrival)
 - [departure](#departure)
 - [stop_area](#stop_area)
-||| Methods
 |||
 ## Properties
 ## .arrival
@@ -54,5 +53,3 @@ this.stop_area
 
 ===
 
----
-## Methods

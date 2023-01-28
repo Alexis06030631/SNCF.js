@@ -5,12 +5,10 @@ author:
 
 # Journey
 
-||| Properties
+
 ||| Methods
 - [get](#get)
 |||
-## Properties
----
 ## Methods
 ## .get
 

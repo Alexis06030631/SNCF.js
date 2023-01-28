@@ -16,7 +16,6 @@ author:
 - [stops](#stops)
 - [to](#to)
 - [co2_emission](#co2_emission)
-||| Methods
 |||
 ## Properties
 ## .id
@@ -113,7 +112,7 @@ From if exist
 ```javascript
 this.from
 ```
-**Type: [stoparea|stoppoint](../structures/stoparea|stoppoint)**
+**Type: [stoparea](../structures/stoparea)**
 
 ===
 
@@ -127,7 +126,7 @@ Return the stops of the step if exist
 ```javascript
 this.stops
 ```
-**Type: [stopstep[]](../structures/stopstep[])**
+**Type: [array :icon-link-external:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) <[stopstep](../structures/stopstep)>**
 
 ===
 
@@ -141,7 +140,7 @@ To
 ```javascript
 this.to
 ```
-**Type: [stoparea|stoppoint](../structures/stoparea|stoppoint)**
+**Type: [stoparea](../structures/stoparea)**
 
 ===
 
@@ -159,5 +158,3 @@ this.co2_emission
 
 ===
 
----
-## Methods

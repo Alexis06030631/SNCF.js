@@ -13,7 +13,6 @@ author:
 - [drop_off](#drop_off)
 - [pick_up](#pick_up)
 - [stop_area](#stop_area)
-||| Methods
 |||
 ## Properties
 ## .headsign
@@ -114,5 +113,3 @@ this.stop_area
 
 ===
 
----
-## Methods
