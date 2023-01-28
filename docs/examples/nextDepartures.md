@@ -3,10 +3,10 @@ label: Get next departures of a station
 icon: clock
 
 author:
-name: Alexis06030631
-avatar: https://avatars.githubusercontent.com/u/61119747
+  name: Alexis06030631
+  avatar: https://avatars.githubusercontent.com/u/61119747
 
-date: 2022-07-23T21:56
+date: 2023-01-27T20:48
 ---
 
 # How to get the next departures of a station
