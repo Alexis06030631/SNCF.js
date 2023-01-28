@@ -15,7 +15,7 @@ module.exports = class Journey extends StructuresManager{
 
 		/**
 		 * If the journey has disruptions return the disruptions
-		 * @returns {Disruption[]}
+		 * @returns {array<Disruption>}
 		 */
 		if(data.disruptions) this.disruptions = data.disruptions
 

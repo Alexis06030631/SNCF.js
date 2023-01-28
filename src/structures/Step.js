@@ -42,19 +42,19 @@ module.exports = class Step extends StructuresManager{
 
 		/**
 		 * From if exist
-		 * @returns {StopArea|StopPoint}
+		 * @returns {StopArea}
 		 */
 		if(data?.from) this.from = new this.class_stop_area(this.client, data.from.stop_point)
 
 		/**
 		 * Return the stops of the step if exist
-		 * @returns {StopStep[]}
+		 * @returns {array<StopStep>}
 		 */
 		if(data?.stop_date_times) this.stops = data.stop_date_times.filter(e=>(e.stop_point.id !== this.from.id) && (e.stop_point.id !== data.to.stop_point.id)).map(stop => new this.class_stop_step(this.client, stop))
 
 		/**
 		 * To
-		 * @returns {StopArea|StopPoint}
+		 * @returns {StopArea}
 		 */
 		if(data?.to) this.to = new this.class_stop_area(this.client, data.to.stop_area || data.to.stop_point)
 

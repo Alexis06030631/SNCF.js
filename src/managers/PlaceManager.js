@@ -66,10 +66,9 @@ module.exports = class PlacesManager extends CachedManager {
 
 /**
  * @typedef {Object} PlaceManagerResult
-
  * @property {date} date - The date of the search
- * @property {array<AdministrativeRegion>} administrative_regions
- * @property {array<StopArea>} stop_areas
+ * @property {array<AdministrativeRegion>} administrative_regions - The administrative regions found
+ * @property {array<StopArea>} stop_areas - The stop areas found
  */
 
 // JSDoc for IntelliSense purposes
