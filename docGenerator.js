@@ -68,6 +68,12 @@ create_structures_doc()
 
 
 function create_classes_doc(){
+    // DELETE ALL FILES
+    fs.readdirSync(doc_folder_classes).forEach(file => {
+        if (file.indexOf('.md') > 0) {
+            fs.unlinkSync(doc_folder_classes + file)
+        }
+    })
     fs.readdirSync(folder_classes).forEach(file => {
         if (file.indexOf('.js') > 0 && file !== 'index.js') {
             const file_content = fs.readFileSync(folder_classes + file, 'utf8');
@@ -81,6 +87,12 @@ function create_classes_doc(){
 }
 
 function create_structures_doc(){
+    // DELETE ALL FILES
+    fs.readdirSync(doc_folder_structures).forEach(file => {
+        if (file.indexOf('.md') > 0) {
+            fs.unlinkSync(doc_folder_structures + file)
+        }
+    })
     fs.readdirSync(folder_structures).forEach(file => {
         if (file.indexOf('.js') > 0 && file !== 'index.js') {
             const file_content = fs.readFileSync(folder_structures + file, 'utf8');
@@ -98,8 +110,8 @@ function create_structures_doc(){
 }
 
 
-function CreateDocFile(file_url, name, file){
-    const {proprieties, functions} = get_functions_and_proprieties(file_url, file)
+function CreateDocFile(file_url, name, file, TypeOf){
+    const {proprieties, functions} = TypeOf || get_functions_and_proprieties(file_url, file)
     let content = '';
     let separator = '---';
     // create header
@@ -112,17 +124,16 @@ function CreateDocFile(file_url, name, file){
     // TODO: add description
 
     // add properties
-    content += `||| Properties\n`;
-    console.log(proprieties)
-    if(proprieties){
+    if(proprieties.length){
+        content += `||| Properties\n`;
         proprieties.forEach(property => {
             content += `- [${property.name}](#${property.name.replaceAll('.','')})\n`;
         })
     }else content += '\n'
 
     // add methods
-    content += `||| Methods\n`;
-    if(functions){
+    if(functions.length){
+        content += `||| Methods\n`;
         functions.forEach(method => {
             content += `- [${method.name}](#${method.name.replaceAll('.','')})\n`;
         })
@@ -131,8 +142,8 @@ function CreateDocFile(file_url, name, file){
     content += `|||\n`;
 
     // add properties descriptions
-    content += `## Properties\n`;
-    if(proprieties){
+    if(proprieties.length){
+        content += `## Properties\n`;
         proprieties.forEach(property => {
 
             content += `## .${property.name}\n\n`
@@ -150,52 +161,53 @@ function CreateDocFile(file_url, name, file){
         })
     }
 
-    // add methods descriptions
-    content += `---\n## Methods\n`;
-    functions.forEach(method =>{
-        content += `## .${method.name}\n\n`
-        content += `=== ${method.name}()\n\n`
+    if(functions.length){
+        // add methods descriptions
+        content += `${proprieties.length?'---\n':''}## Methods\n`;
+        functions.forEach(method =>{
+            content += `## .${method.name}\n\n`
+            content += `=== ${method.name}()\n\n`
 
-        // Set description
-        content += `${method.description}\n\n`
+            // Set description
+            content += `${method.description}\n\n`
 
-        // add parameters
-        if(method.params.length){
-            content += `| PARAMETER | TYPE | OPTIONAL | DESCRIPTION |\n`
-            content += "| --- | --- | :---: | --- |\n"
-            method.params.forEach(parameter => {
-                content += `| ${parameter.name} | ${parameter.type} | ${parameter.optional?':icon-check:': ':icon-x:'} | ${parameter.description} |\n`
-            })
-        }
+            // add parameters
+            if(method.params.length){
+                content += `| PARAMETER | TYPE | OPTIONAL | DESCRIPTION |\n`
+                content += "| --- | --- | :---: | --- |\n"
+                method.params.forEach(parameter => {
+                    content += `| ${parameter.name} | ${parameter.type} | ${parameter.optional?':icon-check:': ':icon-x:'} | ${parameter.description} |\n`
+                })
+            }
 
-        // Set example
-        content += "\n"
-        content += "```javascript\n"
-        content += `${method.name}()\n`
-        content += "```\n"
-        content += `**Type: ${method.return_type}**\n\n`
-        content += "===\n\n"
-    })
+            // Set example
+            content += "\n"
+            content += "```javascript\n"
+            content += `${method.name}()\n`
+            content += "```\n"
+            content += `**Type: ${method.return_type}**\n\n`
+            content += "===\n\n"
+        })
+    }
 
-    console.log('OKAYY')
     return content;
 }
 
 
 function get_functions_and_proprieties(fileName, file){
     const functions = []
-    const proprieties = getPropertyAtTheEnd(file.matchAll(/(\/\*\*\n.*?\*.*@typedef(.|\n|\r)*?\*\/)/gi))
+    const proprieties = []
+
+    getPropertyAtTheEnd(file.match(/(\/\*\*\n.*?\*.*@typedef(.|\n|\r)*?\*\/)/gi))
 
     // Delete JSDoc at the beginning of the file
     file = file.replace(/(\/\*\*\n.*?\*.*@type(.|\n|\r)*?\*\/)|(\/\/.*JSDoc.*)/gi, '');
 
     // Get the zone of the file where the functions and properties are
     let data = file.match(/(module\.exports\s?\=*)(.|\n|\r)*/gi)
-    console.log(data)
     if(data){
         const constructor = data[0].match(/constructor.*\{((.*\n*\s*\r*)*?)\}/)[1]
         let constructor_data
-        console.log(data[0])
         data = data[0].match(/\/\*\*\s*(\n|\r[^\*]|\*[^\/]*)\*\/.*[\n|\r]*(.*)/ig) || []
 
         if(constructor) constructor_data = constructor.match(/this\.(\w*)\s?=.*/g)?.map(match => match.match(/this\.(\w*)\s?=.*/))?.map(match => constructor.match(`\/\/\\s?(.*).*\n{0,2}(.*)this.${match[1]}\\s?=.*`))?.map(match => match?match[0]:null).filter(match => match)
@@ -204,7 +216,6 @@ function get_functions_and_proprieties(fileName, file){
         if(constructor_data?.length) constructor_data.forEach(e => data.push(e))
 
         if(data.length) {
-            console.log(data)
             data.forEach(function (match) {
                 const mdata = matchJSdocs(fileName, match)
 
@@ -243,7 +254,6 @@ function matchJSdocs(fileName, match){
         return_object.name = lastLine.match(/.*get\s*(\w+)\(.*\)/)[1]
         return_object.type_of = 'propriety'
     }else {
-        console.log(fileName, lastLine)
         return_object.name = lastLine.match(/(\w+)\s?\(.*\)/i)[1]
         return_object.type_of = 'function'
         if(lastLine.startsWith('async')) return_object.async = true
@@ -329,8 +339,38 @@ function contain_link(elem) {
     return elem
 }
 
-function getPropertyAtTheEnd(prop){
-    return []
+function getPropertyAtTheEnd(proprieties){
+    if(proprieties){
+        for (let prop of proprieties){
+
+            let prps = []
+            const regex = /@property\s{(.*)}\s(\[)?(\w+)\]?(?:\s?-\s(.+))?/gmi;
+            let m;
+            while ((m = regex.exec(prop)) !== null) {
+                // This is necessary to avoid infinite loops with zero-width matches
+                if (m.index === regex.lastIndex) {
+                    regex.lastIndex++;
+                }
+
+                // The result can be accessed through the `m`-variable.
+                if(m[1].match(/(.*)\<(\w*)(.*)?\>/)) {
+                    m[1] = m[1].match(/(.*)\<(\w*)(.*)?\>/)
+                    m[1] = `${is_type_of(m[1][1])} <${is_type_of(m[1][2])}${m[1][3]?`${m[1][3]}`:''}>`
+                }else {
+                    m[1] = is_type_of(m[1])
+                }
+                prps.push({
+                    name: m[3],
+                    return_type: m[1],
+                    description: m[4] || '',
+                    optional: !!m[2]
+                })
+            }
+
+            fs.writeFileSync(doc_folder_structures + prop.match(/@typedef\s{\w+}\s(\w+)/i)[1] + '.md', CreateDocFile(null, prop.match(/@typedef\s{\w+}\s(\w+)/i)[1], '', {proprieties: prps, functions: []}))
+
+        }
+    }
 }
 
 function check_is_commented(fileName, file, {functions: functions, proprieties: proprieties}) {
