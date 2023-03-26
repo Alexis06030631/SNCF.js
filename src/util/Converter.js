@@ -21,19 +21,14 @@ module.exports = {
 	 * @return {string} The navitia date format: YYYYMMDD[T]HHmmss
 	 */
 	dateToNavitiaDate: (date) => {
+		// Get date utc
 		let initDate = date;
 		// Check if the date is a string date or a Date object
 		if (typeof date === 'string') date = new Date(date);
 		if (!date instanceof Date || isNaN(date.getTime())) {
 			throw new SncfjsError(ErrorCodes.InvalidDate, initDate);
 		}
-		const year = date.getFullYear();
-		const month = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
-		const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
-		const hour = date.getHours().toString().padStart(2, '0');
-		const minute = date.getMinutes().toString().padStart(2, '0');
-		const second = date.getSeconds().toString().padStart(2, '0');
-		return `${year}${month}${day}T${hour}${minute}${second}`;
+		return date.toISOString().replaceAll('-', '').replaceAll(':', '').split('.')[0]
 	},
 
 	/**
