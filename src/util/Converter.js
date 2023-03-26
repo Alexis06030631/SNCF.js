@@ -28,7 +28,8 @@ module.exports = {
 		if (!date instanceof Date || isNaN(date.getTime())) {
 			throw new SncfjsError(ErrorCodes.InvalidDate, initDate);
 		}
-		return date.toISOString().replaceAll('-', '').replaceAll(':', '').split('.')[0]
+		const dateLocale = date.toLocaleDateString('fr-FR').replaceAll('/', '');
+		return dateLocale.substring(4, 8) + dateLocale.substring(2, 4) + dateLocale.substring(0, 2) + 'T' + date.toLocaleTimeString('fr-FR').replaceAll(':', '')
 	},
 
 	/**
