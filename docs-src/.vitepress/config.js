@@ -1,7 +1,7 @@
 export default {
 	title: 'SNCF.JS',
 	description: 'a JavaScript library that allows you to easily use the ©SNCF api.',
-	base: '/sncf.js/',
+	base: '/SNCF.js/',
 	logo: '/favicon.ico',
 	outDir: '../docs/',
 	srcDir: './',
