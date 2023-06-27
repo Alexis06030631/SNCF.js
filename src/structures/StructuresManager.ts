@@ -1,123 +1,116 @@
-module.exports = class StructuresManager {
+import { Departure } from "./Departure";
+import { Arrival } from "./Arrival";
+import { StopArea } from "./StopArea";
+import { AdministrativeRegion } from "./AdministrativeRegion";
+import { Line } from "./Line";
+import { Route } from "./Route";
+import { Journey } from "./Journey";
+import { Step } from "./Step";
+import { Vehicle } from "./Vehicle";
+import { StopTime } from "./StopTime";
+import { Disruption } from "./Disruption";
+import { ImpactedStop } from "./ImpactedStop";
+import { Calendar } from "./Calendar";
+import { StopStep } from "./StopStep";
+
+export class StructuresManager {
     constructor() {}
 
     /**
      * Get departure constructor
-     * @returns {Class<Departure>}
      */
     get class_departure() {
-        return require("./Departure");
+        return Departure
     }
 
     /**
      * Get arrival constructor
-     * @returns {Class<Arrival>}
      */
     get class_arrival() {
-        return require("./Arrival");
-    }
-
-
-    /**
-     * Get Place constructor
-     * @returns {Class<Place>}
-     */
-    get class_place() {
-        return require("./Place");
+        return Arrival
     }
 
     /**
      * Get StopArea constructor
-     * @returns {Class<StopArea>}
      */
     get class_stop_area() {
-        return require("./StopArea");
+        return StopArea
     }
 
     /**
      * Get AdministartiveRegion constructor
-     * @returns {Class<AdministrativeRegion>}
      */
     get class_administrative_region() {
-        return require("./AdministrativeRegion");
+        return AdministrativeRegion
     }
 
     /**
      * Get Line constructor
-     * @returns {Class<Line>}
      */
     get class_line() {
-        return require("./Line");
+        return Line
     }
 
     /**
      * Get Route constructor
-     * @returns {Class<Route>}
      */
     get class_route() {
-        return require("./Route");
+        return Route
     }
 
     /**
      * Get Journey constructor
-     * @returns {Class<Journey>}
      */
     get class_journey() {
-        return require("./Journey");
+        return Journey
     }
 
     /**
      * Get Step constructor
-     * @returns {Class<Step>}
      */
     get class_step() {
-        return require("./Step");
+        return Step
     }
 
     /**
      * Get Vehicle constructor
-     * @returns {Class<Vehicle>}
      */
     get class_vehicle() {
-        return require("./Vehicle");
+        return Vehicle
     }
 
     /**
      * Get StopTime constructor
-     * @returns {Class<StopTime>}
      */
     get class_stop_time() {
-        return require("./StopTime");
+        return StopTime
     }
 
     /**
      * Get class_disruption constructor
-     * @returns {Class<Disruption>}
      */
     get class_disruption() {
-        return require("./Disruption");
+        return Disruption
     }
 
     /**
      * Get ImpactedStop constructor
      */
     get class_impacted_stop() {
-        return require("./ImpactedStop");
+        return ImpactedStop
     }
 
     /**
      * Get StopStep constructor
-     * @returns {Class<StopStep>}
      */
     get class_stop_step() {
-        return require("./StopStep");
+        return StopStep
     }
 
     /**
      * Get Calendar constructor
-     * @returns {Class<Calendar>}
      */
     get class_calendar() {
-        return require("./Calendar");
+        return Calendar
     }
 };

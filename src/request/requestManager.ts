@@ -1,51 +1,54 @@
 'use strict';
 
-const EventEmitter = require('node:events');
-const axios = require("axios");
-const {defineRequestError} = require("./requestError");
-const Status = require("../util/Status");
-const config = require('./requestConfig.json');
-const {SncfjsError, ErrorCodes} = require("../errors");
+import EventEmitter from 'node:events';
+import axios from "axios";
+import {defineRequestError} from "./requestError";
+import Status from "../util/Status";
+import config from './requestConfig.json';
+import {SncfjsError, ErrorCodes} from "../errors";
 
-module.exports = class RequestManager extends EventEmitter {
-	constructor(client) {
+export class RequestManager extends EventEmitter {
+	/**
+	 * The number of the request
+	 */
+	requestNumber: number;
+
+	/**
+	 * The configuration of the request manager
+	 */
+	config: any;
+
+	/**
+	 * The client that instantiated this WebSocketManager
+	 * @internal
+	 */
+	client: any;
+
+
+
+	/**
+	 * The client that instantiated this WebSocketManager
+	 */
+	constructor(client:any) {
 		super();
-		/**
-		 * The client that instantiated this WebSocketManager
-		 * @type {Client}
-		 * @readonly
-		 * @name RequestManager#client
-		 */
 		Object.defineProperty(this, 'client', { value: client });
-
-		/**
-		 * Request number
-		 * @type {number}
-		 */
 		this.requestNumber = 0;
-
-		/**
-		 * The configuration of the request manager
-		 * @type {object}
-		 */
 		this.config = config;
 	}
 
 	/**
 	 * Encode the parameters and the url
-	 * @param {string} [path] The path to url
-	 * @param {object} [params] The parameters to encode
-	 * @returns {string} The encoded parameters
+	 * @param path - The path to url
+	 * @param params - The parameters to encode
 	 */
-	encodeURL(path='', params = {}) {
+	encodeURL(path:string ='', params:any = {}):string {
 		return encodeURI(`${this.config.base_url}${path}`)+`?${(new URLSearchParams(params)).toString()}`;
 	}
 
 	/**
 	 * Try to log in with the token
-	 * @returns {Promise<boolean>}
 	 */
-	async connect() {
+	async connect() : Promise<RequestManager>{
 		return new Promise((resolve, reject) => {
 			this.client.status = Status.Connecting
 			axios.get(this.encodeURL(), {
@@ -63,12 +66,11 @@ module.exports = class RequestManager extends EventEmitter {
 	}
 
 	/**
-	 * Request to navitia
-	 * @param {string} path The path to url
-	 * @param {object} [params] The parameters to encode
-	 * @returns {Promise<object>} The response of the request
+	 * Make a request to the API
+	 * @param path - The path to url
+	 * @param params - The parameters to encode
 	 */
-	request(path, params = {}) {
+	request(path:string, params:any = {}):Promise<any> {
 		return new Promise((resolve, reject) => {
 			if (!this.client.token) throw new SncfjsError(ErrorCodes.TokenNotInitialized);
 			if (!this.client.isReady) throw new SncfjsError(ErrorCodes.NotReady);

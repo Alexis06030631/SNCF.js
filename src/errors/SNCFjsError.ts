@@ -1,8 +1,7 @@
-'use strict';
-
 // Heavily inspired by node's `internal/errors` module
-const ErrorCodes = require('./ErrorCodes');
-const Messages = require('./Messages');
+import {ErrorCodes} from './';
+import {Messages} from './';
+
 
 /**
  * Extend an error of some sort into a SNCFjsError.
@@ -10,9 +9,9 @@ const Messages = require('./Messages');
  * @returns {SncfjsError}
  * @ignore
  */
-function makeSncfjsError(Base) {
+function makeSncfjsError(Base:any) {
 	return class SncfjsError extends Base {
-		constructor(code, ...args) {
+		constructor(code:string, ...args:any[]) {
 			super(message(code, args));
 			this.code = code;
 			if(args[1]) this.details = args[1];
@@ -32,18 +31,18 @@ function makeSncfjsError(Base) {
  * @returns {string} Formatted string
  * @ignore
  */
-function message(code, args) {
-	if (!(code in ErrorCodes)) throw new Error('Error code must be a valid SNCFjsErrorCodes');
+function message(code:string, ...args:any[]) {
+	if (!(code in ErrorCodes)) throw new Error('Error code must be a valid ErrorCodes');
 	const msg = Messages[code];
 	if (!msg) throw new Error(`No message associated with error code: ${code}.`);
-	if (typeof msg === 'function') return msg(...args);
+	if (typeof msg === 'function') { // @ts-ignore
+		return msg(...args);
+	}
 	if (!args?.length) return msg;
 	args.unshift(msg);
 	return String(...args);
 }
 
-module.exports = {
-	SncfjsError: makeSncfjsError(Error),
-	SncfTypeError: makeSncfjsError(TypeError),
-	SncfjsRangeError: makeSncfjsError(RangeError),
-};
+export const SncfjsError = makeSncfjsError(Error)
+export const SncfjsTypeError = makeSncfjsError(TypeError)
+export const SncfjsRangeError = makeSncfjsError(RangeError)

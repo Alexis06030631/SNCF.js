@@ -1,7 +1,5 @@
-'use strict';
-
-function createEnum(keys) {
-	const obj = {};
+export function createEnum(keys:any) {
+	const obj:any = {};
 	for (const [index, key] of keys.entries()) {
 		if (key === null) continue;
 		obj[key] = index;
@@ -9,5 +7,3 @@ function createEnum(keys) {
 	}
 	return obj;
 }
-
-module.exports = { createEnum };

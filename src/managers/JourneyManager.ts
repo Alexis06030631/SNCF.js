@@ -1,24 +1,41 @@
-const CachedManager = require("./CachedManager");
-const {SncfjsError, ErrorCodes} = require("../errors");
-const {dateToNavitiaDate} = require("../util/Converter");
-const {isValidID} = require("../util/Validator");
-const Journey = require("../structures/Journey");
-const Disruption = require("../structures/Disruption");
+import {CachedManager} from "./";
+import {SncfjsError, ErrorCodes} from "../errors";
+import {dateToNavitiaDate} from "../util";
+import {isValidID} from "../util";
+import {Journey} from "../structures";
+import {Disruption} from "../structures";
 
-module.exports = class JourneyManager extends CachedManager {
-    constructor(client) {
+export class JourneyManager extends CachedManager {
+    /**
+     * @internal
+     */
+    client: any;
+    constructor(client:any) {
         super()
         Object.defineProperty(this, "client", {value: client})
     }
 
     /**
      * Get a journey details with departure and arrival stop areas ids
-     * @param {string} from The departure stop area id or name
-     * @param {string} to The arrival stop area id or name
-     * @param {Date} [date=now] The date of the journey to get
-     * @returns {Promise<Journey[]>}
+     * @param from - The departure stop area id or name
+     * @param to - The arrival stop area id or name
+     * @param date - The date of the journey to get
+     *
+     * @example
+     * This example shows how to get a journey using the departure and arrival stop areas names
+     * ```javascript
+     * const journey = await client.journey.get("Paris", "Bordeaux")
+     * console.log(journey)
+     * ```
+     *
+     * @example
+     * This example shows how to get a journey using the departure and arrival stop areas ids
+     * ```javascript
+     * const journey = await client.journey.get("stop_area:SNCF:87611004", "stop_area:SNCF:87686006")
+     * console.log(journey)
+     * ```
      */
-    async get(from, to, date=new Date()){
+    async get(from:string, to:string, date:Date=new Date()):Promise<Journey>{
         return new Promise(async (resolve, reject) => {
             if(!from || !to) {
                 const missing = []
@@ -41,8 +58,11 @@ module.exports = class JourneyManager extends CachedManager {
             if(request.error) {
                 return reject(request.error)
             }else {
+                // @ts-ignore
                 return resolve(request.journeys.map(journey => {
-                    if(request.disruptions) journey.disruptions = request.disruptions.map(disruption => new Disruption(this.client, disruption))
+                    if(request.disruptions) { // @ts-ignore
+                        journey.disruptions = request.disruptions.map(disruption => new Disruption(this.client, disruption))
+                    }
                     return new Journey(this.client, journey)
                 }))
             }

@@ -1,6 +1,4 @@
-'use strict';
-
-const { createEnum } = require('./Enums');
+import { createEnum } from './Enums';
 
 /**
  * @typedef {Object} Status
@@ -15,7 +13,7 @@ const { createEnum } = require('./Enums');
  * @type {Status}
  * @ignore
  */
-module.exports = createEnum([
+export default createEnum([
 	'Ready',
 	'Connecting',
 	'Idle',
