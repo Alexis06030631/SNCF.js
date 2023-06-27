@@ -1,14 +1,3 @@
----
-label: Home
-icon: home
-
-author:
-  name: Alexis06030631
-  avatar: https://avatars.githubusercontent.com/u/61119747
-
-date: 2022-07-23T21:56
----
-
 # SNCF.JS - Introduction
 
 ## <div style="display:none">Introduction</div>
@@ -30,11 +19,11 @@ Only an api key is required to use the library. You can get one [here](https://w
 You can install SNCF.js using `npm` or `yarn`.
 
 NPM
-```
+```bash
 npm install sncf.js
 ```
 Yarn
-```
+```bash
 yarn install sncf.js
 ```
 
@@ -54,7 +43,7 @@ SNCF_TOKEN=<your token>
 
 #### Import the library have fun!
 
-```js
+```javascript
 const {Client} = require('sncf.js');
 const sncf = new Client();
 
