@@ -11,3 +11,16 @@ SECURITY.md
 test.js
 examples
 update.sh
+
+node_modules/
+package-lock.json
+.gitignore
+
+.idea/
+.Ds_Store
+.github
+/src
+docs/
+docs-src/
+api-extractor.json
+vitest.config.ts

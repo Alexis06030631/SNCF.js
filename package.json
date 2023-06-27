@@ -1,46 +1,45 @@
 {
-  "name": "sncf.js",
-  "version": "2.3.9",
-  "description": "An easy to use javascript module to get all the information in real time about the trains ©SNCF (only in France)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\"",
-    "dev": "nodemon test.js",
-    "devDoc": "nodemon docGenerator.js",
-    "update_doc_data": "node ./.github/action/update_version.js",
-    "build_docs": "node ./.github/action/update_version.js && retype build",
-    "dev_docs": "node ./.github/action/update_version.js && retype watch"
-  },
-  "keywords": [
-    "SNCF",
-    "API",
-    "FRENCH",
-    "TRAIN",
-    "EASY TO USE"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "author": "Alexis06030631",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.26.1"
-  },
-  "devDependencies": {
-    "cli-color": "^2.0.3",
-    "dotenv": "^16.0.1",
-    "gitlog": "^4.0.4",
-    "glob": "^8.0.3",
-    "js-yaml": "^4.1.0",
-    "nodemon": "^2.0.19",
-    "np": "^7.6.2"
-  },
-  "homepage": "alexis06030631.github.io/SNCF.js/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Alexis06030631/SNCF.js.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Alexis06030631/SNCF.js/issues"
-  }
+	"name": "sncf.js",
+	"version": "2.4.0",
+	"description": "An easy to use javascript module to get all the information in real time about the trains ©SNCF (only in France)",
+	"scripts": {
+		"test": "nodemon test.js --watch test.js --watch dist",
+		"publish": "npm run build && npm publish --access public",
+		"build": "tsc",
+		"build_auto": "nodemon --watch src --exec \"npm run build\"",
+		"docs:prep": "tsc && api-extractor run --local --verbose && api-documenter markdown --input-folder=./temp/ --output-folder=./docs-src/api && rm -rf ./temp",
+		"docs:dev": "npm run docs:prep && vitepress dev docs-src",
+		"docs:build": "npm run docs:prep && vitepress build docs-src"
+	},
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"keywords": [
+		"SNCF",
+		"API",
+		"FRENCH",
+		"TRAIN",
+		"EASY TO USE"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"author": "Alexis06030631",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.26.1"
+	},
+	"devDependencies": {
+		"@types/node": "^20.1.0",
+		"nodemon": "^2.0.22",
+		"typescript": "^5.0.4",
+		"vitepress": "^1.0.0-beta.3"
+	},
+	"homepage": "alexis06030631.github.io/SNCF.js/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Alexis06030631/SNCF.js.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Alexis06030631/SNCF.js/issues"
+	}
 }
