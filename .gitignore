@@ -49,7 +49,6 @@ update.sh
 .Ds_Store
 .idea/
 data.json
-/docs-src/api/
 /docs-src/.vitepress/cache/
 /docs-src/.vitepress/dist/
 /docs/
