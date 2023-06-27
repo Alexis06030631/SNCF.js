@@ -55,7 +55,7 @@ export class StopArea{
             }else {
                 resolve(request.departures
                     // @ts-ignore
-                    .map(departure => new this.class_departure(this.client, departure)))
+                    .map(departure => new Departure(this.client, departure)))
             }
         })
     }
@@ -72,7 +72,7 @@ export class StopArea{
             }else {
                 resolve(request.arrivals
                     // @ts-ignore
-                    .map(arrival => new this.class_arrival(this.client, arrival)))
+                    .map(arrival => new Arrival(this.client, arrival)))
             }
         })
     }
@@ -100,7 +100,7 @@ export class StopArea{
                     .map(journey => {
                     if(request.disruptions) journey.disruptions = request.disruptions
                         // @ts-ignore
-                        .map(disruption => new this.class_disruption(this.client, disruption))
+                        .map(disruption => new Disruption(this.client, disruption))
                     return new Journey(this.client, journey)
                 }))
             }
@@ -118,7 +118,7 @@ export class StopArea{
             }else {
                 resolve(request.lines
                     // @ts-ignore
-                    .map(line => new this.class_line(this.client, line)))
+                    .map(line => new Line(this.client, line)))
             }
         })
     }
@@ -134,7 +134,7 @@ export class StopArea{
             }else {
                 resolve(request.routes
                     // @ts-ignore
-                    .map(route => new this.class_route(this.client, route)))
+                    .map(route => new Route(this.client, route)))
             }
         })
     }

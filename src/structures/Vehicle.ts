@@ -56,14 +56,14 @@ export class Vehicle {
         this.has_disruptions = !!data?.disruptions?.length
         this.calendar = data.calendars
             // @ts-ignore
-            .map(calendar => {return new this.class_calendar(this.client, calendar)})
+            .map(calendar => {return new Calendar(this.client, calendar)})
         this.departure_time = this.get_departure_time
         this.arrival_time = this.get_arrival_time
         this.stop_times = data.stop_times
             // @ts-ignore
             .sort((a, b) => Number(a.departure_time) - Number(b.departure_time))
             // @ts-ignore
-            .map(stop_time => new this.class_stop_time(this.client, stop_time))
+            .map(stop_time => new StopTime(this.client, stop_time))
 
     }
 

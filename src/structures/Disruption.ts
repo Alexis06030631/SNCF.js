@@ -69,7 +69,7 @@ export class Disruption {
         this.severity = {code: data.severity?.effect, name: data.severity?.name, priority: data.severity?.priority}
         this.impacted_stops = data.impacted_objects[0]?.impacted_stops
             // @ts-ignore
-            ?.map(impacted_object => new this.class_impacted_stop(this.client, impacted_object)) || []
+            ?.map(impacted_object => new ImpactedStop(this.client, impacted_object)) || []
 
     }
 

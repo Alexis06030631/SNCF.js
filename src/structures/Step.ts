@@ -57,7 +57,7 @@ export class Step {
 		if(data?.from) this.from = new StopArea(this.client, data.from.stop_point)
 		if(data?.stop_date_times) this.stops = data.stop_date_times
 			// @ts-ignore
-			.filter(e=>(e.stop_point.id !== this.from.id) && (e.stop_point.id !== data.to.stop_point.id)).map(stop => new this.class_stop_step(this.client, stop))
+			.filter(e=>(e.stop_point.id !== this.from.id) && (e.stop_point.id !== data.to.stop_point.id)).map(stop => new StopStep(this.client, stop))
 		if(data?.to) this.to = new StopArea(this.client, data.to.stop_area || data.to.stop_point)
 		this.co2_emission = {
 			value: data.co2_emission? data.co2_emission.value : null,
