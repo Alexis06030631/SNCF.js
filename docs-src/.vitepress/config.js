@@ -14,7 +14,7 @@ export default {
 			provider: 'local'
 		},
 		editLink: {
-			pattern: 'https://github.com/Alexis06030631/SNCF.js/edit/main/:path',
+			pattern: 'https://github.com/Alexis06030631/SNCF.js/edit/main/docs-src/:path',
 			text: 'Edit this page on GitHub'
 		},
 		sidebar: [
