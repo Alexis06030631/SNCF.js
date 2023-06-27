@@ -55,7 +55,7 @@ export default {
 		socialLinks: [
 			{
 				icon: 'github',
-				link: 'https://github.com/Alexis06030631/meteofrance_api/',
+				link: 'https://github.com/Alexis06030631/SNCF.js/',
 			},
 			{
 				icon: 'instagram',
