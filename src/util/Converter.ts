@@ -53,3 +53,8 @@ export function dateWithDateAndHour(hour:string, date:Date): Date {
 	}
 	return new Date(date.getFullYear(), date.getMonth(), date.getDate(), hourDate.hours, hourDate.minutes, hourDate.seconds)
 }
+
+export function extractDateInTripID(id:string): Date {
+	const date = id.split(':')[1]
+	return new Date(date)
+}

@@ -1,4 +1,4 @@
-import {dateToNavitiaDate, isValidID} from "../util";
+import {dateToNavitiaDate, extractDateInTripID, isValidID} from "../util";
 import {Coord} from "../models";
 import {AdministrativeRegion} from "./AdministrativeRegion";
 import {Departure} from "./Departure";
@@ -141,14 +141,17 @@ export class StopArea{
 
     /**
      * Get vehicle journeys of the stop area
-     * @param date - The date of the vehicle journeys
+     * @param since - The start date of the vehicle journeys to get
+     * @param until - The end date of the vehicle journeys to get (default: since + 1 day)
      */
-    vehicle_journeys(date:Date= new Date()): Promise<Vehicle[]> {
+    vehicle_journeys(since:Date= new Date(), until:Date= new Date(since.getTime() + 86400000)): Promise<Vehicle[]> {
         return new Promise(async (resolve, reject) => {
-            const request = await this.client.requestManager.request(`stop_areas/${this.id}/vehicle_journeys`, {from_datetime: dateToNavitiaDate(date)})
+            if(since > until) return reject(new Error("The since date must be before the until date"))
+            const request = await this.client.requestManager.request(`stop_areas/${this.id}/vehicle_journeys`, {since: dateToNavitiaDate(since), until: dateToNavitiaDate(until)})
             if(request.error) {
                 reject(request.error)
             }else {
+                const date = since
                 resolve(request.vehicle_journeys.map((vehicle_journey:any) => {
                     vehicle_journey.disruptions.forEach((disruption:any) => {
                         if(request.disruptions.map((disruption:any) => disruption.id).includes(disruption.id)) {
@@ -156,7 +159,7 @@ export class StopArea{
                                 .find((disruption2:any) => disruption2.id === disruption.id)
                         }
                     })
-                    return new Vehicle(this.client, vehicle_journey, date)
+                    return new Vehicle(this.client, vehicle_journey)
                 }))
             }
         })

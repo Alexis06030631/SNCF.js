@@ -1,5 +1,5 @@
 import {StructuresManager} from "./StructuresManager";
-import {dateWithDateAndHour, hourNativiaToHour} from "../util";
+import {dateWithDateAndHour, extractDateInTripID, hourNativiaToHour} from "../util";
 import {Calendar} from "./Calendar";
 import {StopTime} from "./StopTime";
 import {Disruption} from "./Disruption";
@@ -56,7 +56,7 @@ export class Vehicle {
      */
     client: any;
 
-    constructor(Client:any, data:any, date:Date = new Date()) {
+    constructor(Client:any, data:any) {
         Object.defineProperty(this, "client", {value: Client})
         Object.defineProperty(this, "data", {value: data})
 
@@ -67,9 +67,9 @@ export class Vehicle {
         this.calendar = data.calendars.map((calendar:any) => new Calendar(this.client, calendar))
         this.departure_time = this.get_departure_time
         this.arrival_time = this.get_arrival_time
-        this.departure_date = dateWithDateAndHour(this.get_departure_time, date)
-        this.arrival_date = dateWithDateAndHour(this.get_arrival_time, date)
-        this.stop_times = data.stop_times.sort((a:any, b:any) => Number(a.departure_time) - Number(b.departure_time)).map((stop_time:any) => new StopTime(this.client, stop_time, date))
+        this.departure_date = dateWithDateAndHour(this.get_departure_time, extractDateInTripID(data.trip.id))
+        this.arrival_date = dateWithDateAndHour(this.get_arrival_time, extractDateInTripID(data.trip.id))
+        this.stop_times = data.stop_times.sort((a:any, b:any) => Number(a.departure_time) - Number(b.departure_time)).map((stop_time:any) => new StopTime(this.client, stop_time, extractDateInTripID(data.trip.id)))
 
     }
 
