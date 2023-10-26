@@ -149,21 +149,14 @@ export class StopArea{
             if(request.error) {
                 reject(request.error)
             }else {
-                resolve(request.vehicle_journeys
-                    // @ts-ignore
-                    .map(vehicle_journey => {
-                    vehicle_journey.disruptions
-                        // @ts-ignore
-                        .forEach(disruption => {
-                        if(request.disruptions
-                            // @ts-ignore
-                            .map(disruption => disruption.id).includes(disruption.id)) {
+                resolve(request.vehicle_journeys.map((vehicle_journey:any) => {
+                    vehicle_journey.disruptions.forEach((disruption:any) => {
+                        if(request.disruptions.map((disruption:any) => disruption.id).includes(disruption.id)) {
                             vehicle_journey.disruptions[vehicle_journey.disruptions.indexOf(disruption)] = request.disruptions
-                                // @ts-ignore
-                                .find(disruption2 => disruption2.id === disruption.id)
+                                .find((disruption2:any) => disruption2.id === disruption.id)
                         }
                     })
-                    return new Vehicle(this.client, vehicle_journey)
+                    return new Vehicle(this.client, vehicle_journey, date)
                 }))
             }
         })

@@ -44,3 +44,12 @@ export function hourNativiaToHour (data:string, PassError?:boolean): string {
 	const second = data.substring(4, 6);
 	return `${hour}:${minute}:${second}`
 }
+
+export function dateWithDateAndHour(hour:string, date:Date): Date {
+	const hourDate:any = {
+		hours: Number(hour.substring(0, 2)),
+		minutes: Number(hour.substring(3, 5)),
+		seconds: Number(hour.substring(6, 8))
+	}
+	return new Date(date.getFullYear(), date.getMonth(), date.getDate(), hourDate.hours, hourDate.minutes, hourDate.seconds)
+}
