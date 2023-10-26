@@ -1,6 +1,6 @@
 {
 	"name": "sncf.js",
-	"version": "2.4.1",
+	"version": "2.4.2",
 	"description": "An easy to use javascript module to get all the information in real time about the trains ©SNCF (only in France)",
 	"scripts": {
 		"test": "nodemon test.js --watch test.js --watch dist",

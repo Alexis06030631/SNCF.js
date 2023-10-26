@@ -15,8 +15,8 @@ export class Calendar {
 			// @ts-ignore
 			.map(active_period => {
 			return {
-				start_date: new Date(active_period.start_date.slice(0, 4), active_period.start_date.slice(4, 6) - 1, active_period.start_date.slice(6, 8)),
-				end_date: new Date(active_period.end_date.slice(0, 4), active_period.end_date.slice(4, 6) - 1, active_period.end_date.slice(6, 8))
+				start_date: new Date(active_period.begin.slice(0, 4), active_period.begin.slice(4, 6) - 1, active_period.begin.slice(6, 8)),
+				end_date: new Date(active_period.end.slice(0, 4), active_period.end.slice(4, 6) - 1, active_period.end.slice(6, 8))
 			}
 		});
 		this.week_pattern = {
