@@ -23,7 +23,7 @@ export class StopArea{
     /**
      * Return the Administative Region of the stop area (if exist)
      */
-    administrative_region: AdministrativeRegion;
+    administrative_region: AdministrativeRegion | null;
     /**
      * The timezone of the stop area
      */

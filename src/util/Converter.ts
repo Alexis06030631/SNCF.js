@@ -38,7 +38,7 @@ export function dateToNavitiaDate (date:Date|string):string {
 	 */
 export function hourNativiaToHour (data:string, PassError?:boolean): string {
 	if (data?.length !== 6 && !PassError) throw new Error('Invalid hour format');
-	if(PassError && data?.length !== 6) return null;
+	if(PassError && data?.length !== 6) return '';
 	const hour = data.substring(0, 2);
 	const minute = data.substring(2, 4);
 	const second = data.substring(4, 6);

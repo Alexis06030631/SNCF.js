@@ -38,7 +38,7 @@ export class JourneyManager extends CachedManager {
     async get(from:string, to:string, date:Date=new Date()):Promise<Journey>{
         return new Promise(async (resolve, reject) => {
             if(!from || !to) {
-                const missing = []
+                const missing:any = []
                 if(!from) missing.push("from")
                 if(!to) missing.push("to")
                 return reject(new SncfjsError(ErrorCodes.MissingParameter, missing.join(" and "), missing.length > 1))

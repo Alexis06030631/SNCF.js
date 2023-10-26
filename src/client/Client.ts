@@ -15,7 +15,7 @@ export class Client extends BaseClient {
     /**
      * Authorization token for the logged in bot.
      */
-    private token: string;
+    private token: any;
     /**
      * If app run as debug mode
      *
