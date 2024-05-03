@@ -12,20 +12,211 @@ export declare class Line
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(Client, data)](./sncf.js.line._constructor_.md) |  | Constructs a new instance of the <code>Line</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(Client, data)](./sncf.js.line._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `Line` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [closing\_time](./sncf.js.line.closing_time.md) |  | string | Return the closing time (HH:MM:SS) |
-|  [commercial\_mode](./sncf.js.line.commercial_mode.md) |  | string | Return the commercial mode |
-|  [id](./sncf.js.line.id.md) |  | string | Return the line id |
-|  [name](./sncf.js.line.name.md) |  | string | Return the line name |
-|  [network](./sncf.js.line.network.md) |  | [Network](./sncf.js.network.md) | Return the line network |
-|  [opening\_time](./sncf.js.line.opening_time.md) |  | string | Return the opening time (HH:MM:SS) |
-|  [physical\_modes](./sncf.js.line.physical_modes.md) |  | [Network](./sncf.js.network.md)<!-- -->\[\] | Return the physical modes |
-|  [routes](./sncf.js.line.routes.md) |  | [Route](./sncf.js.route.md)<!-- -->\[\] | Return the line routes if exist |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[closing\_time](./sncf.js.line.closing_time.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the closing time (HH:MM:SS)
+
+
+</td></tr>
+<tr><td>
+
+[commercial\_mode](./sncf.js.line.commercial_mode.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the commercial mode
+
+
+</td></tr>
+<tr><td>
+
+[id](./sncf.js.line.id.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the line id
+
+
+</td></tr>
+<tr><td>
+
+[name](./sncf.js.line.name.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the line name
+
+
+</td></tr>
+<tr><td>
+
+[network](./sncf.js.line.network.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Network](./sncf.js.network.md)
+
+
+</td><td>
+
+Return the line network
+
+
+</td></tr>
+<tr><td>
+
+[opening\_time](./sncf.js.line.opening_time.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the opening time (HH:MM:SS)
+
+
+</td></tr>
+<tr><td>
+
+[physical\_modes](./sncf.js.line.physical_modes.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Network](./sncf.js.network.md)<!-- -->\[\]
+
+
+</td><td>
+
+Return the physical modes
+
+
+</td></tr>
+<tr><td>
+
+[routes](./sncf.js.line.routes.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Route](./sncf.js.route.md)<!-- -->\[\]
+
+
+</td><td>
+
+Return the line routes if exist
+
+
+</td></tr>
+</tbody></table>

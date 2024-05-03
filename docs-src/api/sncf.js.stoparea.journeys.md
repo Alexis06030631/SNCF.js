@@ -14,11 +14,55 @@ journeys(to?: string, date?: Date): Promise<Journey[]>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  to | string | _(Optional)_ The id or name of the destination |
-|  date | Date | _(Optional)_ The date of the journey |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+to
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+_(Optional)_ The id or name of the destination
+
+
+</td></tr>
+<tr><td>
+
+date
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+_(Optional)_ The date of the journey
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;[Journey](./sncf.js.journey.md)<!-- -->\[\]&gt;

@@ -12,22 +12,251 @@ export declare class Journey
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(Client, data)](./sncf.js.journey._constructor_.md) |  | Constructs a new instance of the <code>Journey</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(Client, data)](./sncf.js.journey._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `Journey` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [arrival\_date\_time](./sncf.js.journey.arrival_date_time.md) |  | Date | Arrival time |
-|  [departure\_date\_time](./sncf.js.journey.departure_date_time.md) |  | Date | Departure time |
-|  [disruptions](./sncf.js.journey.disruptions.md) |  | [Disruption](./sncf.js.disruption.md)<!-- -->\[\] | If the journey has disruptions return the disruptions |
-|  [duration](./sncf.js.journey.duration.md) |  | number | Duration of the journey |
-|  [id](./sncf.js.journey.id.md) |  | string | Return the journey id |
-|  [price](./sncf.js.journey.price.md) |  | [Price](./sncf.js.price.md) | Price of the journey |
-|  [status](./sncf.js.journey.status.md) |  | string | Return value if status is define |
-|  [steps](./sncf.js.journey.steps.md) | <code>readonly</code> | [Step](./sncf.js.step.md)<!-- -->\[\] | Get the steps of the journey |
-|  [transfers](./sncf.js.journey.transfers.md) |  | number | Transfers of the journey |
-|  [type](./sncf.js.journey.type.md) |  | string | Define the journey average |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[arrival\_date\_time](./sncf.js.journey.arrival_date_time.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+Arrival time
+
+
+</td></tr>
+<tr><td>
+
+[departure\_date\_time](./sncf.js.journey.departure_date_time.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+Departure time
+
+
+</td></tr>
+<tr><td>
+
+[disruptions](./sncf.js.journey.disruptions.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Disruption](./sncf.js.disruption.md)<!-- -->\[\]
+
+
+</td><td>
+
+If the journey has disruptions return the disruptions
+
+
+</td></tr>
+<tr><td>
+
+[duration](./sncf.js.journey.duration.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+Duration of the journey
+
+
+</td></tr>
+<tr><td>
+
+[id](./sncf.js.journey.id.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the journey id
+
+
+</td></tr>
+<tr><td>
+
+[price](./sncf.js.journey.price.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Price](./sncf.js.price.md)
+
+
+</td><td>
+
+Price of the journey
+
+
+</td></tr>
+<tr><td>
+
+[status](./sncf.js.journey.status.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return value if status is define
+
+
+</td></tr>
+<tr><td>
+
+[steps](./sncf.js.journey.steps.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Step](./sncf.js.step.md)<!-- -->\[\]
+
+
+</td><td>
+
+Get the steps of the journey
+
+
+</td></tr>
+<tr><td>
+
+[transfers](./sncf.js.journey.transfers.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+Transfers of the journey
+
+
+</td></tr>
+<tr><td>
+
+[type](./sncf.js.journey.type.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Define the journey average
+
+
+</td></tr>
+</tbody></table>

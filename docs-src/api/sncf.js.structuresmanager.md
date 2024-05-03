@@ -12,26 +12,353 @@ export declare class StructuresManager
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)()](./sncf.js.structuresmanager._constructor_.md) |  | Constructs a new instance of the <code>StructuresManager</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)()](./sncf.js.structuresmanager._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `StructuresManager` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [class\_administrative\_region](./sncf.js.structuresmanager.class_administrative_region.md) | <code>readonly</code> | typeof [AdministrativeRegion](./sncf.js.administrativeregion.md) | Get AdministartiveRegion constructor |
-|  [class\_arrival](./sncf.js.structuresmanager.class_arrival.md) | <code>readonly</code> | typeof [Arrival](./sncf.js.arrival.md) | Get arrival constructor |
-|  [class\_calendar](./sncf.js.structuresmanager.class_calendar.md) | <code>readonly</code> | typeof [Calendar](./sncf.js.calendar.md) | Get Calendar constructor |
-|  [class\_departure](./sncf.js.structuresmanager.class_departure.md) | <code>readonly</code> | typeof [Departure](./sncf.js.departure.md) | Get departure constructor |
-|  [class\_disruption](./sncf.js.structuresmanager.class_disruption.md) | <code>readonly</code> | typeof [Disruption](./sncf.js.disruption.md) | Get class\_disruption constructor |
-|  [class\_impacted\_stop](./sncf.js.structuresmanager.class_impacted_stop.md) | <code>readonly</code> | typeof [ImpactedStop](./sncf.js.impactedstop.md) | Get ImpactedStop constructor |
-|  [class\_journey](./sncf.js.structuresmanager.class_journey.md) | <code>readonly</code> | typeof [Journey](./sncf.js.journey.md) | Get Journey constructor |
-|  [class\_line](./sncf.js.structuresmanager.class_line.md) | <code>readonly</code> | typeof [Line](./sncf.js.line.md) | Get Line constructor |
-|  [class\_route](./sncf.js.structuresmanager.class_route.md) | <code>readonly</code> | typeof [Route](./sncf.js.route.md) | Get Route constructor |
-|  [class\_step](./sncf.js.structuresmanager.class_step.md) | <code>readonly</code> | typeof [Step](./sncf.js.step.md) | Get Step constructor |
-|  [class\_stop\_area](./sncf.js.structuresmanager.class_stop_area.md) | <code>readonly</code> | typeof [StopArea](./sncf.js.stoparea.md) | Get StopArea constructor |
-|  [class\_stop\_step](./sncf.js.structuresmanager.class_stop_step.md) | <code>readonly</code> | typeof [StopStep](./sncf.js.stopstep.md) | Get StopStep constructor |
-|  [class\_stop\_time](./sncf.js.structuresmanager.class_stop_time.md) | <code>readonly</code> | typeof [StopTime](./sncf.js.stoptime.md) | Get StopTime constructor |
-|  [class\_vehicle](./sncf.js.structuresmanager.class_vehicle.md) | <code>readonly</code> | typeof [Vehicle](./sncf.js.vehicle.md) | Get Vehicle constructor |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[class\_administrative\_region](./sncf.js.structuresmanager.class_administrative_region.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+typeof [AdministrativeRegion](./sncf.js.administrativeregion.md)
+
+
+</td><td>
+
+Get AdministartiveRegion constructor
+
+
+</td></tr>
+<tr><td>
+
+[class\_arrival](./sncf.js.structuresmanager.class_arrival.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+typeof [Arrival](./sncf.js.arrival.md)
+
+
+</td><td>
+
+Get arrival constructor
+
+
+</td></tr>
+<tr><td>
+
+[class\_calendar](./sncf.js.structuresmanager.class_calendar.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+typeof [Calendar](./sncf.js.calendar.md)
+
+
+</td><td>
+
+Get Calendar constructor
+
+
+</td></tr>
+<tr><td>
+
+[class\_departure](./sncf.js.structuresmanager.class_departure.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+typeof [Departure](./sncf.js.departure.md)
+
+
+</td><td>
+
+Get departure constructor
+
+
+</td></tr>
+<tr><td>
+
+[class\_disruption](./sncf.js.structuresmanager.class_disruption.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+typeof [Disruption](./sncf.js.disruption.md)
+
+
+</td><td>
+
+Get class\_disruption constructor
+
+
+</td></tr>
+<tr><td>
+
+[class\_impacted\_stop](./sncf.js.structuresmanager.class_impacted_stop.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+typeof [ImpactedStop](./sncf.js.impactedstop.md)
+
+
+</td><td>
+
+Get ImpactedStop constructor
+
+
+</td></tr>
+<tr><td>
+
+[class\_journey](./sncf.js.structuresmanager.class_journey.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+typeof [Journey](./sncf.js.journey.md)
+
+
+</td><td>
+
+Get Journey constructor
+
+
+</td></tr>
+<tr><td>
+
+[class\_line](./sncf.js.structuresmanager.class_line.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+typeof [Line](./sncf.js.line.md)
+
+
+</td><td>
+
+Get Line constructor
+
+
+</td></tr>
+<tr><td>
+
+[class\_route](./sncf.js.structuresmanager.class_route.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+typeof [Route](./sncf.js.route.md)
+
+
+</td><td>
+
+Get Route constructor
+
+
+</td></tr>
+<tr><td>
+
+[class\_step](./sncf.js.structuresmanager.class_step.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+typeof [Step](./sncf.js.step.md)
+
+
+</td><td>
+
+Get Step constructor
+
+
+</td></tr>
+<tr><td>
+
+[class\_stop\_area](./sncf.js.structuresmanager.class_stop_area.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+typeof [StopArea](./sncf.js.stoparea.md)
+
+
+</td><td>
+
+Get StopArea constructor
+
+
+</td></tr>
+<tr><td>
+
+[class\_stop\_step](./sncf.js.structuresmanager.class_stop_step.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+typeof [StopStep](./sncf.js.stopstep.md)
+
+
+</td><td>
+
+Get StopStep constructor
+
+
+</td></tr>
+<tr><td>
+
+[class\_stop\_time](./sncf.js.structuresmanager.class_stop_time.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+typeof [StopTime](./sncf.js.stoptime.md)
+
+
+</td><td>
+
+Get StopTime constructor
+
+
+</td></tr>
+<tr><td>
+
+[class\_vehicle](./sncf.js.structuresmanager.class_vehicle.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+typeof [Vehicle](./sncf.js.vehicle.md)
+
+
+</td><td>
+
+Get Vehicle constructor
+
+
+</td></tr>
+</tbody></table>

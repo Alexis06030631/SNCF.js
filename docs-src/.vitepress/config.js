@@ -27,6 +27,7 @@ export default {
 			{
 				text: 'Managers',
 				items: [
+					{ text: 'SearchManager', link: '/api/sncf.js.searchmanager.html' },
 					{ text: 'DisruptionManager', link: '/api/sncf.js.disruptionmanager.html' },
 					{ text: 'JourneyManager', link: '/api/sncf.js.journeymanager.html' },
 					{ text: 'LineManager', link: '/api/sncf.js.linemanager.html' },

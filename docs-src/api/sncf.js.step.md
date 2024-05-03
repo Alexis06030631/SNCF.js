@@ -12,22 +12,247 @@ export declare class Step
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(Client, data)](./sncf.js.step._constructor_.md) |  | Constructs a new instance of the <code>Step</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(Client, data)](./sncf.js.step._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `Step` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [arrival\_date\_time](./sncf.js.step.arrival_date_time.md) |  | Date | Return the step arrival date time |
-|  [co2\_emission](./sncf.js.step.co2_emission.md) |  | [Co2Emission](./sncf.js.co2emission.md) |  |
-|  [departure\_date\_time](./sncf.js.step.departure_date_time.md) |  | Date | Return the step departure date time |
-|  [duration](./sncf.js.step.duration.md) |  | number | Return the step duration |
-|  [from](./sncf.js.step.from.md) |  | [StopArea](./sncf.js.stoparea.md) | Return the step from if exist |
-|  [id](./sncf.js.step.id.md) |  | string | Return the step id |
-|  [is\_transfer](./sncf.js.step.is_transfer.md) |  | boolean | Return boolean if the step is a transfer |
-|  [stops](./sncf.js.step.stops.md) |  | [StopStep](./sncf.js.stopstep.md)<!-- -->\[\] | Return the step stops if exist |
-|  [to](./sncf.js.step.to.md) |  | [StopArea](./sncf.js.stoparea.md) | Return the step to if exist |
-|  [type](./sncf.js.step.type.md) |  | string | Return the step type |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[arrival\_date\_time](./sncf.js.step.arrival_date_time.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+Return the step arrival date time
+
+
+</td></tr>
+<tr><td>
+
+[co2\_emission](./sncf.js.step.co2_emission.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Co2Emission](./sncf.js.co2emission.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[departure\_date\_time](./sncf.js.step.departure_date_time.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+Return the step departure date time
+
+
+</td></tr>
+<tr><td>
+
+[duration](./sncf.js.step.duration.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+Return the step duration
+
+
+</td></tr>
+<tr><td>
+
+[from](./sncf.js.step.from.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[StopArea](./sncf.js.stoparea.md)
+
+
+</td><td>
+
+Return the step from if exist
+
+
+</td></tr>
+<tr><td>
+
+[id](./sncf.js.step.id.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the step id
+
+
+</td></tr>
+<tr><td>
+
+[is\_transfer](./sncf.js.step.is_transfer.md)
+
+
+</td><td>
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+Return boolean if the step is a transfer
+
+
+</td></tr>
+<tr><td>
+
+[stops](./sncf.js.step.stops.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[StopStep](./sncf.js.stopstep.md)<!-- -->\[\]
+
+
+</td><td>
+
+Return the step stops if exist
+
+
+</td></tr>
+<tr><td>
+
+[to](./sncf.js.step.to.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[StopArea](./sncf.js.stoparea.md)
+
+
+</td><td>
+
+Return the step to if exist
+
+
+</td></tr>
+<tr><td>
+
+[type](./sncf.js.step.type.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the step type
+
+
+</td></tr>
+</tbody></table>

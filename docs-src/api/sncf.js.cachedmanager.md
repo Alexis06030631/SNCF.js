@@ -14,7 +14,34 @@ export declare class CachedManager
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)()](./sncf.js.cachedmanager._constructor_.md) |  | Constructs a new instance of the <code>CachedManager</code> class |
+<table><thead><tr><th>
 
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)()](./sncf.js.cachedmanager._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `CachedManager` class
+
+
+</td></tr>
+</tbody></table>

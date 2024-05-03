@@ -14,10 +14,39 @@ export declare function isValidID(string: string): boolean;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  string | string | The string to check |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+string
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The string to check
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 boolean

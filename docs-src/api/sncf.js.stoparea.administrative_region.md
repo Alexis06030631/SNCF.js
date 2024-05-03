@@ -9,5 +9,5 @@ Return the Administative Region of the stop area (if exist)
 **Signature:**
 
 ```typescript
-administrative_region: AdministrativeRegion;
+administrative_region: AdministrativeRegion | null;
 ```

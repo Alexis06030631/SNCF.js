@@ -14,12 +14,71 @@ get(from: string, to: string, date?: Date): Promise<Journey>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  from | string | The departure stop area id or name |
-|  to | string | The arrival stop area id or name |
-|  date | Date | _(Optional)_ The date of the journey to get |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+from
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The departure stop area id or name
+
+
+</td></tr>
+<tr><td>
+
+to
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The arrival stop area id or name
+
+
+</td></tr>
+<tr><td>
+
+date
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+_(Optional)_ The date of the journey to get
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;[Journey](./sncf.js.journey.md)<!-- -->&gt;

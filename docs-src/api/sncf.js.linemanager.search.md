@@ -14,10 +14,39 @@ search(line: string): Promise<Line[]>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  line | string | The name of the line |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+line
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The name of the line
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;[Line](./sncf.js.line.md)<!-- -->\[\]&gt;

@@ -14,10 +14,39 @@ departures(date?: Date): Promise<Departure[]>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  date | Date | _(Optional)_ The date of the departures |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+date
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+_(Optional)_ The date of the departures
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;[Departure](./sncf.js.departure.md)<!-- -->\[\]&gt;

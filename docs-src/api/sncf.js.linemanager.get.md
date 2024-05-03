@@ -14,10 +14,39 @@ get(lineID: string): Promise<Line>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  lineID | string | The id of the line |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+lineID
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The id of the line
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;[Line](./sncf.js.line.md)<!-- -->&gt;

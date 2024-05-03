@@ -14,10 +14,39 @@ login(token?: string): Promise<Client>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  token | string | _(Optional)_ the token of the account to log in with |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+token
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+_(Optional)_ the token of the account to log in with
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;[Client](./sncf.js.client.md)<!-- -->&gt;

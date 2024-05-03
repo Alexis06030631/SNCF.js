@@ -12,8 +12,63 @@ export interface Network
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [id](./sncf.js.network.id.md) |  | string | The id of the network |
-|  [name](./sncf.js.network.name.md) |  | string | The name of the network |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[id](./sncf.js.network.id.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The id of the network
+
+
+</td></tr>
+<tr><td>
+
+[name](./sncf.js.network.name.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The name of the network
+
+
+</td></tr>
+</tbody></table>

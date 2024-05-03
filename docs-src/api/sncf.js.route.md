@@ -12,18 +12,173 @@ export declare class Route
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(Client, data)](./sncf.js.route._constructor_.md) |  | Constructs a new instance of the <code>Route</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(Client, data)](./sncf.js.route._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `Route` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [direction\_type](./sncf.js.route.direction_type.md) |  | string | Return the route direction type |
-|  [direction](./sncf.js.route.direction.md) |  | [StopArea](./sncf.js.stoparea.md) | Return the route direction |
-|  [id](./sncf.js.route.id.md) |  | string | Return the route id |
-|  [line](./sncf.js.route.line.md) |  | [Line](./sncf.js.line.md) | Return the route line |
-|  [name](./sncf.js.route.name.md) |  | string | Return the route name |
-|  [physical\_modes](./sncf.js.route.physical_modes.md) |  | any\[\] | Physical mode of the route |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[direction\_type](./sncf.js.route.direction_type.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the route direction type
+
+
+</td></tr>
+<tr><td>
+
+[direction](./sncf.js.route.direction.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[StopArea](./sncf.js.stoparea.md)
+
+
+</td><td>
+
+Return the route direction
+
+
+</td></tr>
+<tr><td>
+
+[id](./sncf.js.route.id.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the route id
+
+
+</td></tr>
+<tr><td>
+
+[line](./sncf.js.route.line.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Line](./sncf.js.line.md)
+
+
+</td><td>
+
+Return the route line
+
+
+</td></tr>
+<tr><td>
+
+[name](./sncf.js.route.name.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the route name
+
+
+</td></tr>
+<tr><td>
+
+[physical\_modes](./sncf.js.route.physical_modes.md)
+
+
+</td><td>
+
+
+</td><td>
+
+any\[\]
+
+
+</td><td>
+
+Physical mode of the route
+
+
+</td></tr>
+</tbody></table>

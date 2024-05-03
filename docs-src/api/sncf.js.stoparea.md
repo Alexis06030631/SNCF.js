@@ -12,28 +12,258 @@ export declare class StopArea
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(Client, data)](./sncf.js.stoparea._constructor_.md) |  | Constructs a new instance of the <code>StopArea</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(Client, data)](./sncf.js.stoparea._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `StopArea` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [administrative\_region](./sncf.js.stoparea.administrative_region.md) |  | [AdministrativeRegion](./sncf.js.administrativeregion.md) | Return the Administative Region of the stop area (if exist) |
-|  [coord](./sncf.js.stoparea.coord.md) |  | [Coord](./sncf.js.coord.md) | The coord of the stop area |
-|  [id](./sncf.js.stoparea.id.md) |  | string | The id of the stop area |
-|  [name](./sncf.js.stoparea.name.md) |  | string | The name of the stop area |
-|  [timezone](./sncf.js.stoparea.timezone.md) |  | string | The timezone of the stop area |
+<table><thead><tr><th>
+
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[administrative\_region](./sncf.js.stoparea.administrative_region.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[AdministrativeRegion](./sncf.js.administrativeregion.md) \| null
+
+
+</td><td>
+
+Return the Administative Region of the stop area (if exist)
+
+
+</td></tr>
+<tr><td>
+
+[coord](./sncf.js.stoparea.coord.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Coord](./sncf.js.coord.md)
+
+
+</td><td>
+
+The coord of the stop area
+
+
+</td></tr>
+<tr><td>
+
+[id](./sncf.js.stoparea.id.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The id of the stop area
+
+
+</td></tr>
+<tr><td>
+
+[name](./sncf.js.stoparea.name.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The name of the stop area
+
+
+</td></tr>
+<tr><td>
+
+[timezone](./sncf.js.stoparea.timezone.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The timezone of the stop area
+
+
+</td></tr>
+</tbody></table>
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [arrivals(date)](./sncf.js.stoparea.arrivals.md) |  | Get the arrivals of the stop area |
-|  [departures(date)](./sncf.js.stoparea.departures.md) |  | Get the departures of the stop area |
-|  [journeys(to, date)](./sncf.js.stoparea.journeys.md) |  | Get Journeys from the stop area |
-|  [lines()](./sncf.js.stoparea.lines.md) |  | Get the lines of the stop area |
-|  [routes()](./sncf.js.stoparea.routes.md) |  | Get the routes of the stop area |
-|  [vehicle\_journeys(date)](./sncf.js.stoparea.vehicle_journeys.md) |  | Get vehicle journeys of the stop area |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[arrivals(date)](./sncf.js.stoparea.arrivals.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get the arrivals of the stop area
+
+
+</td></tr>
+<tr><td>
+
+[departures(date)](./sncf.js.stoparea.departures.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get the departures of the stop area
+
+
+</td></tr>
+<tr><td>
+
+[journeys(to, date)](./sncf.js.stoparea.journeys.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get Journeys from the stop area
+
+
+</td></tr>
+<tr><td>
+
+[lines()](./sncf.js.stoparea.lines.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get the lines of the stop area
+
+
+</td></tr>
+<tr><td>
+
+[routes()](./sncf.js.stoparea.routes.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get the routes of the stop area
+
+
+</td></tr>
+<tr><td>
+
+[vehicle\_journeys(since, until)](./sncf.js.stoparea.vehicle_journeys.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get vehicle journeys of the stop area
+
+
+</td></tr>
+</tbody></table>

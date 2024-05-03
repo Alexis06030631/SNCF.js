@@ -4,6 +4,11 @@
 
 ## StopTime.arrival\_time property
 
+> Warning: This API is now obsolete.
+> 
+> Use arrival\_date instead
+> 
+
 Arrival time
 
 **Signature:**

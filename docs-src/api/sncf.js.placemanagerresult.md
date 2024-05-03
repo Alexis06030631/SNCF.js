@@ -12,9 +12,76 @@ export interface PlaceManagerResult
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [administrative\_regions](./sncf.js.placemanagerresult.administrative_regions.md) |  | [AdministrativeRegion](./sncf.js.administrativeregion.md)<!-- -->\[\] |  |
-|  [date](./sncf.js.placemanagerresult.date.md) |  | Date |  |
-|  [stop\_areas](./sncf.js.placemanagerresult.stop_areas.md) |  | [StopArea](./sncf.js.stoparea.md)<!-- -->\[\] |  |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[administrative\_regions](./sncf.js.placemanagerresult.administrative_regions.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[AdministrativeRegion](./sncf.js.administrativeregion.md)<!-- -->\[\]
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[date](./sncf.js.placemanagerresult.date.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[stop\_areas](./sncf.js.placemanagerresult.stop_areas.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[StopArea](./sncf.js.stoparea.md)<!-- -->\[\]
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

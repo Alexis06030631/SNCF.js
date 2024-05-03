@@ -12,8 +12,63 @@ export interface Time
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [base\_date](./sncf.js.time.base_date.md) |  | Date | The scheduled date |
-|  [real\_date](./sncf.js.time.real_date.md) |  | Date | The real date |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[base\_date](./sncf.js.time.base_date.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+The scheduled date
+
+
+</td></tr>
+<tr><td>
+
+[real\_date](./sncf.js.time.real_date.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+The real date
+
+
+</td></tr>
+</tbody></table>

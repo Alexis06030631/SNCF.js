@@ -14,11 +14,55 @@ encodeURL(path?: string, params?: any): string;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  path | string | _(Optional)_ The path to url |
-|  params | any | _(Optional)_ The parameters to encode |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+path
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+_(Optional)_ The path to url
+
+
+</td></tr>
+<tr><td>
+
+params
+
+
+</td><td>
+
+any
+
+
+</td><td>
+
+_(Optional)_ The parameters to encode
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 string

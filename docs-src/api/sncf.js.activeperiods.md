@@ -12,8 +12,63 @@ export interface ActivePeriods
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [end\_date](./sncf.js.activeperiods.end_date.md) |  | Date | The end date of the active period |
-|  [start\_date](./sncf.js.activeperiods.start_date.md) |  | Date | The start date of the active period |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[end\_date](./sncf.js.activeperiods.end_date.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+The end date of the active period
+
+
+</td></tr>
+<tr><td>
+
+[start\_date](./sncf.js.activeperiods.start_date.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+The start date of the active period
+
+
+</td></tr>
+</tbody></table>

@@ -15,26 +15,266 @@ export declare class Client extends BaseClient
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(options)](./sncf.js.client._constructor_.md) |  | Constructs a new instance of the <code>Client</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(options)](./sncf.js.client._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `Client` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [debug](./sncf.js.client.debug.md) |  | boolean | If app run as debug mode |
-|  [disruption](./sncf.js.client.disruption.md) |  | [DisruptionManager](./sncf.js.disruptionmanager.md) | DisruptionManager class |
-|  [isReady](./sncf.js.client.isready.md) | <code>readonly</code> | boolean | Indicates whether the client is ready to start working. |
-|  [journey](./sncf.js.client.journey.md) |  | [JourneyManager](./sncf.js.journeymanager.md) | JourneysManager class |
-|  [line](./sncf.js.client.line.md) |  | [LineManager](./sncf.js.linemanager.md) | LineManager class |
-|  [place](./sncf.js.client.place.md) |  | [PlacesManager](./sncf.js.placesmanager.md) | PlacesManager class |
-|  [requestManager](./sncf.js.client.requestmanager.md) |  | [RequestManager](./sncf.js.requestmanager.md) | The request manager of the client |
-|  [status](./sncf.js.client.status.md) |  | string | The status of the client |
+<table><thead><tr><th>
+
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[debug](./sncf.js.client.debug.md)
+
+
+</td><td>
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+If app run as debug mode
+
+
+</td></tr>
+<tr><td>
+
+[disruption](./sncf.js.client.disruption.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[DisruptionManager](./sncf.js.disruptionmanager.md)
+
+
+</td><td>
+
+DisruptionManager class
+
+
+</td></tr>
+<tr><td>
+
+[isReady](./sncf.js.client.isready.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+Indicates whether the client is ready to start working.
+
+
+</td></tr>
+<tr><td>
+
+[journey](./sncf.js.client.journey.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[JourneyManager](./sncf.js.journeymanager.md)
+
+
+</td><td>
+
+JourneysManager class
+
+
+</td></tr>
+<tr><td>
+
+[line](./sncf.js.client.line.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[LineManager](./sncf.js.linemanager.md)
+
+
+</td><td>
+
+LineManager class
+
+
+</td></tr>
+<tr><td>
+
+[place](./sncf.js.client.place.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[PlacesManager](./sncf.js.placesmanager.md)
+
+
+</td><td>
+
+PlacesManager class
+
+
+</td></tr>
+<tr><td>
+
+[requestManager](./sncf.js.client.requestmanager.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[RequestManager](./sncf.js.requestmanager.md)
+
+
+</td><td>
+
+The request manager of the client
+
+
+</td></tr>
+<tr><td>
+
+[searchManager](./sncf.js.client.searchmanager.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[SearchManager](./sncf.js.searchmanager.md)
+
+
+</td><td>
+
+SearchManager: It is used to search for a train by headsign ID and other search queries
+
+
+</td></tr>
+<tr><td>
+
+[status](./sncf.js.client.status.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The status of the client
+
+
+</td></tr>
+</tbody></table>
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [login(token)](./sncf.js.client.login.md) |  | Logs the client in, establishing a connection to navitia. |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[login(token)](./sncf.js.client.login.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Logs the client in, establishing a connection to navitia.
+
+
+</td></tr>
+</tbody></table>

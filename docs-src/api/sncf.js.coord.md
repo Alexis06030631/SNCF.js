@@ -12,8 +12,63 @@ export interface Coord
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [lat](./sncf.js.coord.lat.md) |  | number | Latitude |
-|  [lon](./sncf.js.coord.lon.md) |  | number | Longitude |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[lat](./sncf.js.coord.lat.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+Latitude
+
+
+</td></tr>
+<tr><td>
+
+[lon](./sncf.js.coord.lon.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+Longitude
+
+
+</td></tr>
+</tbody></table>

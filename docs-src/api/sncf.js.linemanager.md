@@ -13,14 +13,82 @@ export declare class LineManager extends CachedManager
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(client)](./sncf.js.linemanager._constructor_.md) |  | Constructs a new instance of the <code>LineManager</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(client)](./sncf.js.linemanager._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `LineManager` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [get(lineID)](./sncf.js.linemanager.get.md) |  | Get a line by id |
-|  [search(line)](./sncf.js.linemanager.search.md) |  | Search a line by name (departure - arrival) |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[get(lineID)](./sncf.js.linemanager.get.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get a line by id
+
+
+</td></tr>
+<tr><td>
+
+[search(line)](./sncf.js.linemanager.search.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Search a line by name (departure - arrival)
+
+
+</td></tr>
+</tbody></table>

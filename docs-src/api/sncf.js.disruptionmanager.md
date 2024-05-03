@@ -13,14 +13,82 @@ export declare class DisruptionManager extends CachedManager
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(client)](./sncf.js.disruptionmanager._constructor_.md) |  | Constructs a new instance of the <code>DisruptionManager</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(client)](./sncf.js.disruptionmanager._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `DisruptionManager` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [get(disruptionID)](./sncf.js.disruptionmanager.get.md) |  | Get a disruption by id |
-|  [search(since\_date, until\_date)](./sncf.js.disruptionmanager.search.md) |  | Search the disruptions |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[get(disruptionID)](./sncf.js.disruptionmanager.get.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get a disruption by id
+
+
+</td></tr>
+<tr><td>
+
+[search(since\_date, until\_date)](./sncf.js.disruptionmanager.search.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Search the disruptions
+
+
+</td></tr>
+</tbody></table>

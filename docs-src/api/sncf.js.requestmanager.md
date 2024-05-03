@@ -13,22 +13,159 @@ export declare class RequestManager extends EventEmitter
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(client)](./sncf.js.requestmanager._constructor_.md) |  | The client that instantiated this WebSocketManager |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(client)](./sncf.js.requestmanager._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+The client that instantiated this WebSocketManager
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [config](./sncf.js.requestmanager.config.md) |  | any | The configuration of the request manager |
-|  [requestNumber](./sncf.js.requestmanager.requestnumber.md) |  | number | The number of the request |
+<table><thead><tr><th>
+
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[config](./sncf.js.requestmanager.config.md)
+
+
+</td><td>
+
+
+</td><td>
+
+any
+
+
+</td><td>
+
+The configuration of the request manager
+
+
+</td></tr>
+<tr><td>
+
+[requestNumber](./sncf.js.requestmanager.requestnumber.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The number of the request
+
+
+</td></tr>
+</tbody></table>
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [connect()](./sncf.js.requestmanager.connect.md) |  | Try to log in with the token |
-|  [encodeURL(path, params)](./sncf.js.requestmanager.encodeurl.md) |  | Encode the parameters and the url |
-|  [request(path, params)](./sncf.js.requestmanager.request.md) |  | Make a request to the API |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[connect()](./sncf.js.requestmanager.connect.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Try to log in with the token
+
+
+</td></tr>
+<tr><td>
+
+[encodeURL(path, params)](./sncf.js.requestmanager.encodeurl.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Encode the parameters and the url
+
+
+</td></tr>
+<tr><td>
+
+[request(path, params)](./sncf.js.requestmanager.request.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Make a request to the API
+
+
+</td></tr>
+</tbody></table>

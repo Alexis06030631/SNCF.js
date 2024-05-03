@@ -9,13 +9,69 @@ Constructs a new instance of the `StopTime` class
 **Signature:**
 
 ```typescript
-constructor(Client: any, data: any);
+constructor(Client: any, data: any, date?: Date);
 ```
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  Client | any |  |
-|  data | any |  |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+Client
+
+
+</td><td>
+
+any
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+data
+
+
+</td><td>
+
+any
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+date
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+_(Optional)_
+
+
+</td></tr>
+</tbody></table>

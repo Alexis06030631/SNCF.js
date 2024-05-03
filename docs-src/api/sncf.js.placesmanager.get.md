@@ -14,10 +14,39 @@ get(stationID: string): Promise<StopArea | AdministrativeRegion>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  stationID | string | The id of the station to get |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+stationID
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The id of the station to get
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;[StopArea](./sncf.js.stoparea.md) \| [AdministrativeRegion](./sncf.js.administrativeregion.md)<!-- -->&gt;

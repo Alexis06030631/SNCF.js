@@ -14,10 +14,39 @@ export declare function dateToNavitiaDate(date: Date | string): string;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  date | Date \| string | The date to transform |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+date
+
+
+</td><td>
+
+Date \| string
+
+
+</td><td>
+
+The date to transform
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 string

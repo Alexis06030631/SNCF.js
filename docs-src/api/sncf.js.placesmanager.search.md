@@ -14,10 +14,39 @@ search(station: string): Promise<PlaceManagerResult>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  station | string | The name of the station to search for |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+station
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The name of the station to search for
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;[PlaceManagerResult](./sncf.js.placemanagerresult.md)<!-- -->&gt;

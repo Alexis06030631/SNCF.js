@@ -4,6 +4,11 @@
 
 ## Vehicle.departure\_time property
 
+> Warning: This API is now obsolete.
+> 
+> Use arrival\_date instead
+> 
+
 Return the departure time of the vehicle
 
 **Signature:**

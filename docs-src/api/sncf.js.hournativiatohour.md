@@ -14,11 +14,55 @@ export declare function hourNativiaToHour(data: string, PassError?: boolean): st
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  data | string | The navitia date |
-|  PassError | boolean | _(Optional)_ If true, return null instead of throwing an error |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+data
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The navitia date
+
+
+</td></tr>
+<tr><td>
+
+PassError
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+_(Optional)_ If true, return null instead of throwing an error
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 string

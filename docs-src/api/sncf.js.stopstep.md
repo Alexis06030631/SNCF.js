@@ -12,15 +12,116 @@ export declare class StopStep
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(Client, data)](./sncf.js.stopstep._constructor_.md) |  | Constructs a new instance of the <code>StopStep</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(Client, data)](./sncf.js.stopstep._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `StopStep` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [arrival](./sncf.js.stopstep.arrival.md) |  | [Time](./sncf.js.time.md) | Return the Arrival data of the stop |
-|  [departure](./sncf.js.stopstep.departure.md) |  | [Time](./sncf.js.time.md) | Return the Departure data of the stop |
-|  [stop\_area](./sncf.js.stopstep.stop_area.md) |  | [StopArea](./sncf.js.stoparea.md) | Return the stop area |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[arrival](./sncf.js.stopstep.arrival.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Time](./sncf.js.time.md)
+
+
+</td><td>
+
+Return the Arrival data of the stop
+
+
+</td></tr>
+<tr><td>
+
+[departure](./sncf.js.stopstep.departure.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Time](./sncf.js.time.md)
+
+
+</td><td>
+
+Return the Departure data of the stop
+
+
+</td></tr>
+<tr><td>
+
+[stop\_area](./sncf.js.stopstep.stop_area.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[StopArea](./sncf.js.stoparea.md)
+
+
+</td><td>
+
+Return the stop area
+
+
+</td></tr>
+</tbody></table>

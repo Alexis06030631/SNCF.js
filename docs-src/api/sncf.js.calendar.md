@@ -12,14 +12,97 @@ export declare class Calendar
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(Client, data)](./sncf.js.calendar._constructor_.md) |  | Constructs a new instance of the <code>Calendar</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(Client, data)](./sncf.js.calendar._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `Calendar` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [active\_periods](./sncf.js.calendar.active_periods.md) |  | [ActivePeriods](./sncf.js.activeperiods.md) | Return the active\_periods of the calendar |
-|  [week\_pattern](./sncf.js.calendar.week_pattern.md) |  | [WeekPattern](./sncf.js.weekpattern.md) | Return the week pattern of the calendar |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[active\_periods](./sncf.js.calendar.active_periods.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[ActivePeriods](./sncf.js.activeperiods.md)
+
+
+</td><td>
+
+Return the active\_periods of the calendar
+
+
+</td></tr>
+<tr><td>
+
+[week\_pattern](./sncf.js.calendar.week_pattern.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[WeekPattern](./sncf.js.weekpattern.md)
+
+
+</td><td>
+
+Return the week pattern of the calendar
+
+
+</td></tr>
+</tbody></table>

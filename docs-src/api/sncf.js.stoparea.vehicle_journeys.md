@@ -9,15 +9,60 @@ Get vehicle journeys of the stop area
 **Signature:**
 
 ```typescript
-vehicle_journeys(date?: Date): Promise<Vehicle[]>;
+vehicle_journeys(since?: Date, until?: Date): Promise<Vehicle[]>;
 ```
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  date | Date | _(Optional)_ The date of the vehicle journeys |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+since
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+_(Optional)_ The start date of the vehicle journeys to get
+
+
+</td></tr>
+<tr><td>
+
+until
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+_(Optional)_ The end date of the vehicle journeys to get (default: since + 1 day)
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;[Vehicle](./sncf.js.vehicle.md)<!-- -->\[\]&gt;

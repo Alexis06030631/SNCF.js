@@ -12,9 +12,82 @@ export interface TimeImpact
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [base\_time](./sncf.js.timeimpact.base_time.md) |  | string | Return the base time of the impact |
-|  [real\_time](./sncf.js.timeimpact.real_time.md) |  | string | Return the real time of the impact |
-|  [status](./sncf.js.timeimpact.status.md) |  | string | Return the status of the impact |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[base\_time](./sncf.js.timeimpact.base_time.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the base time of the impact
+
+
+</td></tr>
+<tr><td>
+
+[real\_time](./sncf.js.timeimpact.real_time.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the real time of the impact
+
+
+</td></tr>
+<tr><td>
+
+[status](./sncf.js.timeimpact.status.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the status of the impact
+
+
+</td></tr>
+</tbody></table>

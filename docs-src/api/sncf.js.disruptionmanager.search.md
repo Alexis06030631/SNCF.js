@@ -14,11 +14,55 @@ search(since_date?: Date, until_date?: Date): Promise<Disruption[]>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  since\_date | Date | _(Optional)_ Defines the start date of the disruptions to search for |
-|  until\_date | Date | _(Optional)_ Defines the end date of the disruptions to search for |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+since\_date
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+_(Optional)_ Defines the start date of the disruptions to search for
+
+
+</td></tr>
+<tr><td>
+
+until\_date
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+_(Optional)_ Defines the end date of the disruptions to search for
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;[Disruption](./sncf.js.disruption.md)<!-- -->\[\]&gt;

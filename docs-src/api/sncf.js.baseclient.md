@@ -12,7 +12,34 @@ export declare class BaseClient
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(options)](./sncf.js.baseclient._constructor_.md) |  | Constructs a new instance of the <code>BaseClient</code> class |
+<table><thead><tr><th>
 
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(options)](./sncf.js.baseclient._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `BaseClient` class
+
+
+</td></tr>
+</tbody></table>

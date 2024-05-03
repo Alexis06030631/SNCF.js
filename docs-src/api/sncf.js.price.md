@@ -12,8 +12,63 @@ export interface Price
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [found](./sncf.js.price.found.md) |  | boolean | If the price is found |
-|  [value](./sncf.js.price.value.md) |  | number | The currency of the price |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[found](./sncf.js.price.found.md)
+
+
+</td><td>
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+If the price is found
+
+
+</td></tr>
+<tr><td>
+
+[value](./sncf.js.price.value.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+The currency of the price
+
+
+</td></tr>
+</tbody></table>

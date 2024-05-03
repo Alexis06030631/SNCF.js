@@ -14,10 +14,39 @@ get(disruptionID: string): Promise<Disruption>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  disruptionID | string | The id of the disruption to get |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+disruptionID
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The id of the disruption to get
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;[Disruption](./sncf.js.disruption.md)<!-- -->&gt;

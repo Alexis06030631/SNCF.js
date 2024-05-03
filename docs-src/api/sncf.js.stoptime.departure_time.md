@@ -4,6 +4,11 @@
 
 ## StopTime.departure\_time property
 
+> Warning: This API is now obsolete.
+> 
+> Use departure\_date instead
+> 
+
 Departure time
 
 **Signature:**

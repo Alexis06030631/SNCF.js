@@ -12,23 +12,308 @@ export declare class Vehicle
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(Client, data)](./sncf.js.vehicle._constructor_.md) |  | Constructs a new instance of the <code>Vehicle</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(Client, data)](./sncf.js.vehicle._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `Vehicle` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [arrival\_time](./sncf.js.vehicle.arrival_time.md) |  | string | Return the arrival time of the vehicle |
-|  [calendar](./sncf.js.vehicle.calendar.md) |  | [Calendar](./sncf.js.calendar.md)<!-- -->\[\] | Return the calendar of the vehicle |
-|  [departure\_time](./sncf.js.vehicle.departure_time.md) |  | string | Return the departure time of the vehicle |
-|  [disruptions](./sncf.js.vehicle.disruptions.md) | <code>readonly</code> | [Disruption](./sncf.js.disruption.md)<!-- -->\[\] | Return the vehicle disruptions |
-|  [get\_arrival\_time](./sncf.js.vehicle.get_arrival_time.md) | <code>readonly</code> | string |  |
-|  [get\_departure\_time](./sncf.js.vehicle.get_departure_time.md) | <code>readonly</code> | string |  |
-|  [has\_disruptions](./sncf.js.vehicle.has_disruptions.md) |  | boolean | Return boolean if the vehicle has disruptions |
-|  [headsign](./sncf.js.vehicle.headsign.md) |  | string | Return the vehicle headsign |
-|  [id](./sncf.js.vehicle.id.md) |  | string | Return the vehicle id |
-|  [stop\_times](./sncf.js.vehicle.stop_times.md) |  | [StopTime](./sncf.js.stoptime.md)<!-- -->\[\] | Return the steps of the vehicle |
-|  [trip\_id](./sncf.js.vehicle.trip_id.md) |  | string | Return trip ID |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[arrival\_date](./sncf.js.vehicle.arrival_date.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+Return the arrival date of the vehicle
+
+
+</td></tr>
+<tr><td>
+
+[arrival\_time](./sncf.js.vehicle.arrival_time.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the arrival time of the vehicle
+
+
+</td></tr>
+<tr><td>
+
+[calendar](./sncf.js.vehicle.calendar.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Calendar](./sncf.js.calendar.md)<!-- -->\[\]
+
+
+</td><td>
+
+Return the calendar of the vehicle
+
+
+</td></tr>
+<tr><td>
+
+[departure\_date](./sncf.js.vehicle.departure_date.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+Return the departure date of the vehicle
+
+
+</td></tr>
+<tr><td>
+
+[departure\_time](./sncf.js.vehicle.departure_time.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the departure time of the vehicle
+
+
+</td></tr>
+<tr><td>
+
+[disruptions](./sncf.js.vehicle.disruptions.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+[Disruption](./sncf.js.disruption.md)<!-- -->\[\]
+
+
+</td><td>
+
+Return the vehicle disruptions
+
+
+</td></tr>
+<tr><td>
+
+[get\_arrival\_time](./sncf.js.vehicle.get_arrival_time.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[get\_departure\_time](./sncf.js.vehicle.get_departure_time.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[has\_disruptions](./sncf.js.vehicle.has_disruptions.md)
+
+
+</td><td>
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+Return boolean if the vehicle has disruptions
+
+
+</td></tr>
+<tr><td>
+
+[headsign](./sncf.js.vehicle.headsign.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the vehicle headsign
+
+
+</td></tr>
+<tr><td>
+
+[id](./sncf.js.vehicle.id.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return the vehicle id
+
+
+</td></tr>
+<tr><td>
+
+[stop\_times](./sncf.js.vehicle.stop_times.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[StopTime](./sncf.js.stoptime.md)<!-- -->\[\]
+
+
+</td><td>
+
+Return the steps of the vehicle
+
+
+</td></tr>
+<tr><td>
+
+[trip\_id](./sncf.js.vehicle.trip_id.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Return trip ID
+
+
+</td></tr>
+</tbody></table>

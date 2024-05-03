@@ -12,11 +12,120 @@ export interface TrainInfo
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [commercial\_mode](./sncf.js.traininfo.commercial_mode.md) |  | string | The train commercial mode |
-|  [direction](./sncf.js.traininfo.direction.md) |  | string | The train direction |
-|  [headsign](./sncf.js.traininfo.headsign.md) |  | string | The train identifier |
-|  [name](./sncf.js.traininfo.name.md) |  | string | The train name |
-|  [physical\_mode](./sncf.js.traininfo.physical_mode.md) |  | string | The train physical mode |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[commercial\_mode](./sncf.js.traininfo.commercial_mode.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The train commercial mode
+
+
+</td></tr>
+<tr><td>
+
+[direction](./sncf.js.traininfo.direction.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The train direction
+
+
+</td></tr>
+<tr><td>
+
+[headsign](./sncf.js.traininfo.headsign.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The train identifier
+
+
+</td></tr>
+<tr><td>
+
+[name](./sncf.js.traininfo.name.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The train name
+
+
+</td></tr>
+<tr><td>
+
+[physical\_mode](./sncf.js.traininfo.physical_mode.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The train physical mode
+
+
+</td></tr>
+</tbody></table>

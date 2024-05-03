@@ -12,20 +12,211 @@ export declare class Arrival
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(Client, data)](./sncf.js.arrival._constructor_.md) |  | Constructs a new instance of the <code>Arrival</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(Client, data)](./sncf.js.arrival._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `Arrival` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [arrival\_date\_time](./sncf.js.arrival.arrival_date_time.md) |  | Date | Return the arrival time (real time) |
-|  [base\_arrival\_date\_time](./sncf.js.arrival.base_arrival_date_time.md) |  | Date | Return the arrival time (scheduled) |
-|  [base\_departure\_date\_time](./sncf.js.arrival.base_departure_date_time.md) |  | Date | Return the departure time (scheduled) |
-|  [departure\_date\_time](./sncf.js.arrival.departure_date_time.md) |  | Date | Return the departure time (real time) |
-|  [isLate](./sncf.js.arrival.islate.md) |  | boolean | Return true if the train is late |
-|  [route](./sncf.js.arrival.route.md) |  | [Route](./sncf.js.route.md) | Return the route of the train |
-|  [stop\_area](./sncf.js.arrival.stop_area.md) |  | [StopArea](./sncf.js.stoparea.md) | Return the stop area of the train |
-|  [train](./sncf.js.arrival.train.md) |  | [TrainInfo](./sncf.js.traininfo.md) | Return the train data |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[arrival\_date\_time](./sncf.js.arrival.arrival_date_time.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+Return the arrival time (real time)
+
+
+</td></tr>
+<tr><td>
+
+[base\_arrival\_date\_time](./sncf.js.arrival.base_arrival_date_time.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+Return the arrival time (scheduled)
+
+
+</td></tr>
+<tr><td>
+
+[base\_departure\_date\_time](./sncf.js.arrival.base_departure_date_time.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+Return the departure time (scheduled)
+
+
+</td></tr>
+<tr><td>
+
+[departure\_date\_time](./sncf.js.arrival.departure_date_time.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Date
+
+
+</td><td>
+
+Return the departure time (real time)
+
+
+</td></tr>
+<tr><td>
+
+[isLate](./sncf.js.arrival.islate.md)
+
+
+</td><td>
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+Return true if the train is late
+
+
+</td></tr>
+<tr><td>
+
+[route](./sncf.js.arrival.route.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[Route](./sncf.js.route.md)
+
+
+</td><td>
+
+Return the route of the train
+
+
+</td></tr>
+<tr><td>
+
+[stop\_area](./sncf.js.arrival.stop_area.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[StopArea](./sncf.js.stoparea.md)
+
+
+</td><td>
+
+Return the stop area of the train
+
+
+</td></tr>
+<tr><td>
+
+[train](./sncf.js.arrival.train.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[TrainInfo](./sncf.js.traininfo.md)
+
+
+</td><td>
+
+Return the train data
+
+
+</td></tr>
+</tbody></table>

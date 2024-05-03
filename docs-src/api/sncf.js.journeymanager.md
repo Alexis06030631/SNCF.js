@@ -13,13 +13,68 @@ export declare class JourneyManager extends CachedManager
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(client)](./sncf.js.journeymanager._constructor_.md) |  | Constructs a new instance of the <code>JourneyManager</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(client)](./sncf.js.journeymanager._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `JourneyManager` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [get(from, to, date)](./sncf.js.journeymanager.get.md) |  | Get a journey details with departure and arrival stop areas ids |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[get(from, to, date)](./sncf.js.journeymanager.get.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get a journey details with departure and arrival stop areas ids
+
+
+</td></tr>
+</tbody></table>

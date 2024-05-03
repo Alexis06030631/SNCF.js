@@ -6,67 +6,515 @@
 
 ## Classes
 
-|  Class | Description |
-|  --- | --- |
-|  [AdministrativeRegion](./sncf.js.administrativeregion.md) |  |
-|  [Arrival](./sncf.js.arrival.md) |  |
-|  [BaseClient](./sncf.js.baseclient.md) |  |
-|  [CachedManager](./sncf.js.cachedmanager.md) | Manages the API methods of a data model with a mutable cache of instances. |
-|  [Calendar](./sncf.js.calendar.md) |  |
-|  [Client](./sncf.js.client.md) | The main hub for interacting with the Navitia API. |
-|  [Departure](./sncf.js.departure.md) |  |
-|  [Disruption](./sncf.js.disruption.md) |  |
-|  [DisruptionManager](./sncf.js.disruptionmanager.md) |  |
-|  [ImpactedStop](./sncf.js.impactedstop.md) |  |
-|  [Journey](./sncf.js.journey.md) |  |
-|  [JourneyManager](./sncf.js.journeymanager.md) |  |
-|  [Line](./sncf.js.line.md) |  |
-|  [LineManager](./sncf.js.linemanager.md) |  |
-|  [PlacesManager](./sncf.js.placesmanager.md) |  |
-|  [RequestManager](./sncf.js.requestmanager.md) |  |
-|  [Route](./sncf.js.route.md) |  |
-|  [Step](./sncf.js.step.md) |  |
-|  [StopArea](./sncf.js.stoparea.md) |  |
-|  [StopStep](./sncf.js.stopstep.md) |  |
-|  [StopTime](./sncf.js.stoptime.md) |  |
-|  [StructuresManager](./sncf.js.structuresmanager.md) |  |
-|  [Vehicle](./sncf.js.vehicle.md) |  |
+<table><thead><tr><th>
+
+Class
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[AdministrativeRegion](./sncf.js.administrativeregion.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[Arrival](./sncf.js.arrival.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[BaseClient](./sncf.js.baseclient.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[CachedManager](./sncf.js.cachedmanager.md)
+
+
+</td><td>
+
+Manages the API methods of a data model with a mutable cache of instances.
+
+
+</td></tr>
+<tr><td>
+
+[Calendar](./sncf.js.calendar.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[Client](./sncf.js.client.md)
+
+
+</td><td>
+
+The main hub for interacting with the Navitia API.
+
+
+</td></tr>
+<tr><td>
+
+[Departure](./sncf.js.departure.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[Disruption](./sncf.js.disruption.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[DisruptionManager](./sncf.js.disruptionmanager.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[ImpactedStop](./sncf.js.impactedstop.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[Journey](./sncf.js.journey.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[JourneyManager](./sncf.js.journeymanager.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[Line](./sncf.js.line.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[LineManager](./sncf.js.linemanager.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[PlacesManager](./sncf.js.placesmanager.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[RequestManager](./sncf.js.requestmanager.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[Route](./sncf.js.route.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[SearchManager](./sncf.js.searchmanager.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[Step](./sncf.js.step.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[StopArea](./sncf.js.stoparea.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[StopStep](./sncf.js.stopstep.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[StopTime](./sncf.js.stoptime.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[StructuresManager](./sncf.js.structuresmanager.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[Vehicle](./sncf.js.vehicle.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
 
 ## Functions
 
-|  Function | Description |
-|  --- | --- |
-|  [createEnum(keys)](./sncf.js.createenum.md) |  |
-|  [dateToNavitiaDate(date)](./sncf.js.datetonavitiadate.md) | Transform a Date object to a navitia date |
-|  [defineRequestError(response)](./sncf.js.definerequesterror.md) |  |
-|  [hourNativiaToHour(data, PassError)](./sncf.js.hournativiatohour.md) | Transform a navitia date to a moment object (format: HHmmss to HH:mm:ss) |
-|  [isValidID(string)](./sncf.js.isvalidid.md) | Check if is a valid ID |
-|  [isValidLineID(string)](./sncf.js.isvalidlineid.md) | Check if is a valid Line ID |
-|  [navitiaDateToDate(date)](./sncf.js.navitiadatetodate.md) | Transform a navitia date to a Date object |
+<table><thead><tr><th>
+
+Function
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[createEnum(keys)](./sncf.js.createenum.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[dateToNavitiaDate(date)](./sncf.js.datetonavitiadate.md)
+
+
+</td><td>
+
+Transform a Date object to a navitia date
+
+
+</td></tr>
+<tr><td>
+
+[dateWithDateAndHour(hour, date)](./sncf.js.datewithdateandhour.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[defineRequestError(response)](./sncf.js.definerequesterror.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[extractDateInTripID(id)](./sncf.js.extractdateintripid.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[hourNativiaToHour(data, PassError)](./sncf.js.hournativiatohour.md)
+
+
+</td><td>
+
+Transform a navitia date to a moment object (format: HHmmss to HH:mm:ss)
+
+
+</td></tr>
+<tr><td>
+
+[isValidID(string)](./sncf.js.isvalidid.md)
+
+
+</td><td>
+
+Check if is a valid ID
+
+
+</td></tr>
+<tr><td>
+
+[isValidLineID(string)](./sncf.js.isvalidlineid.md)
+
+
+</td><td>
+
+Check if is a valid Line ID
+
+
+</td></tr>
+<tr><td>
+
+[navitiaDateToDate(date)](./sncf.js.navitiadatetodate.md)
+
+
+</td><td>
+
+Transform a navitia date to a Date object
+
+
+</td></tr>
+</tbody></table>
 
 ## Interfaces
 
-|  Interface | Description |
-|  --- | --- |
-|  [ActivePeriods](./sncf.js.activeperiods.md) |  |
-|  [Co2Emission](./sncf.js.co2emission.md) |  |
-|  [Coord](./sncf.js.coord.md) |  |
-|  [Network](./sncf.js.network.md) |  |
-|  [PlaceManagerResult](./sncf.js.placemanagerresult.md) |  |
-|  [Price](./sncf.js.price.md) |  |
-|  [Severity](./sncf.js.severity.md) |  |
-|  [Time](./sncf.js.time.md) |  |
-|  [TimeImpact](./sncf.js.timeimpact.md) |  |
-|  [TrainInfo](./sncf.js.traininfo.md) |  |
-|  [WeekPattern](./sncf.js.weekpattern.md) |  |
+<table><thead><tr><th>
+
+Interface
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[ActivePeriods](./sncf.js.activeperiods.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[Co2Emission](./sncf.js.co2emission.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[Coord](./sncf.js.coord.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[Network](./sncf.js.network.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[PlaceManagerResult](./sncf.js.placemanagerresult.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[Price](./sncf.js.price.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[Severity](./sncf.js.severity.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[Time](./sncf.js.time.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[TimeImpact](./sncf.js.timeimpact.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[TrainInfo](./sncf.js.traininfo.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[WeekPattern](./sncf.js.weekpattern.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
 
 ## Variables
 
-|  Variable | Description |
-|  --- | --- |
-|  [ErrorCodes](./sncf.js.errorcodes.md) |  |
-|  [Messages](./sncf.js.messages.md) |  |
-|  [SncfjsError](./sncf.js.sncfjserror.md) |  |
-|  [SncfjsRangeError](./sncf.js.sncfjsrangeerror.md) |  |
-|  [SncfjsTypeError](./sncf.js.sncfjstypeerror.md) |  |
+<table><thead><tr><th>
 
+Variable
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[ErrorCodes](./sncf.js.errorcodes.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[Messages](./sncf.js.messages.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[SncfjsError](./sncf.js.sncfjserror.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[SncfjsRangeError](./sncf.js.sncfjsrangeerror.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[SncfjsTypeError](./sncf.js.sncfjstypeerror.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

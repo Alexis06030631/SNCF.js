@@ -14,11 +14,55 @@ request(path: string, params?: any): Promise<any>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  path | string | The path to url |
-|  params | any | _(Optional)_ The parameters to encode |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+path
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The path to url
+
+
+</td></tr>
+<tr><td>
+
+params
+
+
+</td><td>
+
+any
+
+
+</td><td>
+
+_(Optional)_ The parameters to encode
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;any&gt;

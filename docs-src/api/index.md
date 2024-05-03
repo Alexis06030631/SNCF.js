@@ -6,7 +6,24 @@
 
 ## Packages
 
-|  Package | Description |
-|  --- | --- |
-|  [sncf.js](./sncf.js.md) |  |
+<table><thead><tr><th>
 
+Package
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[sncf.js](./sncf.js.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
