@@ -13,6 +13,7 @@ const keys: string[] = [
 	'NetworkError',
 	'InvalidId',
 	'NoResultFound',
+	'HeadSignNotFound',
 
 	// Navitia errors codes
 	'unable_to_parse',

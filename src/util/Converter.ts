@@ -20,15 +20,20 @@ export function navitiaDateToDate (date:string): Date {
 	 * @param date - The date to transform
 	 */
 export function dateToNavitiaDate (date:Date|string):string {
-	// Get date utc
 	let initDate = date;
 	// Check if the date is a string date or a Date object
 	if (typeof date === 'string') date = new Date(date);
 	if (!(date instanceof Date) || isNaN(date.getTime())) {
 		throw new SncfjsError(ErrorCodes.InvalidDate, initDate);
 	}
+		const options:any = {
+		hour: '2-digit',
+		minute: '2-digit',
+		second: '2-digit',
+		};
 	const dateLocale:string = date.toLocaleDateString('fr-FR').replace(/\//g, '')
-	return dateLocale.substring(4, 8) + dateLocale.substring(2, 4) + dateLocale.substring(0, 2) + 'T' + date.toLocaleTimeString('fr-FR').replace(/\//g, '')
+	const timeLocale:string = date.toLocaleTimeString('fr-FR', options)
+	return dateLocale.substring(4, 8) + dateLocale.substring(2, 4) + dateLocale.substring(0, 2) + 'T' + timeLocale.replace(/:/g, '')
 }
 
 	/**

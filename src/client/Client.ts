@@ -1,7 +1,7 @@
 import {BaseClient} from './BaseClient';
 import {SncfjsError, ErrorCodes} from "../errors";
 import {RequestManager} from "../request";
-import {PlacesManager} from "../managers";
+import {PlacesManager, SearchManager} from "../managers";
 import Status from "./../util/Status";
 import {DisruptionManager} from "../managers";
 import {LineManager} from "../managers";
@@ -33,6 +33,10 @@ export class Client extends BaseClient {
      * PlacesManager class
      */
     place: PlacesManager;
+    /**
+     * SearchManager: It is used to search for a train by headsign ID and other search queries
+     */
+    searchManager: SearchManager;
     /**
      * DisruptionManager class
      */
@@ -77,6 +81,7 @@ export class Client extends BaseClient {
         this.request = this.requestManager.request
         this.status = Status.Disconnected;
         this.place = new PlacesManager(this);
+        this.searchManager = new SearchManager(this);
         this.disruption = new DisruptionManager(this);
         this.line = new LineManager(this);
         this.journey = new JourneyManager(this);

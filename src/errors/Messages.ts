@@ -17,6 +17,7 @@ export const Messages =  {
 	[ErrorCodes.NetworkError]: (details:any) => `The request at ${details.host} was failed with the code ${details.code}. Please verify it and try again.`,
 	[ErrorCodes.InvalidId]: (id:string) => `The id "${id}" is not valid. Please provide a valid id.`,
 	[ErrorCodes.NoResultFound]: (param:string) => `No result found for ${param}.`,
+	[ErrorCodes.HeadSignNotFound]: (param:string) => `The headsign "${param}" was not found. Please provide a valid headsign or check the date.`,
 
 	// Navitia errors codes
 	[ErrorCodes.unable_to_parse]: 'Unable to parse the data from the API. Please try again later or change the parameters.',
